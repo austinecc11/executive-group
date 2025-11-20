@@ -14,10 +14,9 @@
       --border-strong: rgba(148, 163, 184, 0.7);
       --text: #1f2933;
       --muted: #6b7280;
-      --accent-primary: #4fc3f7;      /* ECC sky blue */
-      --accent-primary-dark: #0288d1; /* deeper blue */
-      --accent-golden: #f9a825;       /* sun gold */
-      --accent-apex: #0288d1;         /* Apex blue */
+      --accent-primary: #4fc3f7;      /* general blue accent */
+      --accent-primary-dark: #0288d1; /* deeper blue (Apex) */
+      --accent-golden: #f9a825;       /* sun gold (Golden Eagle) */
       --radius-lg: 20px;
       --radius-pill: 999px;
     }
@@ -170,7 +169,7 @@
 
     .hero-logo-badge.exec:hover {
       background: #020617;
-      border-color: var(--accent-primary-dark);
+      border-color: #111827;
     }
 
     .hero-logo-badge.gold:hover {
@@ -188,7 +187,7 @@
       color: #e5e7eb;
     }
 
-    /* Apex stays light */
+    /* Apex stays light blue accent */
     .hero-logo-badge.apex {
       border-color: rgba(2, 136, 209, 0.7);
       background: #ffffff;
@@ -196,7 +195,7 @@
 
     .hero-logo-badge.apex:hover {
       background: #f9fbff;
-      border-color: var(--accent-apex);
+      border-color: var(--accent-primary-dark);
       color: var(--text);
     }
 
@@ -365,6 +364,8 @@
       background: var(--surface);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card::before {
@@ -441,11 +442,11 @@
       background: rgba(148, 163, 184, 0.9);
     }
 
-    .company-accent.exec { color: #111827; }           /* ECC = black */
-    .company-accent.gold { color: var(--accent-golden); }
+    .company-accent.exec { color: #111827; }              /* ECC = black */
+    .company-accent.gold { color: var(--accent-golden); } /* Golden Eagle gold */
     .company-accent.apex { color: var(--accent-primary-dark); } /* Apex = blue */
 
-    /* Scoped card styling per brand */
+    /* Scoped card styling per brand (core scopes) */
     .card--exec::before {
       background: linear-gradient(to right, #111827, #4b5563);
     }
@@ -480,6 +481,19 @@
       border-color: rgba(249, 168, 37, 0.7);
       background: rgba(249, 168, 37, 0.06);
       color: var(--accent-golden);
+    }
+
+    /* Brand link cards */
+    .card--brand-link {
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+      display: block;
+    }
+
+    .card--brand-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border-color: var(--border-strong);
     }
 
     .contact-grid {
@@ -707,7 +721,8 @@
       </div>
 
       <div class="three-grid">
-        <article class="card" id="brand-executive">
+        <!-- Executive brand card -->
+        <a href="executive.html" class="card card--brand-link" id="brand-executive">
           <div class="card-heading-row">
             <div class="card-title">Executive Custom Construction</div>
           </div>
@@ -721,9 +736,15 @@
               <span><strong>Focus:</strong> general contracting &amp; project management</span>
             </div>
           </div>
-        </article>
+          <div class="meta-row" style="margin-top:0.4rem;">
+            <div class="meta-pill">
+              <span>View past Executive projects →</span>
+            </div>
+          </div>
+        </a>
 
-        <article class="card" id="brand-apex">
+        <!-- Apex brand card -->
+        <a href="apex.html" class="card card--brand-link" id="brand-apex">
           <div class="card-heading-row">
             <div class="card-title">Apex Coatings</div>
           </div>
@@ -737,9 +758,15 @@
               <span><strong>Focus:</strong> framing, drywall, finish</span>
             </div>
           </div>
-        </article>
+          <div class="meta-row" style="margin-top:0.4rem;">
+            <div class="meta-pill">
+              <span>View past Apex projects →</span>
+            </div>
+          </div>
+        </a>
 
-        <article class="card" id="brand-golden-eagle">
+        <!-- Golden Eagle brand card -->
+        <a href="golden-eagle.html" class="card card--brand-link" id="brand-golden-eagle">
           <div class="card-heading-row">
             <div class="card-title">Golden Eagle</div>
           </div>
@@ -753,7 +780,12 @@
               <span><strong>Focus:</strong> excavation, utilities, flatwork</span>
             </div>
           </div>
-        </article>
+          <div class="meta-row" style="margin-top:0.4rem;">
+            <div class="meta-pill">
+              <span>View past Golden Eagle projects →</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -811,3 +843,4 @@
   </script>
 </body>
 </html>
+
