@@ -1,0 +1,743 @@
+# executive-group<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Executive Custom Construction | Golden Eagle | Apex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Executive Custom Construction and partner brands Golden Eagle and Apex delivering framing, coatings, and construction services." />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-elevated: #020617;
+      --card: #020617;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --border-strong: rgba(148, 163, 184, 0.6);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent-executive: #38bdf8; /* cyan */
+      --accent-golden: #f97316;    /* orange */
+      --accent-apex: #22c55e;      /* green */
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #020617 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.85), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.8);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .brand-logo {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 30%;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: radial-gradient(circle at 20% 0%, #38bdf8 0, #0f172a 50%, #020617 100%);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .brand-title {
+      font-size: 0.92rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    nav a {
+      font-size: 0.86rem;
+      text-decoration: none;
+      color: var(--muted);
+      margin-left: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .pill-link {
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 3.5rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.2fr);
+      gap: 2.4rem;
+      align-items: center;
+      margin-top: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge span {
+      width: 0.3rem;
+      height: 0.3rem;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 3.4vw + 1.3rem, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 0.8rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(to right, #38bdf8, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.02rem;
+      color: #cbd5f5;
+      max-width: 34rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 0.82rem 1.7rem;
+      font-size: 0.93rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      color: #020617;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.02);
+    }
+
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      padding: 0.78rem 1.4rem;
+      font-size: 0.86rem;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    .hero-side {
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 1.4rem 1.4rem 1.1rem;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+                  radial-gradient(circle at 70% -20%, rgba(248, 250, 252, 0.05), transparent 60%),
+                  rgba(15, 23, 42, 0.92);
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .hero-side-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-side-title {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.85);
+      white-space: nowrap;
+    }
+
+    .chip.exec {
+      border-color: rgba(56, 189, 248, 0.85);
+    }
+
+    .chip.gold {
+      border-color: rgba(249, 115, 22, 0.9);
+    }
+
+    .chip.apex {
+      border-color: rgba(34, 197, 94, 0.9);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .mini-card {
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.7rem 0.75rem;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .mini-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .mini-value {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .mini-dot {
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 999px;
+    }
+
+    .mini-dot.exec { background: var(--accent-executive); }
+    .mini-dot.gold { background: var(--accent-golden); }
+    .mini-dot.apex { background: var(--accent-apex); }
+
+    .mini-row {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.3rem;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (max-width: 800px) {
+      .three-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      nav {
+        display: none;
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.25rem 1.3rem;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .card-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .card-tag {
+      font-size: 0.68rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid var(--border-subtle);
+      color: var(--muted);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #d1d5db;
+      margin-bottom: 0.9rem;
+    }
+
+    .meta-row {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-pill strong {
+      font-weight: 500;
+    }
+
+    .meta-dot {
+      width: 0.28rem;
+      height: 0.28rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.9);
+    }
+
+    .company-accent.exec { color: var(--accent-executive); }
+    .company-accent.gold { color: var(--accent-golden); }
+    .company-accent.apex { color: var(--accent-apex); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 2.3fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem 1.3rem;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .contact-grid-inner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-mini {
+      border-radius: 14px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.8rem 0.9rem;
+      background: rgba(15, 23, 42, 0.94);
+      font-size: 0.86rem;
+    }
+
+    .contact-mini strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: linear-gradient(to top, #020617, transparent);
+    }
+
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand-mark">
+        <div class="brand-logo">Ex</div>
+        <div class="brand-text">
+          <div class="brand-title">Executive Custom Construction</div>
+          <div class="brand-sub">Golden Eagle • Apex</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact" class="pill-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="hero-badge">
+          <span></span>
+          EXECUTIVE CUSTOM CONSTRUCTION GROUP
+        </div>
+        <h1>
+          One team behind
+          <span>every framing, coatings &amp; site package.</span>
+        </h1>
+        <p>
+          Executive Custom Construction brings your projects out of the ground and to final punch with
+          tightly coordinated brands: Golden Eagle, Apex, and more. Fewer subs to manage, clearer scope,
+          and crews that actually care about schedule and safety.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+            Request a bid →
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('brands').scrollIntoView({ behavior: 'smooth' });">
+            View our brands
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="hero-side-header">
+          <div class="hero-side-title">Active brands</div>
+          <div style="font-size: 0.75rem; color: var(--muted);">Framing • Coatings • Site</div>
+        </div>
+
+        <div class="hero-chip-row">
+          <div class="chip exec">Executive Custom Construction</div>
+          <div class="chip gold">Golden Eagle</div>
+          <div class="chip apex">Apex</div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <div class="mini-label">Executive</div>
+            <div class="mini-value">Structural &amp; GC</div>
+            <div class="mini-row" style="margin-top: 0.5rem;">
+              <div class="mini-dot exec"></div>
+              <span style="font-size: 0.78rem; color: var(--muted);">Framing • Builds • Coordination</span>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-label">Golden Eagle</div>
+            <div class="mini-value">Coatings &amp; exterior</div>
+            <div class="mini-row" style="margin-top: 0.5rem;">
+              <div class="mini-dot gold"></div>
+              <span style="font-size: 0.78rem; color: var(--muted);">Stucco • Paint • Finishes</span>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-label">Apex</div>
+            <div class="mini-value">Concrete &amp; flatwork</div>
+            <div class="mini-row" style="margin-top: 0.5rem;">
+              <div class="mini-dot.apex mini-dot apex"></div>
+              <span style="font-size: 0.78rem; color: var(--muted);">Flatwork • Curb • Pads</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Core services -->
+    <section id="services">
+      <div class="section-header">
+        <div class="section-title">Core scopes</div>
+        <div class="section-sub">
+          From dirt to final punch, we keep your scopes aligned and your schedules moving.
+        </div>
+      </div>
+
+      <div class="three-grid">
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title company-accent exec">Framing &amp; structures</div>
+            <div class="card-tag">Executive</div>
+          </div>
+          <p>
+            Structural framing for production neighborhoods and custom builds, delivered with clean sites,
+            clear communication, and respect for the trades behind us.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Typical scopes:</strong> walls, roofs, stairs, decks</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title company-accent gold">Coatings &amp; exterior</div>
+            <div class="card-tag">Golden Eagle</div>
+          </div>
+          <p>
+            Exterior coatings, stucco, and finishes coordinated with framing and site so you’re not chasing
+            three different subs for one elevation.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Typical scopes:</strong> stucco, paint, sealants</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title company-accent.apex company-accent apex">Concrete &amp; flatwork</div>
+            <div class="card-tag">Apex</div>
+          </div>
+          <p>
+            Foundations, driveways, patios, and flatwork tied into your framing schedule so you’re not waiting
+            on slabs to set while the rest of the job sits.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Typical scopes:</strong> foundations, drives, walks</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section id="brands">
+      <div class="section-header">
+        <div class="section-title">Our brands</div>
+        <div class="section-sub">
+          Each brand runs its own crew, but we plan and bid as one team so you don’t have to coordinate five different phones.
+        </div>
+      </div>
+
+      <div class="three-grid">
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title">Executive Custom Construction</div>
+          </div>
+          <p>
+            The umbrella that holds everything together. Executive is your single point of contact for scopes,
+            schedules, and site coordination across framing, coatings, and concrete.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Focus:</strong> GC support &amp; structural</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title">Golden Eagle</div>
+          </div>
+          <p>
+            Exterior coatings and finishes with an eye for elevation consistency, clean lines, and schedules that
+            match the framing and concrete work happening around you.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Focus:</strong> stucco, paint, specialty coatings</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-heading-row">
+            <div class="card-title">Apex</div>
+          </div>
+          <p>
+            Concrete and flatwork scopes coordinated from day one. Pads, drives, walks, and patios poured with the
+            framing and finish work in mind.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Focus:</strong> foundations, flatwork, exterior slabs</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-title">Contact</div>
+        <div class="section-sub">
+          Send plans, elevations, and schedule — we’ll build one coordinated proposal instead of three separate bids.
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Bid requests &amp; plans</h3>
+          <p style="font-size: 0.9rem; color: #d1d5db;">
+            Email your plan set, options/elevations, and approximate start dates and we’ll follow up with scope
+            questions and a clean, line-item proposal.
+          </p>
+          <p style="font-size: 0.9rem; margin-top: 0.8rem;">
+            <strong>Email:</strong> info@executivecustomconstruction.com<br />
+            <strong>Phone:</strong> (555) 555-5555
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Direct contacts</h3>
+          <div class="contact-grid-inner">
+            <div class="contact-mini">
+              <strong>Executive</strong>
+              Main office<br />
+              bids@executivecustomconstruction.com
+            </div>
+            <div class="contact-mini">
+              <strong>Golden Eagle</strong>
+              golden@executivecustomconstruction.com
+            </div>
+            <div class="contact-mini">
+              <strong>Apex</strong>
+              apex@executivecustomconstruction.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Executive Custom Construction • Golden Eagle • Apex. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
