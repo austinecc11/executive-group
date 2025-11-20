@@ -14,9 +14,9 @@
       --border-strong: rgba(148, 163, 184, 0.7);
       --text: #1f2933;
       --muted: #6b7280;
-      --accent-primary: #4fc3f7;      /* general blue accent */
-      --accent-primary-dark: #0288d1; /* deeper blue (Apex) */
-      --accent-golden: #f9a825;       /* sun gold (Golden Eagle) */
+      --accent-primary: #4fc3f7;
+      --accent-primary-dark: #0288d1;
+      --accent-golden: #f9a825;
       --radius-lg: 20px;
       --radius-pill: 999px;
     }
@@ -159,7 +159,6 @@
                   border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
     }
 
-    /* Black tiles for ECC & Golden Eagle */
     .hero-logo-badge.exec,
     .hero-logo-badge.gold {
       background: #020617;
@@ -187,7 +186,6 @@
       color: #e5e7eb;
     }
 
-    /* Apex stays light blue accent */
     .hero-logo-badge.apex {
       border-color: rgba(2, 136, 209, 0.7);
       background: #ffffff;
@@ -206,7 +204,7 @@
 
     .hero-logo-image-wrapper {
       width: 100%;
-      aspect-ratio: 1 / 1; /* perfect square */
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -394,10 +392,6 @@
       gap: 0.35rem;
     }
 
-    .card-icon {
-      font-size: 1.1rem;
-    }
-
     .card-tag {
       font-size: 0.68rem;
       padding: 0.18rem 0.55rem;
@@ -442,11 +436,10 @@
       background: rgba(148, 163, 184, 0.9);
     }
 
-    .company-accent.exec { color: #111827; }              /* ECC = black */
-    .company-accent.gold { color: var(--accent-golden); } /* Golden Eagle gold */
-    .company-accent.apex { color: var(--accent-primary-dark); } /* Apex = blue */
+    .company-accent.exec { color: #111827; }
+    .company-accent.gold { color: var(--accent-golden); }
+    .company-accent.apex { color: var(--accent-primary-dark); }
 
-    /* Scoped card styling per brand (core scopes) */
     .card--exec::before {
       background: linear-gradient(to right, #111827, #4b5563);
     }
@@ -483,7 +476,6 @@
       color: var(--accent-golden);
     }
 
-    /* Brand link cards */
     .card--brand-link {
       cursor: pointer;
       transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
@@ -584,7 +576,6 @@
     <!-- Hero with big logo badges -->
     <section class="hero">
       <div class="hero-logos">
-        <!-- ECC FIRST -->
         <a href="#brand-executive" class="hero-logo-badge exec">
           <div class="hero-logo-image-wrapper">
             <img src="ecc-logo.png" alt="Executive Custom Construction logo">
@@ -593,7 +584,6 @@
           <div class="hero-logo-sub">General Contracting and Project Management</div>
         </a>
 
-        <!-- APEX MIDDLE -->
         <a href="#brand-apex" class="hero-logo-badge apex">
           <div class="hero-logo-image-wrapper">
             <img src="apex-logo.png" alt="Apex Coatings logo">
@@ -602,7 +592,6 @@
           <div class="hero-logo-sub">Framing, Drywall, Finish</div>
         </a>
 
-        <!-- GOLDEN EAGLE THIRD -->
         <a href="#brand-golden-eagle" class="hero-logo-badge gold">
           <div class="hero-logo-image-wrapper">
             <img src="golden-eagle-logo.png" alt="Golden Eagle logo">
@@ -646,11 +635,9 @@
       </div>
 
       <div class="three-grid">
-        <!-- Exec GC / PM -->
         <article class="card card--exec">
           <div class="card-heading-row">
             <div class="card-title company-accent exec">
-              <span class="card-icon">📋</span>
               General Contracting &amp; Project Management
             </div>
             <div class="card-tag">Executive</div>
@@ -667,17 +654,15 @@
           </div>
         </article>
 
-        <!-- Apex framing / drywall / finish -->
         <article class="card card--apex">
           <div class="card-heading-row">
             <div class="card-title company-accent apex">
-              <span class="card-icon">🛠️</span>
               Framing, Drywall &amp; Finish
             </div>
             <div class="card-tag">Apex</div>
           </div>
           <p>
-            Apex handles the structure and interiors as one package — framing, drywall, and finish — so you
+            Apex handles structure and interiors as one package — framing, drywall, and finish — so you
             aren’t chasing multiple subs for walls, ceilings, and trim on the same home or building.
           </p>
           <div class="meta-row">
@@ -688,11 +673,9 @@
           </div>
         </article>
 
-        <!-- Golden Eagle excavation / utilities / flatwork -->
         <article class="card card--gold">
           <div class="card-heading-row">
             <div class="card-title company-accent gold">
-              <span class="card-icon">🚜</span>
               Excavation, Utilities &amp; Flatwork
             </div>
             <div class="card-tag">Golden Eagle</div>
@@ -721,14 +704,12 @@
       </div>
 
       <div class="three-grid">
-        <!-- Executive brand card -->
         <a href="executive.html" class="card card--brand-link" id="brand-executive">
           <div class="card-heading-row">
             <div class="card-title">Executive Custom Construction</div>
           </div>
           <p>
-            Executive is the GC and project management arm of the group — your single point of contact for scopes,
-            schedules, and site coordination across the Executive companies.
+            GC and project management across residential, commercial, and remodel work.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
@@ -738,19 +719,17 @@
           </div>
           <div class="meta-row" style="margin-top:0.4rem;">
             <div class="meta-pill">
-              <span>View past Executive projects →</span>
+              <span>View more info &amp; past projects →</span>
             </div>
           </div>
         </a>
 
-        <!-- Apex brand card -->
         <a href="apex.html" class="card card--brand-link" id="brand-apex">
           <div class="card-heading-row">
             <div class="card-title">Apex Coatings</div>
           </div>
           <p>
-            Apex bundles framing, drywall, and finish packages so structure and interiors move in sync.
-            One team from first wall up through trim and final punch.
+            Framing, drywall, and finish packages delivered as one coordinated scope.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
@@ -760,19 +739,17 @@
           </div>
           <div class="meta-row" style="margin-top:0.4rem;">
             <div class="meta-pill">
-              <span>View past Apex projects →</span>
+              <span>View more info &amp; past projects →</span>
             </div>
           </div>
         </a>
 
-        <!-- Golden Eagle brand card -->
         <a href="golden-eagle.html" class="card card--brand-link" id="brand-golden-eagle">
           <div class="card-heading-row">
             <div class="card-title">Golden Eagle</div>
           </div>
           <p>
-            Golden Eagle keeps the site side moving — excavation, utilities, and flatwork — so foundations,
-            access, and exterior concrete are ready when your schedule calls for them.
+            Excavation, utilities, and flatwork tied into your overall project schedule.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
@@ -782,7 +759,7 @@
           </div>
           <div class="meta-row" style="margin-top:0.4rem;">
             <div class="meta-pill">
-              <span>View past Golden Eagle projects →</span>
+              <span>View more info &amp; past projects →</span>
             </div>
           </div>
         </a>
