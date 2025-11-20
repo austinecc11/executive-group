@@ -366,11 +366,23 @@
     }
 
     .card {
+      position: relative;
       border-radius: var(--radius-lg);
       border: 1px solid rgba(209, 213, 219, 0.9);
       padding: 1.2rem 1.25rem 1.3rem;
       background: var(--surface);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
     }
 
     .card-heading-row {
@@ -431,6 +443,43 @@
     .company-accent.exec { color: var(--accent-primary-dark); }
     .company-accent.gold { color: var(--accent-golden); }
     .company-accent.apex { color: var(--accent-apex); }
+
+    /* Scoped card styling per brand */
+    .card--exec::before {
+      background: linear-gradient(to right, var(--accent-primary-dark), var(--accent-primary));
+    }
+    .card--exec {
+      border-color: rgba(2, 136, 209, 0.35);
+    }
+    .card--exec .card-tag {
+      border-color: rgba(2, 136, 209, 0.7);
+      background: rgba(2, 136, 209, 0.06);
+      color: var(--accent-primary-dark);
+    }
+
+    .card--apex::before {
+      background: linear-gradient(to right, #0f766e, var(--accent-apex));
+    }
+    .card--apex {
+      border-color: rgba(38, 166, 154, 0.35);
+    }
+    .card--apex .card-tag {
+      border-color: rgba(38, 166, 154, 0.7);
+      background: rgba(38, 166, 154, 0.06);
+      color: var(--accent-apex);
+    }
+
+    .card--gold::before {
+      background: linear-gradient(to right, #b45309, var(--accent-golden));
+    }
+    .card--gold {
+      border-color: rgba(249, 168, 37, 0.35);
+    }
+    .card--gold .card-tag {
+      border-color: rgba(249, 168, 37, 0.7);
+      background: rgba(249, 168, 37, 0.06);
+      color: var(--accent-golden);
+    }
 
     .contact-grid {
       display: grid;
@@ -578,13 +627,13 @@
       <div class="section-header">
         <div class="section-title">Core scopes</div>
         <div class="section-sub">
-          One group handling the big buckets: GC &amp; management, structure &amp; interiors, and site &amp; flatwork.
+          Complete contracting, interiors, and site work—delivered as one coordinated team.
         </div>
       </div>
 
       <div class="three-grid">
         <!-- Exec GC / PM -->
-        <article class="card">
+        <article class="card card--exec">
           <div class="card-heading-row">
             <div class="card-title company-accent exec">General Contracting &amp; Project Management</div>
             <div class="card-tag">Executive</div>
@@ -602,9 +651,9 @@
         </article>
 
         <!-- Apex framing / drywall / finish -->
-        <article class="card">
+        <article class="card card--apex">
           <div class="card-heading-row">
-            <div class="card-title company-accent.apex company-accent apex">Framing, Drywall &amp; Finish</div>
+            <div class="card-title company-accent apex">Framing, Drywall &amp; Finish</div>
             <div class="card-tag">Apex</div>
           </div>
           <p>
@@ -620,7 +669,7 @@
         </article>
 
         <!-- Golden Eagle excavation / utilities / flatwork -->
-        <article class="card">
+        <article class="card card--gold">
           <div class="card-heading-row">
             <div class="card-title company-accent gold">Excavation, Utilities &amp; Flatwork</div>
             <div class="card-tag">Golden Eagle</div>
@@ -718,6 +767,7 @@
           </p>
           <p style="font-size: 0.9rem; margin-top: 0.8rem;">
             <strong>Phone:</strong> (719) 531-0707<br />
+            <strong>Email:</strong> estimating@executive-company.com<br />
             <strong>Office:</strong> 13540 Meadowgrass Dr, Colorado Springs, CO 80921
           </p>
         </div>
@@ -752,4 +802,5 @@
   </script>
 </body>
 </html>
+
 
