@@ -161,10 +161,10 @@
     }
 
     .projects-grid {
-      margin-top: 0.6rem;
+      margin-top: 0.9rem;
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.9rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
     }
 
     .project-card {
@@ -173,24 +173,41 @@
       background: #f9fafb;
       padding: 0.85rem 0.95rem 0.95rem;
       font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-image-wrap {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #e5e7eb;
+    }
+
+    .project-image-wrap img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
     }
 
     .project-card h3 {
-      margin: 0 0 0.2rem;
+      margin: 0;
       font-size: 0.98rem;
     }
 
     .project-meta {
       font-size: 0.8rem;
       color: var(--muted);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.15rem;
     }
 
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
-      margin-top: 0.4rem;
+      margin-top: 0.1rem;
     }
 
     .tag {
@@ -257,7 +274,8 @@
       <h1>General contracting &amp; project management</h1>
       <p class="tagline">
         Executive Custom Construction is the GC and coordination arm of the group—tying scopes, budgets,
-        and schedules together across residential, commercial, and remodel work.
+        and schedules together across residential, commercial, and remodel work. Projects include Topgolf,
+        Ford Amphitheater, Bass Pro Shops, and Roth’s Sea &amp; Steak.
       </p>
       <div class="pill">
         <span class="dot"></span>
@@ -270,7 +288,7 @@
 
   <main class="shell">
     <div class="layout">
-      <!-- Main content: what we do + projects -->
+      <!-- Main content: what we do + accomplishments -->
       <section class="card">
         <h2>What we handle</h2>
         <p>
@@ -286,43 +304,79 @@
           <li>Support from early budgeting through final inspections and closeout</li>
         </ul>
 
-        <div class="projects-grid" style="margin-top:1.6rem;">
+        <h2 style="margin-top:1.6rem;">Major accomplishments</h2>
+        <p>
+          A sample of projects where Executive provided general contracting and coordination support.
+          You can update or expand these as you add new work.
+        </p>
+
+        <div class="projects-grid">
+          <!-- Ford Amphitheater -->
           <div class="project-card">
-            <h3>North Ridge Estates – Phase II</h3>
-            <div class="project-meta">Production residential · GC coordination</div>
+            <div class="project-image-wrap">
+              <img src="ford-amphitheater-1.png" alt="Ford Amphitheater at dusk with full crowd">
+            </div>
+            <h3>Ford Amphitheater</h3>
+            <div class="project-meta">Entertainment venue · GC &amp; site coordination</div>
             <p>
-              Coordinated excavation, framing, and flatwork teams across multiple elevations and options.
-              Managed schedules, inspections, and communication between the builder and field crews.
+              General contracting and coordination for a large outdoor amphitheater, aligning site work,
+              structural concrete, and seating areas with aggressive event schedules.
             </p>
             <div class="tag-row">
-              <span class="tag">Production residential</span>
-              <span class="tag">Schedule management</span>
+              <span class="tag">Entertainment</span>
+              <span class="tag">Large venue</span>
             </div>
           </div>
 
+          <!-- Topgolf -->
           <div class="project-card">
-            <h3>Stonegate Office Build-Out</h3>
-            <div class="project-meta">Light commercial · Tenant improvement</div>
+            <div class="project-image-wrap">
+              <img src="topgolf.png" alt="Topgolf facility with illuminated targets and building">
+            </div>
+            <h3>Topgolf</h3>
+            <div class="project-meta">Recreation facility · GC support</div>
             <p>
-              GC and project management support for a multi-tenant office build-out, keeping framing, drywall,
-              and site concrete aligned with interior finish schedules and move-in dates.
+              Project management and coordination for a multi-level golf and entertainment facility,
+              keeping structure, site access, and finishes moving together.
             </p>
             <div class="tag-row">
-              <span class="tag">Commercial TI</span>
-              <span class="tag">Coordination</span>
+              <span class="tag">Recreation</span>
+              <span class="tag">Multi-level</span>
             </div>
           </div>
 
+          <!-- Bass Pro Shops -->
           <div class="project-card">
-            <h3>Custom Home – Black Forest</h3>
-            <div class="project-meta">Custom residential · Full coordination</div>
+            <div class="project-image-wrap">
+              <img src="bass-pro.png" alt="Bass Pro Shops Outdoor World exterior in winter">
+            </div>
+            <h3>Bass Pro Shops Outdoor World</h3>
+            <div class="project-meta">Retail · GC &amp; exterior coordination</div>
             <p>
-              Managed framing, site access, flatwork, and exterior scopes as one package so the owner and
-              architect had a single point of contact throughout the build.
+              Coordination of structural, exterior, and site scopes for a destination retail building,
+              including heavy timber details and customer-focused entry experience.
             </p>
             <div class="tag-row">
-              <span class="tag">Custom home</span>
-              <span class="tag">Single point of contact</span>
+              <span class="tag">Retail</span>
+              <span class="tag">Destination project</span>
+            </div>
+          </div>
+
+          <!-- Roth's Sea & Steak -->
+          <div class="project-card">
+            <div class="project-image-wrap">
+              <!-- placeholder block until we have a photo -->
+              <img src="ford-amphitheater-2.png" alt="Construction project at night" style="opacity:0.0;">
+            </div>
+            <h3>Roth’s Sea &amp; Steak</h3>
+            <div class="project-meta">Restaurant · Build-out</div>
+            <p>
+              Build-out support for a restaurant project, coordinating interior layout, finishes,
+              and kitchen-related scopes to meet opening timelines.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Restaurant</span>
+              <span class="tag">Interior build-out</span>
             </div>
           </div>
         </div>
