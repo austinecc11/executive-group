@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Executive Custom Construction | Golden Eagle | Apex</title>
+  <title>Executive Companies | Executive Custom Construction • Golden Eagle • Apex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Executive Custom Construction and partner brands Golden Eagle and Apex providing framing, coatings, and concrete services in Colorado." />
+  <meta name="description" content="Executive Companies: Executive Custom Construction, Golden Eagle, and Apex providing framing, excavation, coatings, and concrete services in Colorado." />
   <style>
     :root {
       --bg: #e5edf5;
@@ -14,10 +14,10 @@
       --border-strong: rgba(148, 163, 184, 0.7);
       --text: #1f2933;
       --muted: #6b7280;
-      --accent-primary: #4fc3f7; /* ECC sky blue */
+      --accent-primary: #4fc3f7;      /* ECC sky blue */
       --accent-primary-dark: #0288d1; /* deeper ECC blue */
-      --accent-golden: #f9a825;    /* sun gold */
-      --accent-apex: #26a69a;      /* teal/green */
+      --accent-golden: #f9a825;       /* sun gold */
+      --accent-apex: #26a69a;         /* teal/green */
       --radius-lg: 20px;
       --radius-pill: 999px;
     }
@@ -156,26 +156,52 @@
       background: #ffffff;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
       cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
     }
 
-    .hero-logo-badge.exec {
-      border-color: rgba(2, 136, 209, 0.7);
-    }
-
+    /* Black tiles for ECC & Golden Eagle */
+    .hero-logo-badge.exec,
     .hero-logo-badge.gold {
-      border-color: rgba(249, 168, 37, 0.7);
+      background: #020617;
+      border-color: rgba(15, 23, 42, 0.85);
+      color: #f9fafb;
     }
 
+    .hero-logo-badge.exec:hover {
+      background: #020617;
+      border-color: var(--accent-primary-dark);
+    }
+
+    .hero-logo-badge.gold:hover {
+      background: #020617;
+      border-color: var(--accent-golden);
+    }
+
+    .hero-logo-badge.exec .hero-logo-title,
+    .hero-logo-badge.gold .hero-logo-title {
+      color: #f9fafb;
+    }
+
+    .hero-logo-badge.exec .hero-logo-sub,
+    .hero-logo-badge.gold .hero-logo-sub {
+      color: #e5e7eb;
+    }
+
+    /* Apex stays light */
     .hero-logo-badge.apex {
       border-color: rgba(38, 166, 154, 0.7);
+      background: #ffffff;
+    }
+
+    .hero-logo-badge.apex:hover {
+      background: #f9fbff;
+      border-color: var(--accent-apex);
+      color: var(--text);
     }
 
     .hero-logo-badge:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 38px rgba(15, 23, 42, 0.09);
-      border-color: var(--border-strong);
-      background: #f9fbff;
     }
 
     .hero-logo-image-wrapper {
@@ -475,10 +501,10 @@
   <header>
     <div class="nav-inner">
       <div class="brand-mark">
-        <div class="brand-logo">Ex</div>
+        <div class="brand-logo">EC</div>
         <div class="brand-text">
-          <div class="brand-title">Executive Custom Construction</div>
-          <div class="brand-sub">Golden Eagle • Apex</div>
+          <div class="brand-title">Executive Companies</div>
+          <div class="brand-sub">Executive Custom Construction • Golden Eagle • Apex</div>
         </div>
       </div>
       <nav>
@@ -493,14 +519,7 @@
     <!-- Hero with big logo badges -->
     <section class="hero">
       <div class="hero-logos">
-        <a href="#brand-golden-eagle" class="hero-logo-badge gold">
-          <div class="hero-logo-image-wrapper">
-            <img src="golden-eagle-logo.png" alt="Golden Eagle logo">
-          </div>
-          <div class="hero-logo-title">Golden Eagle</div>
-          <div class="hero-logo-sub">Excavation &amp; earthwork</div>
-        </a>
-
+        <!-- ECC FIRST -->
         <a href="#brand-executive" class="hero-logo-badge exec">
           <div class="hero-logo-image-wrapper">
             <img src="ecc-logo.png" alt="Executive Custom Construction logo">
@@ -509,6 +528,7 @@
           <div class="hero-logo-sub">Framing &amp; GC support</div>
         </a>
 
+        <!-- APEX MIDDLE -->
         <a href="#brand-apex" class="hero-logo-badge apex">
           <div class="hero-logo-image-wrapper">
             <img src="apex-logo.png" alt="Apex Coatings logo">
@@ -516,18 +536,27 @@
           <div class="hero-logo-title">Apex Coatings</div>
           <div class="hero-logo-sub">Coatings &amp; finishes</div>
         </a>
+
+        <!-- GOLDEN EAGLE THIRD -->
+        <a href="#brand-golden-eagle" class="hero-logo-badge gold">
+          <div class="hero-logo-image-wrapper">
+            <img src="golden-eagle-logo.png" alt="Golden Eagle logo">
+          </div>
+          <div class="hero-logo-title">Golden Eagle</div>
+          <div class="hero-logo-sub">Excavation &amp; earthwork</div>
+        </a>
       </div>
 
       <div class="hero-badge">
         <span></span>
-        EXECUTIVE CUSTOM CONSTRUCTION GROUP
+        EXECUTIVE COMPANIES
       </div>
       <h1>
         One team behind
-        <span>every framing, coatings &amp; concrete package.</span>
+        <span>every framing, excavation, coatings &amp; concrete package.</span>
       </h1>
       <p>
-        Executive Custom Construction coordinates structural framing, exterior coatings, and concrete
+        Executive Companies coordinate structural framing, excavation, exterior coatings, and concrete
         so your projects move cleaner and faster with fewer subs to manage.
       </p>
       <div class="hero-secondary-line">
@@ -572,17 +601,17 @@
 
         <article class="card">
           <div class="card-heading-row">
-            <div class="card-title company-accent gold">Coatings &amp; exterior</div>
+            <div class="card-title company-accent gold">Excavation &amp; exterior</div>
             <div class="card-tag">Golden Eagle</div>
           </div>
           <p>
-            Exterior coatings, stucco, and finishes coordinated with framing and concrete so you’re not
+            Excavation, earthwork, and exterior coatings coordinated with framing and concrete so you’re not
             chasing three different subs for one elevation.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
               <div class="meta-dot"></div>
-              <span><strong>Typical scopes:</strong> stucco, paint, sealants</span>
+              <span><strong>Typical scopes:</strong> excavation, grading, stucco, coatings</span>
             </div>
           </div>
         </article>
@@ -621,8 +650,8 @@
             <div class="card-title">Executive Custom Construction</div>
           </div>
           <p>
-            The umbrella that holds everything together. Executive is your single point of contact for scopes,
-            schedules, and site coordination across framing, coatings, and concrete.
+            The umbrella that holds everything together on the framing and structural side. Executive is your single
+            point of contact for scopes, schedules, and site coordination across the Executive companies.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
@@ -632,34 +661,34 @@
           </div>
         </article>
 
-        <article class="card" id="brand-golden-eagle">
-          <div class="card-heading-row">
-            <div class="card-title">Golden Eagle</div>
-          </div>
-          <p>
-            Excavation, earthwork, and exterior coatings with an eye for elevation consistency, clean lines, and schedules
-            that match the framing and concrete work happening around you.
-          </p>
-          <div class="meta-row">
-            <div class="meta-pill">
-              <div class="meta-dot"></div>
-              <span><strong>Focus:</strong> excavation, stucco, exterior coatings</span>
-            </div>
-          </div>
-        </article>
-
         <article class="card" id="brand-apex">
           <div class="card-heading-row">
             <div class="card-title">Apex Coatings</div>
           </div>
           <p>
-            Concrete and flatwork scopes coordinated from day one. Pads, drives, walks, and patios poured with the
-            framing and finish work in mind.
+            Coatings and finishes planned from day one. Apex ties exterior paint and coatings into your schedule so
+            elevations finish cleanly with fewer callbacks.
           </p>
           <div class="meta-row">
             <div class="meta-pill">
               <div class="meta-dot"></div>
-              <span><strong>Focus:</strong> flatwork, drives, walks, exterior slabs</span>
+              <span><strong>Focus:</strong> exterior coatings &amp; finishes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="brand-golden-eagle">
+          <div class="card-heading-row">
+            <div class="card-title">Golden Eagle</div>
+          </div>
+          <p>
+            Excavation and earthwork aligned with your foundation and framing starts. Golden Eagle helps keep dirt work,
+            elevations, and site access coordinated.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">
+              <div class="meta-dot"></div>
+              <span><strong>Focus:</strong> excavation, grading, select exterior work</span>
             </div>
           </div>
         </article>
@@ -710,7 +739,7 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Executive Custom Construction • Golden Eagle • Apex. All rights reserved.
+    © <span id="year"></span> Executive Companies — Executive Custom Construction • Golden Eagle • Apex. All rights reserved.
   </footer>
 
   <script>
@@ -718,3 +747,4 @@
   </script>
 </body>
 </html>
+
