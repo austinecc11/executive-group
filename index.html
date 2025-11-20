@@ -259,6 +259,8 @@
     }
 
     .chip {
+      display: inline-flex;
+      align-items: center;
       font-size: 0.75rem;
       padding: 0.2rem 0.55rem;
       border-radius: var(--radius-pill);
@@ -277,6 +279,14 @@
 
     .chip.apex {
       border-color: rgba(22, 163, 74, 0.95);
+    }
+
+    .chip-logo {
+      height: 16px;
+      width: auto;
+      margin-right: 0.35rem;
+      border-radius: 3px;
+      background: #020617;
     }
 
     .mini-grid {
@@ -546,9 +556,18 @@
         </div>
 
         <div class="hero-chip-row">
-          <div class="chip exec">Executive Custom Construction</div>
-          <div class="chip gold">Golden Eagle</div>
-          <div class="chip apex">Apex</div>
+          <div class="chip exec">
+            <img src="ecc-logo.png" alt="Executive Custom Construction logo" class="chip-logo">
+            Executive Custom Construction
+          </div>
+          <div class="chip gold">
+            <img src="golden-eagle-logo.png" alt="Golden Eagle logo" class="chip-logo">
+            Golden Eagle
+          </div>
+          <div class="chip apex">
+            <img src="apex-logo.png" alt="Apex Coatings logo" class="chip-logo">
+            Apex
+          </div>
         </div>
 
         <div class="mini-grid">
@@ -763,3 +782,4 @@
   </script>
 </body>
 </html>
+
