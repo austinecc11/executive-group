@@ -47,6 +47,13 @@
       padding: 1.1rem 1.5rem 1.2rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
       gap: 1.25rem;
     }
 
@@ -111,6 +118,24 @@
       max-width: 44rem;
     }
 
+    .home-button {
+      font-size: 0.86rem;
+      text-decoration: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      color: #e5e7eb;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+    }
+
+    .home-button:hover {
+      border-color: var(--ecc-blue);
+    }
+
     .shell {
       max-width: 1120px;
       margin: 0 auto;
@@ -128,12 +153,17 @@
       .layout {
         grid-template-columns: minmax(0, 1fr);
       }
+      .header-inner {
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 640px) {
       .header-inner {
         padding-inline: 1.2rem;
         gap: 0.9rem;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .shell {
         padding-inline: 1.2rem;
@@ -263,20 +293,15 @@
       margin-bottom: 0.15rem;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.1rem;
+    .proj-bullets {
+      margin: 0.1rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: #e5e7eb;
     }
 
-    .tag {
-      font-size: 0.78rem;
-      padding: 0.12rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.9);
+    .proj-bullets li {
+      margin-bottom: 0.2rem;
     }
 
     .side-card-title {
@@ -326,21 +351,24 @@
 <body>
   <header>
     <div class="header-inner">
-      <div class="header-logo-wrap">
-        <img src="ecc-logo.png" alt="Executive Custom Construction logo">
-      </div>
-      <div class="header-text-block">
-        <div class="crumbs">
-          <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Executive Custom Construction
+      <div class="header-main">
+        <div class="header-logo-wrap">
+          <img src="ecc-logo.png" alt="Executive Custom Construction logo">
         </div>
-        <div class="brand-line">Executive Custom Construction</div>
-        <h1>General contracting &amp; project management</h1>
-        <p class="tagline">
-          Executive Custom Construction is the GC and coordination arm of the group—tying scopes, budgets,
-          and schedules together across residential, commercial, and remodel work. Projects include Topgolf,
-          Ford Amphitheater, Bass Pro Shops, and Roth’s Sea &amp; Steak.
-        </p>
+        <div class="header-text-block">
+          <div class="crumbs">
+            <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Executive Custom Construction
+          </div>
+          <div class="brand-line">Executive Custom Construction</div>
+          <h1>General contracting &amp; project management</h1>
+          <p class="tagline">
+            Executive Custom Construction is the GC and coordination arm of the group—tying scopes, budgets,
+            and schedules together across residential, commercial, and remodel work. Projects include Topgolf,
+            Ford Amphitheater, Bass Pro Shops, and Roth’s Sea &amp; Steak.
+          </p>
+        </div>
       </div>
+      <a href="index.html" class="home-button">Home</a>
     </div>
   </header>
 
@@ -363,10 +391,10 @@
             <li>Support from early budgeting through final inspections and closeout</li>
           </ul>
 
-          <h2 style="margin-top:1.6rem;">Major accomplishments</h2>
+          <h2 style="margin-top:1.6rem;">Proud to have helped build</h2>
           <p>
-            A sample of projects where Executive provided general contracting and coordination support.
-            You can update or expand these as you add new work.
+            A few of the entertainment, retail, and restaurant projects where Executive provided general contracting
+            and coordination support.
           </p>
 
           <div class="projects-grid">
@@ -378,14 +406,11 @@
                 </div>
                 <h3>Ford Amphitheater</h3>
                 <div class="project-meta">Entertainment venue · GC &amp; site coordination</div>
-                <p>
-                  General contracting and coordination for a large outdoor amphitheater, aligning site work,
-                  structural concrete, and seating areas with aggressive event schedules.
-                </p>
-                <div class="tag-row">
-                  <span class="tag">Entertainment</span>
-                  <span class="tag">Large venue</span>
-                </div>
+                <ul class="proj-bullets">
+                  <li>Coordinated site work, structural concrete, and seating areas.</li>
+                  <li>Aligned construction with concert schedules and opening dates.</li>
+                  <li>Managed access, circulation, and guest flow across the site.</li>
+                </ul>
               </div>
             </div>
 
@@ -397,14 +422,11 @@
                 </div>
                 <h3>Topgolf</h3>
                 <div class="project-meta">Recreation facility · GC support</div>
-                <p>
-                  Project management and coordination for a multi-level golf and entertainment facility,
-                  keeping structure, site access, and finishes moving together.
-                </p>
-                <div class="tag-row">
-                  <span class="tag">Recreation</span>
-                  <span class="tag">Multi-level</span>
-                </div>
+                <ul class="proj-bullets">
+                  <li>Supported GC coordination on a multi-level golf and entertainment facility.</li>
+                  <li>Kept structure, site access, and finishes moving together.</li>
+                  <li>Worked around phased turnover and operational deadlines.</li>
+                </ul>
               </div>
             </div>
 
@@ -416,14 +438,11 @@
                 </div>
                 <h3>Bass Pro Shops Outdoor World</h3>
                 <div class="project-meta">Retail · GC &amp; exterior coordination</div>
-                <p>
-                  Coordination of structural, exterior, and site scopes for a destination retail building,
-                  including heavy timber details and customer-focused entry experience.
-                </p>
-                <div class="tag-row">
-                  <span class="tag">Retail</span>
-                  <span class="tag">Destination project</span>
-                </div>
+                <ul class="proj-bullets">
+                  <li>Coordinated structural, exterior, and site scopes on a destination retail project.</li>
+                  <li>Integrated heavy timber detailing with building and entry elements.</li>
+                  <li>Focused on guest arrival, parking, and overall site experience.</li>
+                </ul>
               </div>
             </div>
 
@@ -436,14 +455,11 @@
                 </div>
                 <h3>Roth’s Sea &amp; Steak</h3>
                 <div class="project-meta">Restaurant · Build-out</div>
-                <p>
-                  Build-out support for a restaurant project, coordinating interior layout, finishes,
-                  and kitchen-related scopes to meet opening timelines.
-                </p>
-                <div class="tag-row">
-                  <span class="tag">Restaurant</span>
-                  <span class="tag">Interior build-out</span>
-                </div>
+                <ul class="proj-bullets">
+                  <li>Interior build-out support for dining, bar, and kitchen areas.</li>
+                  <li>Coordinated layout, finishes, and kitchen-related scopes.</li>
+                  <li>Kept inspections and opening timelines on track.</li>
+                </ul>
               </div>
             </div>
           </div>
