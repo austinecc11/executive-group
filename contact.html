@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Executive Companies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Executive Companies for residential, commercial, and remodel construction projects. Send plans, concepts, or questions through this form." />
+  <style>
+    :root {
+      --ecc-blue: #005f9e;
+      --ecc-gold: #f9a825;
+      --page-bg: #020617;
+      --panel-bg: #030712;
+      --panel-soft: #020919;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(55, 65, 81, 0.9);
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      background: #000000;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .header-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .crumbs {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .crumbs a {
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+
+    .crumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .brand-line {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ecc-gold);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      letter-spacing: 0.01em;
+      color: #f9fafb;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      font-size: 0.86rem;
+      text-decoration: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      color: #e5e7eb;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .nav-btn.primary {
+      border-color: var(--ecc-blue);
+      background: var(--ecc-blue);
+    }
+
+    .nav-btn:hover {
+      border-color: var(--ecc-gold);
+    }
+
+    .shell {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 3rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 880px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-buttons {
+        width: 100%;
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(160deg, var(--panel-bg), var(--panel-soft));
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+      padding: 1.3rem 1.4rem 1.45rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.4);
+      opacity: 0.7;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.02rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .card p {
+      margin: 0 0 0.9rem;
+      font-size: 0.94rem;
+      line-height: 1.7;
+      color: #e5e7eb;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      background: #020617;
+      border-radius: 10px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.92rem;
+      color: #e5e7eb;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b7280;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .inline-fields {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .inline-fields {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+
+    button[type="submit"] {
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--ecc-gold);
+      background: linear-gradient(135deg, var(--ecc-gold), #fbbf24);
+      color: #111827;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.9);
+    }
+
+    button[type="submit"]:hover {
+      filter: brightness(1.04);
+    }
+
+    .submit-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .side-list {
+      list-style: none;
+      margin: 0.6rem 0 0;
+      padding: 0;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .side-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .side-divider {
+      height: 1px;
+      margin: 0.9rem 0;
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.6), rgba(249, 168, 37, 0.8), rgba(15, 23, 42, 0.6));
+    }
+
+    .side-muted {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-title-block">
+        <div class="crumbs">
+          <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Contact
+        </div>
+        <div class="brand-line">Contact Executive Companies</div>
+        <h1>Tell us about your project</h1>
+      </div>
+      <div class="header-buttons">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="executive.html" class="nav-btn">ECC</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="layout">
+      <!-- Form -->
+      <section class="card">
+        <div class="card-inner">
+          <h2>Project inquiry form</h2>
+          <p>
+            Share a few details about your project. Plans and full schedules are helpful but not required—
+            we regularly help owners and builders price work from concepts and early layouts.
+          </p>
+
+          <!--
+            FORM HANDLING:
+            1. Create a free Formspree account at formspree.io
+            2. Make a new form and copy the endpoint URL they give you.
+            3. Replace "YOUR_FORMSPREE_ID" below with your actual Formspree form ID.
+            Submissions will then be emailed to you and visible in your Formspree dashboard.
+          -->
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="inline-fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required placeholder="Full name" />
+              </div>
+              <div class="field">
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" placeholder="Company or organization" />
+              </div>
+            </div>
+
+            <div class="inline-fields">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" required placeholder="(xxx) xxx-xxxx" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="project-type">Project type</label>
+              <select id="project-type" name="project_type" required>
+                <option value="">Select one</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="remodel">Remodel / addition</option>
+                <option value="site-only">Site / earthwork only</option>
+                <option value="other">Other / not sure</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="location">Project location</label>
+              <input id="location" name="location" type="text" placeholder="City, area, or subdivision" />
+              <div class="helper-text">Example: Colorado Springs, Black Forest, Monument, etc.</div>
+            </div>
+
+            <div class="field">
+              <label for="details">Project details</label>
+              <textarea id="details" name="details" required placeholder="Scope, rough size, timelines, and anything else we should know."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="plans">Plans / documents</label>
+              <textarea id="plans" name="plans_info" placeholder="Share links to plan sets, sketches, or documents (Google Drive, Dropbox, etc.)."></textarea>
+              <div class="helper-text">
+                File uploads aren’t handled directly on this page—share a link and we’ll pull the drawings from there.
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="timeline">Rough timeline</label>
+              <input id="timeline" name="timeline" type="text" placeholder="For example: 'Summer 2025 start' or 'ASAP pricing only'" />
+            </div>
+
+            <div class="submit-row">
+              <button type="submit">Send inquiry</button>
+              <div class="submit-note">
+                You’ll receive a follow-up from the estimating team after we review your details.
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Side info -->
+      <aside class="card">
+        <div class="card-inner">
+          <h2>Other ways to reach us</h2>
+          <ul class="side-list">
+            <li><strong>Phone:</strong> (719) 531-0707</li>
+            <li><strong>Email:</strong> estimating@executive-company.com</li>
+            <li><strong>Address:</strong> 13540 Meadowgrass Dr, Colorado Springs, CO 80921</li>
+          </ul>
+
+          <div class="side-divider"></div>
+
+          <p class="side-card-title">Helpful to include</p>
+          <ul class="side-list">
+            <li>Any plan sets, sketches, or concept drawings</li>
+            <li>Target start dates or key milestones</li>
+            <li>Whether you’re looking for budget pricing or a formal bid</li>
+          </ul>
+
+          <p class="side-muted">
+            Don’t have drawings yet? That’s fine. Share what you know today and we’ll help you work toward
+            a clear scope and pricing path.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
