@@ -155,49 +155,18 @@
     /* HERO */
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
-      gap: 1.8rem;
-      align-items: center;
       margin-top: 0.5rem;
       margin-bottom: 2rem;
     }
 
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
     .hero-left {
+      max-width: 760px;
+      margin: 0 auto;
       padding: 1.4rem 1.4rem 1.5rem;
       border-radius: 26px;
       background: radial-gradient(circle at top left, var(--blue-soft) 0, #ffffff 50%, #eef2f7 100%);
       border: 1px solid rgba(209, 213, 219, 0.9);
       box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.78rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero-pill-dot {
-      width: 0.35rem;
-      height: 0.35rem;
-      border-radius: 999px;
-      background: var(--gold);
-      flex-shrink: 0;
     }
 
     .hero-title {
@@ -245,33 +214,6 @@
     .hero-note {
       font-size: 0.82rem;
       color: var(--text-muted);
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1rem 1.1rem;
-      border-radius: 22px;
-      background: #ffffff;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-    }
-
-    .hero-right-heading {
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-    }
-
-    .hero-right-brands {
-      font-size: 0.9rem;
-      color: var(--text-main);
-    }
-
-    .hero-right-brands strong {
-      font-weight: 600;
     }
 
     /* BRAND TILES */
@@ -356,11 +298,11 @@
     }
 
     .brand-logo-wrap.apex {
-      background: #ffffff; /* back to white for Apex */
+      background: #ffffff; /* Apex on white */
     }
 
     .brand-logo-wrap.golden {
-      background: #000000; /* solid black for Golden Eagle */
+      background: #000000; /* Golden Eagle on black */
     }
 
     .brand-logo-wrap img {
@@ -567,12 +509,6 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-left">
-        <div class="hero-pill">
-          <span class="hero-pill-dot"></span>
-          <span>One team</span>
-          <span>•</span>
-          <span>Three companies</span>
-        </div>
         <h1 class="hero-title">One coordinated group for site, structure, and finish.</h1>
         <p class="hero-text">
           Executive Companies brings excavation, general contracting, and interiors under one umbrella.
@@ -585,15 +521,6 @@
           No full plan set yet? That’s fine. We regularly help owners and builders price work from concepts and early layouts.
         </p>
       </div>
-
-      <aside class="hero-right">
-        <div class="hero-right-heading">How the group is organized</div>
-        <div class="hero-right-brands">
-          <p><strong>Executive Custom Construction</strong><br />General contracting &amp; project management.</p>
-          <p><strong>Apex Coatings</strong><br />Framing, drywall, and interior finishes.</p>
-          <p><strong>Golden Eagle Excavation</strong><br />Excavation, utilities, and flatwork.</p>
-        </div>
-      </aside>
     </section>
 
     <!-- BRAND TILES -->
