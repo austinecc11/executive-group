@@ -55,14 +55,14 @@
     .header-main {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
     .header-logo-wrap {
       flex-shrink: 0;
-      width: 86px;
-      height: 86px;
-      border-radius: 24px;
+      width: 130px;
+      height: 130px;
+      border-radius: 32px;
       border: 1px solid rgba(148, 163, 184, 0.9);
       background: #020617;
       display: flex;
@@ -72,8 +72,8 @@
     }
 
     .header-logo-wrap img {
-      max-width: 92%;
-      max-height: 92%;
+      max-width: 94%;
+      max-height: 94%;
       object-fit: contain;
       display: block;
     }
@@ -107,7 +107,7 @@
 
     h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.1rem;
       letter-spacing: 0.01em;
       color: #f9fafb;
     }
@@ -187,6 +187,13 @@
       h1 {
         font-size: 1.7rem;
       }
+      .header-main {
+        gap: 1rem;
+      }
+      .header-logo-wrap {
+        width: 110px;
+        height: 110px;
+      }
     }
 
     .card {
@@ -256,7 +263,8 @@
     .projects-grid {
       margin-top: 1rem;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 3fr 2fr;
+      grid-auto-rows: auto;
       gap: 1.6rem;
     }
 
@@ -264,13 +272,19 @@
       .projects-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+      .project-card--ford,
+      .project-card--topgolf,
+      .project-card--basspro,
+      .project-card--roths {
+        grid-column: auto !important;
+      }
     }
 
     .project-card {
       border-radius: 18px;
       border: 1px solid rgba(55, 65, 81, 0.9);
       background: #020617;
-      padding: 0.95rem 1rem 1rem;
+      padding: 0.7rem 0.85rem 0.85rem;
       font-size: 0.9rem;
       display: flex;
       flex-direction: column;
@@ -305,9 +319,26 @@
 
     .project-image-wrap img {
       width: 100%;
-      height: 360px;
+      height: 420px;
       object-fit: cover;
       display: block;
+    }
+
+    /* Asym layout specifics */
+    .project-card--ford {
+      grid-column: 1 / -1; /* full width hero */
+    }
+
+    .project-card--topgolf {
+      grid-column: 1 / 2;  /* wide left */
+    }
+
+    .project-card--basspro {
+      grid-column: 2 / 3;  /* narrower right */
+    }
+
+    .project-card--roths {
+      grid-column: 1 / -1; /* full width bottom */
     }
 
     .project-card h3 {
@@ -442,8 +473,8 @@
           </p>
 
           <div class="projects-grid">
-            <!-- Ford Amphitheater -->
-            <div class="project-card">
+            <!-- Ford Amphitheater - full width hero -->
+            <div class="project-card project-card--ford">
               <div class="project-inner">
                 <div class="project-image-wrap">
                   <img src="ford-amphitheater-2.png" alt="Ford Amphitheater wide aerial view">
@@ -458,8 +489,8 @@
               </div>
             </div>
 
-            <!-- Topgolf -->
-            <div class="project-card">
+            <!-- Topgolf - wide left -->
+            <div class="project-card project-card--topgolf">
               <div class="project-inner">
                 <div class="project-image-wrap">
                   <img src="topgolf.png" alt="Topgolf facility with illuminated targets and building">
@@ -474,8 +505,8 @@
               </div>
             </div>
 
-            <!-- Bass Pro Shops -->
-            <div class="project-card">
+            <!-- Bass Pro Shops - narrower right -->
+            <div class="project-card project-card--basspro">
               <div class="project-inner">
                 <div class="project-image-wrap">
                   <img src="bass-pro.png" alt="Bass Pro Shops Outdoor World exterior in winter">
@@ -490,8 +521,8 @@
               </div>
             </div>
 
-            <!-- Roth's Sea & Steak -->
-            <div class="project-card">
+            <!-- Roth's Sea & Steak - full width bottom -->
+            <div class="project-card project-card--roths">
               <div class="project-inner">
                 <div class="project-image-wrap">
                   <!-- placeholder block until a Roth's photo is available -->
