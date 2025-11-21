@@ -11,6 +11,7 @@
       --blue-soft: #e6f0f8;
       --blue-soft-alt: #f3f6fb;
       --gold: #f9a825;
+      --gold-rich: #f59e0b;
       --text-main: #111827;
       --text-muted: #6b7280;
       --bg: #f3f4f6;
@@ -70,8 +71,11 @@
       width: 150px;
       height: 150px;
       border-radius: 32px;
-      background: radial-gradient(circle at 30% 0%, #e0f2fe 0, #f9fafb 45%, #d1d5db 100%);
-      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #000000; /* solid black to blend with logo */
+      border: 2px solid rgba(249, 168, 37, 0.9); /* rich gold border */
+      box-shadow:
+        0 0 0 2px rgba(249, 168, 37, 0.4),
+        0 16px 40px rgba(15, 23, 42, 0.45);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -89,14 +93,17 @@
     .header-text-block {
       display: flex;
       flex-direction: column;
-      gap: 0.1rem;
+      gap: 0.15rem;
     }
 
     .header-brand-line {
       font-size: 0.78rem;
       letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--gold-rich);
+      display: inline-block;
+      padding-bottom: 0.12rem;
+      border-bottom: 2px solid rgba(245, 158, 11, 0.9);
     }
 
     .header-title {
@@ -129,6 +136,11 @@
       white-space: nowrap;
     }
 
+    /* make the dot separators gold */
+    .header-nav-links span:nth-child(2n) {
+      color: var(--gold-rich);
+    }
+
     .header-buttons {
       display: flex;
       gap: 0.5rem;
@@ -149,9 +161,10 @@
     }
 
     .nav-button.primary {
-      border-color: var(--blue);
-      background: var(--blue);
+      border-color: var(--gold-rich);
+      background: linear-gradient(120deg, var(--blue) 0%, var(--gold-rich) 100%);
       color: #f9fafb;
+      box-shadow: 0 14px 30px rgba(245, 158, 11, 0.45);
     }
 
     .nav-button:hover {
@@ -170,6 +183,7 @@
       .header-logo-wrap {
         width: 110px;
         height: 110px;
+        border-radius: 26px;
       }
       .header-nav {
         width: 100%;
