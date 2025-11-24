@@ -2,198 +2,869 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Golden Eagle | Executive Companies</title>
+  <title>Golden Eagle Excavation | Excavation, Utilities, Flatwork</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Golden Eagle Excavation handles excavation, utilities, and flatwork within the Executive Companies group."
+  />
   <style>
+    :root {
+      --ge-orange: #f97316;
+      --ge-orange-deep: #ea580c;
+      --ge-orange-soft: #fed7aa;
+      --ge-orange-soft-bg: rgba(248, 250, 252, 0.02);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --bg: #020617;
+      --bg-panel: #020617;
+      --bg-card: #020617;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f6fb;
-      color: #111827;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 50%);
+      color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
 
-    .page-shell {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.8rem 1.5rem 3rem;
+    a {
+      color: inherit;
     }
+
+    /* HEADER ---------------------------------------------------- */
 
     header {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
-      background: #ffffff;
+      background: rgba(3, 7, 18, 0.98);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
     }
 
-    .crumbs {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 0.6rem;
-    }
-
-    .crumbs a {
-      text-decoration: none;
-      color: #6b7280;
-    }
-
-    .crumbs a:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .tagline {
-      margin-top: 0.25rem;
-      font-size: 0.96rem;
-      color: #4b5563;
-    }
-
-    .pill {
-      display: inline-flex;
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem 0.8rem;
+      display: flex;
       align-items: center;
-      gap: 0.3rem;
-      font-size: 0.76rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(249, 168, 37, 0.6);
-      margin-top: 0.7rem;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-logo-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: #000000;
+      border: 1px solid rgba(249, 168, 37, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.9);
+    }
+
+    .header-logo-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .header-brand-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(229, 231, 235, 0.8);
+    }
+
+    .header-subline {
+      font-size: 0.8rem;
+      color: rgba(156, 163, 175, 0.9);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .header-nav-company {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ge-orange);
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-button {
+      font-size: 0.8rem;
+      text-decoration: none;
+      padding: 0.42rem 1.05rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: #b45309;
-      background: rgba(249, 168, 37, 0.05);
+      white-space: nowrap;
+      transition: border-color 0.15s ease, background 0.15s ease,
+        box-shadow 0.15s ease, transform 0.15s ease;
     }
 
-    .section {
-      margin-top: 2rem;
+    .nav-button.primary {
+      border-color: var(--ge-orange-deep);
+      background: linear-gradient(
+        135deg,
+        #f97316 0%,
+        #ea580c 45%,
+        #ca8a04 100%
+      );
+      color: #0b1120;
+      box-shadow: 0 14px 35px rgba(234, 88, 12, 0.65);
     }
 
-    .section h2 {
-      font-size: 1.1rem;
+    .nav-button:hover {
+      border-color: var(--ge-orange);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 1.2rem;
+      }
+      .header-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    /* MAIN WRAPPER ---------------------------------------------- */
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 2.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding-inline: 1.2rem;
+      }
+    }
+
+    /* HERO ------------------------------------------------------ */
+
+    .hero {
+      margin-bottom: 2rem;
+    }
+
+    .hero-inner {
+      border-radius: 28px;
+      padding: 1.6rem 1.6rem 1.8rem;
+      background: radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.28),
+          transparent 55%
+        ),
+        linear-gradient(135deg, #020617, #020617 45%, #0f172a 100%);
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.95);
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #6b7280;
-      margin-bottom: 0.5rem;
+      color: var(--ge-orange-soft);
     }
 
-    .section p {
-      font-size: 0.95rem;
-      color: #4b5563;
-      max-width: 48rem;
-      line-height: 1.6;
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.15;
+      margin: 0;
+      color: #f9fafb;
     }
 
-    .projects-grid {
-      margin-top: 1.2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.1rem;
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0 0 0.5rem;
     }
 
-    .project-card {
-      border-radius: 16px;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      background: #ffffff;
-      padding: 0.9rem 1rem 1rem;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
-      font-size: 0.9rem;
+    .hero-text {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0 0 0.9rem;
+      max-width: 32rem;
     }
 
-    .project-card h3 {
-      margin: 0 0 0.2rem;
-      font-size: 0.98rem;
+    .hero-capabilities {
+      font-size: 0.85rem;
+      color: var(--ge-orange-soft);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 0.9rem;
     }
 
-    .project-meta {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 0.35rem;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
     }
 
-    .back-link {
+    .hero-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      margin-top: 2rem;
-      font-size: 0.86rem;
+      justify-content: center;
+      padding: 0.6rem 1.5rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: #f97316;
+      color: #0b1120;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
-      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 20px 48px rgba(249, 115, 22, 0.7);
+      cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
     }
 
-    .back-link span {
-      font-size: 1rem;
+    .hero-cta:hover {
+      box-shadow: 0 24px 60px rgba(249, 115, 22, 0.85);
+      transform: translateY(-1px);
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 1.5rem;
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .hero-logo-wrap {
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #f97316 0, #111827 65%);
+      border: 2px solid rgba(248, 250, 252, 0.1);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-logo-wrap img {
+      max-width: 88%;
+      max-height: 88%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-logo-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero-logo-wrap {
+        width: 180px;
+        height: 180px;
       }
+    }
+
+    /* GENERAL SECTIONS ------------------------------------------ */
+
+    .section {
+      margin-bottom: 2.2rem;
+    }
+
+    .section:not(:first-of-type) {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: var(--ge-orange-soft);
+      margin: 0 0 0.3rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      color: #f9fafb;
+      margin: 0 0 0.45rem;
+    }
+
+    .section-text {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      max-width: 44rem;
+      margin: 0 0 1.05rem;
+    }
+
+    /* CORE SERVICES --------------------------------------------- */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-card {
+      border-radius: 18px;
+      background: radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.08),
+          transparent 55%
+        ),
+        #020617;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 0.9rem 1rem 1rem;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(249, 115, 22, 0.7);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 1);
+      transform: translateY(-2px);
+    }
+
+    .service-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ge-orange-soft);
+      margin-bottom: 0.25rem;
+    }
+
+    .service-name {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #f9fafb;
+      margin: 0 0 0.35rem;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0 0 0.5rem;
+    }
+
+    .service-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .service-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .service-list li::marker {
+      color: var(--ge-orange);
+    }
+
+    /* PROJECT TYPES --------------------------------------------- */
+
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .chip {
+      font-size: 0.82rem;
+      padding: 0.26rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+      transition: border-color 0.15s ease, background 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--ge-orange);
+      background: rgba(30, 64, 175, 0.18);
+      transform: translateY(-1px);
+    }
+
+    /* GROUP COORDINATION ---------------------------------------- */
+
+    .coord-card {
+      border-radius: 20px;
+      background: radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.16),
+          transparent 60%
+        ),
+        #020617;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 1.1rem 1.2rem 1.2rem;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 1);
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+      align-items: center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    @media (max-width: 840px) {
+      .coord-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .coord-card:hover {
+      border-color: rgba(249, 115, 22, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .coord-title {
+      font-size: 1.1rem;
+      color: #f9fafb;
+      margin: 0 0 0.4rem;
+    }
+
+    .coord-text {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin: 0 0 0.4rem;
+    }
+
+    .coord-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .coord-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .coord-list li::marker {
+      color: var(--ge-orange);
+    }
+
+    .coord-side-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ge-orange-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .coord-side-box {
+      border-radius: 14px;
+      border: 1px dashed rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      padding: 0.7rem 0.8rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* CTA ------------------------------------------------------- */
+
+    .cta-card {
+      border-radius: 20px;
+      background: radial-gradient(
+          circle at top left,
+          rgba(249, 115, 22, 0.2),
+          transparent 60%
+        ),
+        #020617;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 1rem 1.2rem 1.1rem;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 1);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+      align-items: center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    @media (max-width: 840px) {
+      .cta-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .cta-card:hover {
+      border-color: rgba(249, 115, 22, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .cta-title {
+      font-size: 1.1rem;
+      color: #f9fafb;
+      margin: 0 0 0.4rem;
+    }
+
+    .cta-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .cta-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--ge-orange-deep);
+      background: var(--ge-orange);
+      color: #0b1120;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      transition: background 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(75, 85, 99, 0.9);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--ge-orange);
+    }
+
+    .cta-contact-line {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .cta-contact-line strong {
+      color: #f9fafb;
+    }
+
+    /* FOOTER ---------------------------------------------------- */
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 1.3rem;
+      font-size: 0.84rem;
+      color: rgba(148, 163, 184, 0.96);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 720px) {
+      .footer-inner {
+        padding-inline: 1.2rem;
+        flex-direction: column;
+      }
+    }
+
+    .footer-contact-line {
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="page-shell" style="padding:0;">
-      <div class="crumbs">
-        <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Golden Eagle
+    <div class="header-inner">
+      <div class="header-left">
+        <div class="header-logo-wrap">
+          <img src="executive-companies.png" alt="Executive Companies logo" />
+        </div>
+        <div class="header-text-block">
+          <div class="header-brand-line">Executive Companies</div>
+          <div class="header-subline">Construction • Excavation • Interiors</div>
+        </div>
       </div>
-      <h1>Golden Eagle</h1>
-      <div class="tagline">
-        Excavation, utilities, and flatwork aligned with your schedule so sites are ready when the rest of the job arrives.
-      </div>
-      <div class="pill">
-        <span>Golden Eagle</span>
-        <span>•</span>
-        <span>Excavation · Utilities · Flatwork</span>
+      <div class="header-nav">
+        <div class="header-nav-company">Golden Eagle Excavation</div>
+        <div class="header-buttons">
+          <a href="index.html" class="nav-button">Home</a>
+          <a href="contact.html" class="nav-button primary">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="page-shell">
-    <section class="section">
-      <h2>Recent &amp; representative projects</h2>
-      <p>
-        These example projects show how Golden Eagle keeps dirt work, utilities, and flatwork moving with the overall
-        build schedule. Swap in your actual jobs, photos, and details as you go.
-      </p>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <h3>Highline Subdivision Infrastructure</h3>
-          <div class="project-meta">Subdivision · Excavation &amp; utilities</div>
-          <p>
-            Mass excavation, trenching, and underground utilities installed and coordinated with foundation and
-            framing starts across multiple phases.
+  <main class="shell">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <div class="hero-tagline">Excavation • Utilities • Flatwork</div>
+          <h1 class="hero-title">Golden Eagle Excavation</h1>
+          <p class="hero-subtitle">
+            Getting projects out of the ground the right way — aligned with the rest
+            of the Executive Companies group.
           </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Retail Pad Site &amp; Flatwork</h3>
-          <div class="project-meta">Commercial · Site &amp; concrete</div>
-          <p>
-            Site grading, utility connections, and flatwork for a retail pad site including drives, walks, and
-            accessible routes tied into city requirements.
+          <p class="hero-text">
+            Golden Eagle handles the dirt, utilities, and concrete scopes your project
+            relies on. From first dig through flatwork, we focus on clean pads,
+            predictable trench work, and scopes that stay in sync with GC and framing
+            schedules instead of fighting them.
           </p>
-        </article>
 
-        <article class="project-card">
-          <h3>Custom Home – Hillside Lot</h3>
-          <div class="project-meta">Custom residential · Complex access</div>
-          <p>
-            Selective excavation, utility runs, and flatwork for a hillside custom home, coordinated tightly with
-            foundation design and access constraints.
+          <p class="hero-capabilities">
+            Excavation • Utilities • Foundations • Flatwork
           </p>
-        </article>
+
+          <div class="hero-actions">
+            <a href="contact.html" class="hero-cta">Request site pricing</a>
+          </div>
+          <p class="hero-note">
+            We can help from early budgeting through full construction — with or without
+            a fully completed plan set.
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-logo-wrap">
+            <img src="golden-eagle-logo.png" alt="Golden Eagle Excavation logo" />
+          </div>
+          <div class="hero-logo-caption">
+            A company within the Executive Companies group.
+          </div>
+        </div>
       </div>
     </section>
 
-    <a href="index.html#brands" class="back-link">
-      <span>←</span>
-      <span>Back to all brands</span>
-    </a>
+    <!-- CORE SERVICES -->
+    <section class="section">
+      <p class="section-title">Core services</p>
+      <h2 class="section-heading">Where Golden Eagle plugs into your project</h2>
+      <p class="section-text">
+        Golden Eagle is built around the scopes that set the tone for the rest of
+        the job — grading, foundations, utilities, and flatwork. We can run as a
+        sitework partner to your GC, or integrate directly with Executive Custom
+        Construction as part of a full group package.
+      </p>
+
+      <div class="services-grid">
+        <!-- Excavation -->
+        <div class="service-card">
+          <div class="service-label">Site &amp; mass grading</div>
+          <h3 class="service-name">Excavation</h3>
+          <p class="service-text">
+            Pads, over-excavation, and trench work done with the next trades in mind.
+          </p>
+          <ul class="service-list">
+            <li>Mass excavation and over-excavation</li>
+            <li>Building pads and foundation digs</li>
+            <li>Backfill and compaction</li>
+          </ul>
+        </div>
+
+        <!-- Utilities -->
+        <div class="service-card">
+          <div class="service-label">Underground</div>
+          <h3 class="service-name">Utilities</h3>
+          <p class="service-text">
+            Trenching and underground work that ties into inspections and schedules.
+          </p>
+          <ul class="service-list">
+            <li>Utility trenching and service runs</li>
+            <li>Storm, sanitary, and water tie-ins</li>
+            <li>Coordination with inspections and other trades</li>
+          </ul>
+        </div>
+
+        <!-- Flatwork -->
+        <div class="service-card">
+          <div class="service-label">Concrete</div>
+          <h3 class="service-name">Flatwork &amp; slabs</h3>
+          <p class="service-text">
+            Concrete scopes that match the project design and keep elevations consistent.
+          </p>
+          <ul class="service-list">
+            <li>Exterior flatwork and walks</li>
+            <li>Driveways, approaches, and patios</li>
+            <li>Slabs and project-specific pours</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT TYPES -->
+    <section class="section">
+      <p class="section-title">Project types</p>
+      <h2 class="section-heading">The work Golden Eagle is a good fit for</h2>
+      <p class="section-text">
+        We support residential, commercial, and site-driven work — from individual
+        builds to multi-lot and small development projects.
+      </p>
+
+      <div class="chips-row">
+        <span class="chip">New residential builds</span>
+        <span class="chip">Custom homes</span>
+        <span class="chip">Small subdivisions &amp; infill</span>
+        <span class="chip">Light commercial pads</span>
+        <span class="chip">Remodels with sitework</span>
+        <span class="chip">Flatwork &amp; approaches</span>
+      </div>
+    </section>
+
+    <!-- GROUP COORDINATION -->
+    <section class="section">
+      <p class="section-title">Part of the group</p>
+      <h2 class="section-heading">How Golden Eagle works with the other companies</h2>
+
+      <div class="coord-card">
+        <div>
+          <h3 class="coord-title">From first dig through framing and finish</h3>
+          <p class="coord-text">
+            Because Golden Eagle is inside the Executive Companies group, we’re
+            used to coordinating with the GC and framing teams before we ever mobilize.
+            That means fewer surprises on elevations, utilities, or concrete scopes —
+            and fewer gaps between what’s drawn and what gets built.
+          </p>
+          <ul class="coord-list">
+            <li>Pads, utilities, and flatwork scoped with GC and framing in mind</li>
+            <li>Shared schedules and expectations across companies</li>
+            <li>One phone call to adjust sitework, foundations, or flatwork</li>
+          </ul>
+        </div>
+        <div>
+          <div class="coord-side-label">Working with Golden Eagle</div>
+          <div class="coord-side-box">
+            Bring us in as your site and concrete partner, or as part of a full
+            <strong>Executive Companies</strong> package with GC and interior
+            scopes. Either way, you’ll know who to call when it’s time to dig,
+            trench, or pour.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section class="section">
+      <div class="cta-card">
+        <div>
+          <h3 class="cta-title">Need help planning the site side of a project?</h3>
+          <p class="cta-text">
+            We can help with early budgets, rough takeoffs, or full pricing for
+            excavation, utilities, and flatwork — whether you’re at concept or
+            ready to mobilize.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <div class="cta-buttons-row">
+            <a href="contact.html" class="cta-button">Use contact form</a>
+            <a href="index.html" class="cta-button secondary">Back to main site</a>
+          </div>
+          <div class="cta-contact-line">
+            Or email
+            <strong>estimating@executive-company.com</strong> or call
+            <strong>(719) 531-0707</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Golden Eagle Excavation — part of Executive Companies</div>
+      <div class="footer-contact-line">
+        (719) 531-0707 &nbsp;|&nbsp; 13540 Meadowgrass Dr, Colorado Springs, CO
+        80921
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
