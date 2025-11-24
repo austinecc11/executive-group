@@ -575,6 +575,89 @@
     .footer-contact-line {
       white-space: nowrap;
     }
+
+    /* ========================= */
+    /*   EXTRA MOBILE TWEAKS     */
+    /* ========================= */
+
+    @media (max-width: 640px) {
+      /* Overall padding tighter on phones */
+      .shell {
+        padding: 1.6rem 1rem 2.1rem;
+      }
+
+      /* Hero card a bit softer and smaller */
+      .hero-left {
+        padding: 1.1rem 1.1rem 1.2rem;
+        border-radius: 20px;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      .hero-text {
+        font-size: 0.94rem;
+      }
+
+      /* Brand / scope cards full-width & slightly rounder */
+      .brand-card,
+      .scope-card,
+      .fit-card {
+        border-radius: 18px;
+      }
+
+      /* Buttons full-width for thumb tap */
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .fit-tags {
+        gap: 0.35rem;
+      }
+
+      /* Header nav stacks more cleanly */
+      .header-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .header-buttons {
+        width: 100%;
+      }
+
+      .header-buttons .nav-button {
+        flex: 1;
+        text-align: center;
+      }
+
+      /* Footer line can wrap so no sideways scrolling */
+      .footer-contact-line {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .shell {
+        padding-inline: 0.9rem;
+      }
+
+      .hero-title {
+        font-size: 1.45rem;
+      }
+
+      .hero-text,
+      .section-text {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
