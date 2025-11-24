@@ -2,198 +2,820 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Apex Coatings | Executive Companies</title>
+  <title>Apex Coatings | Framing, Drywall, Finish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Apex Coatings handles framing, drywall, and finish scopes for residential, commercial, and remodel projects within the Executive Companies group."
+  />
   <style>
+    :root {
+      --blue-deep: #0b1f3b;
+      --blue-main: #0f4fa8;
+      --blue-soft: #e6f0fb;
+      --blue-soft-alt: #f3f6fd;
+      --gold: #f59e0b;
+      --text-main: #0b1220;
+      --text-muted: #6b7280;
+      --bg: #020617;
+      --bg-panel: #020617;
+      --bg-card: #ffffff;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f6fb;
-      color: #111827;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #0b1f3b 0, #020617 55%);
+      color: #e5e7eb;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
 
-    .page-shell {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.8rem 1.5rem 3rem;
+    a {
+      color: inherit;
     }
+
+    /* HEADER ---------------------------------------------------- */
 
     header {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
-      background: #ffffff;
+      background: rgba(2, 6, 23, 0.96);
+      border-bottom: 1px solid rgba(30, 64, 175, 0.5);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
     }
 
-    .crumbs {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 0.6rem;
-    }
-
-    .crumbs a {
-      text-decoration: none;
-      color: #6b7280;
-    }
-
-    .crumbs a:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .tagline {
-      margin-top: 0.25rem;
-      font-size: 0.96rem;
-      color: #4b5563;
-    }
-
-    .pill {
-      display: inline-flex;
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem 0.7rem;
+      display: flex;
       align-items: center;
-      gap: 0.3rem;
-      font-size: 0.76rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(2, 136, 209, 0.6);
-      margin-top: 0.7rem;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-logo-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: #000000;
+      border: 1px solid rgba(245, 158, 11, 0.8);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-logo-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .header-brand-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #0288d1;
-      background: rgba(2, 136, 209, 0.05);
+      color: rgba(209, 213, 219, 0.95);
     }
 
-    .section {
-      margin-top: 2rem;
+    .header-subline {
+      font-size: 0.78rem;
+      color: rgba(156, 163, 175, 0.95);
     }
 
-    .section h2 {
-      font-size: 1.1rem;
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .header-nav-company {
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #6b7280;
-      margin-bottom: 0.5rem;
+      color: rgba(191, 219, 254, 0.9);
     }
 
-    .section p {
-      font-size: 0.95rem;
-      color: #4b5563;
-      max-width: 48rem;
-      line-height: 1.6;
+    .header-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
-    .projects-grid {
-      margin-top: 1.2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.1rem;
-    }
-
-    .project-card {
-      border-radius: 16px;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      background: #ffffff;
-      padding: 0.9rem 1rem 1rem;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
-      font-size: 0.9rem;
-    }
-
-    .project-card h3 {
-      margin: 0 0 0.2rem;
-      font-size: 0.98rem;
-    }
-
-    .project-meta {
+    .nav-button {
       font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 0.35rem;
+      text-decoration: none;
+      padding: 0.4rem 1.05rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
     }
 
-    .back-link {
+    .nav-button.primary {
+      border-color: var(--blue-main);
+      background: linear-gradient(
+        130deg,
+        #1d4ed8 0%,
+        #2563eb 40%,
+        #f59e0b 100%
+      );
+      color: #f9fafb;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.6);
+    }
+
+    .nav-button:hover {
+      border-color: var(--gold);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 1.2rem;
+      }
+
+      .header-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    /* MAIN WRAPPER ---------------------------------------------- */
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 2.4rem;
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding-inline: 1.2rem;
+      }
+    }
+
+    /* HERO ------------------------------------------------------ */
+
+    .hero {
+      margin-bottom: 2rem;
+    }
+
+    .hero-inner {
+      border-radius: 28px;
+      padding: 1.6rem 1.6rem 1.8rem;
+      background: radial-gradient(
+          circle at top left,
+          rgba(59, 130, 246, 0.35),
+          transparent 55%
+        ),
+        linear-gradient(145deg, #020617, #020617 40%, #0b1f3b 100%);
+      border: 1px solid rgba(30, 64, 175, 0.8);
+      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.95);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(191, 219, 254, 0.95);
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.15;
+      margin: 0;
+      color: #e5e7eb;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(209, 213, 219, 0.9);
+      margin: 0 0 0.6rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: rgba(156, 163, 175, 0.95);
+      margin: 0 0 0.9rem;
+      max-width: 32rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      color: rgba(209, 213, 219, 0.95);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .hero-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      margin-top: 2rem;
-      font-size: 0.86rem;
+      justify-content: center;
+      padding: 0.6rem 1.5rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: #f9fafb;
+      color: #0b1120;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
-      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.9);
+      cursor: pointer;
     }
 
-    .back-link span {
-      font-size: 1rem;
+    .hero-note {
+      font-size: 0.82rem;
+      color: rgba(148, 163, 184, 0.95);
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 1.5rem;
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-logo-wrap {
+      width: 210px;
+      height: 210px;
+      border-radius: 34px;
+      background: #ffffff;
+      border: 2px solid rgba(15, 118, 230, 0.85);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-logo-wrap img {
+      max-width: 88%;
+      max-height: 88%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-logo-caption {
+      font-size: 0.8rem;
+      color: rgba(191, 219, 254, 0.9);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero-logo-wrap {
+        width: 180px;
+        height: 180px;
       }
+    }
+
+    /* GENERAL SECTIONS ------------------------------------------ */
+
+    .section {
+      margin-bottom: 2.2rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: rgba(148, 163, 184, 0.95);
+      margin: 0 0 0.35rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      color: #e5e7eb;
+      margin: 0 0 0.5rem;
+    }
+
+    .section-text {
+      font-size: 0.94rem;
+      color: rgba(156, 163, 175, 0.96);
+      max-width: 44rem;
+      margin: 0 0 1.1rem;
+    }
+
+    /* CORE SERVICES --------------------------------------------- */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-card {
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(30, 64, 175, 0.85);
+      padding: 0.9rem 1rem 1rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    }
+
+    .service-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(191, 219, 254, 0.95);
+      margin-bottom: 0.3rem;
+    }
+
+    .service-name {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      margin: 0 0 0.35rem;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      color: rgba(156, 163, 175, 0.96);
+      margin: 0 0 0.5rem;
+    }
+
+    .service-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: rgba(148, 163, 184, 0.96);
+    }
+
+    .service-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* PROJECT TYPES --------------------------------------------- */
+
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .chip {
+      font-size: 0.82rem;
+      padding: 0.26rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.85);
+      background: rgba(15, 23, 42, 0.9);
+      color: rgba(209, 213, 219, 0.96);
+    }
+
+    /* COORDINATION CARD ----------------------------------------- */
+
+    .coord-card {
+      border-radius: 20px;
+      background: radial-gradient(
+          circle at top left,
+          rgba(37, 99, 235, 0.25),
+          transparent 55%
+        ),
+        rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 1.1rem 1.2rem 1.2rem;
+      box-shadow: 0 20px 56px rgba(15, 23, 42, 0.95);
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .coord-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .coord-title {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      margin: 0 0 0.4rem;
+    }
+
+    .coord-text {
+      font-size: 0.94rem;
+      color: rgba(156, 163, 175, 0.96);
+      margin: 0 0 0.4rem;
+    }
+
+    .coord-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: rgba(148, 163, 184, 0.96);
+    }
+
+    .coord-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .coord-side-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(191, 219, 254, 0.9);
+      margin-bottom: 0.4rem;
+    }
+
+    .coord-side-box {
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      padding: 0.7rem 0.8rem;
+      font-size: 0.88rem;
+      color: rgba(209, 213, 219, 0.96);
+    }
+
+    /* CTA ------------------------------------------------------- */
+
+    .cta-card {
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        #0b1f3b,
+        #111827 50%,
+        #020617 100%
+      );
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      padding: 1rem 1.2rem 1.1rem;
+      box-shadow: 0 22px 58px rgba(15, 23, 42, 1);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .cta-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .cta-title {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      margin: 0 0 0.4rem;
+    }
+
+    .cta-text {
+      font-size: 0.92rem;
+      color: rgba(156, 163, 175, 0.96);
+      margin: 0;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .cta-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      background: #f9fafb;
+      color: #0b1120;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .cta-contact-line {
+      font-size: 0.88rem;
+      color: rgba(209, 213, 219, 0.96);
+    }
+
+    .cta-contact-line strong {
+      color: #f9fafb;
+    }
+
+    /* FOOTER ---------------------------------------------------- */
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 1.3rem;
+      font-size: 0.84rem;
+      color: rgba(148, 163, 184, 0.96);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 720px) {
+      .footer-inner {
+        padding-inline: 1.2rem;
+        flex-direction: column;
+      }
+    }
+
+    .footer-contact-line {
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="page-shell" style="padding:0;">
-      <div class="crumbs">
-        <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Apex Coatings
+    <div class="header-inner">
+      <div class="header-left">
+        <div class="header-logo-wrap">
+          <img src="executive-companies.png" alt="Executive Companies logo" />
+        </div>
+        <div class="header-text-block">
+          <div class="header-brand-line">Executive Companies</div>
+          <div class="header-subline">Construction • Excavation • Interiors</div>
+        </div>
       </div>
-      <h1>Apex Coatings</h1>
-      <div class="tagline">
-        Framing, drywall, and finish packages kept in sync so interiors move cleanly from rough to final punch.
-      </div>
-      <div class="pill">
-        <span>Apex</span>
-        <span>•</span>
-        <span>Framing · Drywall · Finish</span>
+      <div class="header-nav">
+        <div class="header-nav-company">Apex Coatings</div>
+        <div class="header-buttons">
+          <a href="index.html" class="nav-button">Home</a>
+          <a href="contact.html" class="nav-button primary">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="page-shell">
-    <section class="section">
-      <h2>Recent &amp; representative projects</h2>
-      <p>
-        Here are a few sample projects where Apex Coatings delivered coordinated framing, drywall, and finish work.
-        Replace or expand these with your own neighborhoods, custom homes, or commercial jobs.
-      </p>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <h3>Willow Creek Homes – Series A</h3>
-          <div class="project-meta">Production residential · Framing &amp; interiors</div>
-          <p>
-            Framing, hang &amp; tape, and finish carpentry provided as one package so elevations and options
-            stayed consistent across the neighborhood.
+  <main class="shell">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <div class="hero-tagline">Framing • Drywall • Finish</div>
+          <h1 class="hero-title">Apex Coatings</h1>
+          <p class="hero-subtitle">
+            Structural framing, drywall, and interior finishes — aligned with the
+            rest of the Executive Companies group.
           </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Downtown Loft Conversion</h3>
-          <div class="project-meta">Remodel · Loft build-out</div>
-          <p>
-            Interior framing, drywall, and finish for a loft conversion, coordinating tightly with MEP trades
-            and owner finishes in an occupied building.
+          <p class="hero-text">
+            Apex Coatings handles the structure and interior skin of your project.
+            From framing through drywall and trim, we focus on clean lines, tight
+            schedules, and scopes that tie in with excavation and GC work rather
+            than fighting them.
           </p>
-        </article>
 
-        <article class="project-card">
-          <h3>Medical Office Interior Build</h3>
-          <div class="project-meta">Commercial · Interior package</div>
-          <p>
-            Wall layout, framing, drywall, and acoustical details completed as one scope to keep inspections
-            and finishes on schedule.
+          <div class="hero-badges">
+            <span class="hero-badge">Framing</span>
+            <span class="hero-badge">Drywall</span>
+            <span class="hero-badge">Texture &amp; Finish</span>
+            <span class="hero-badge">New builds &amp; remodels</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="contact.html" class="hero-cta">Request pricing</a>
+          </div>
+          <p class="hero-note">
+            We’re comfortable Pricing from full plan sets or early concepts —
+            especially when you’re still working out scope and budget.
           </p>
-        </article>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-logo-wrap">
+            <img src="apex-logo.png" alt="Apex Coatings logo" />
+          </div>
+          <div class="hero-logo-caption">
+            A company within the Executive Companies group.
+          </div>
+        </div>
       </div>
     </section>
 
-    <a href="index.html#brands" class="back-link">
-      <span>←</span>
-      <span>Back to all brands</span>
-    </a>
+    <!-- CORE SERVICES -->
+    <section class="section">
+      <p class="section-title">Core services</p>
+      <h2 class="section-heading">Where Apex plugs into your project</h2>
+      <p class="section-text">
+        Apex is focused on the parts of the project you see and feel every day —
+        the structure, walls, and finishes. We can run as a trade partner for
+        your GC, or work directly under Executive Custom Construction as part of
+        a full group package.
+      </p>
+
+      <div class="services-grid">
+        <!-- Framing -->
+        <div class="service-card">
+          <div class="service-label">Structural &amp; interior</div>
+          <h3 class="service-name">Framing</h3>
+          <p class="service-text">
+            From layout through punch, we frame with the next trades and final
+            finishes in mind.
+          </p>
+          <ul class="service-list">
+            <li>Structural and interior wall framing</li>
+            <li>Floor systems and roof framing</li>
+            <li>Blocking, backing, and details for finishes</li>
+          </ul>
+        </div>
+
+        <!-- Drywall -->
+        <div class="service-card">
+          <div class="service-label">Walls &amp; ceilings</div>
+          <h3 class="service-name">Drywall &amp; texture</h3>
+          <p class="service-text">
+            Clean board lines, consistent finishes, and textures that match the
+            rest of your project.
+          </p>
+          <ul class="service-list">
+            <li>Drywall hang, tape, and finish</li>
+            <li>Spray and hand textures</li>
+            <li>Repairs and blend-ins for remodel work</li>
+          </ul>
+        </div>
+
+        <!-- Finish -->
+        <div class="service-card">
+          <div class="service-label">Interior finish</div>
+          <h3 class="service-name">Trim &amp; details</h3>
+          <p class="service-text">
+            The final details that make a space feel finished and intentional.
+          </p>
+          <ul class="service-list">
+            <li>Interior doors and casing</li>
+            <li>Base, crown, and specialty trim</li>
+            <li>Built-ins and accent details tied to your design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT TYPES -->
+    <section class="section">
+      <p class="section-title">Project types</p>
+      <h2 class="section-heading">The work Apex is a good fit for</h2>
+      <p class="section-text">
+        We support a mix of residential, commercial, and remodel work. If it
+        needs framing, drywall, or finish scopes — Apex can likely help.
+      </p>
+
+      <div class="chips-row">
+        <span class="chip">New residential builds</span>
+        <span class="chip">Large custom homes</span>
+        <span class="chip">Commercial interiors</span>
+        <span class="chip">Tenant finish &amp; TI work</span>
+        <span class="chip">Remodels &amp; additions</span>
+        <span class="chip">Punch lists &amp; repairs</span>
+      </div>
+    </section>
+
+    <!-- COORDINATION WITH THE GROUP -->
+    <section class="section">
+      <p class="section-title">Part of the group</p>
+      <h2 class="section-heading">How Apex works with the other companies</h2>
+
+      <div class="coord-card">
+        <div>
+          <h3 class="coord-title">Aligned with excavation and GC from day one</h3>
+          <p class="coord-text">
+            Because Apex is inside the Executive Companies group, we’re used to
+            working alongside excavation and GC teams that already know our
+            scopes and expectations. That translates to fewer handoff gaps and
+            fewer “who owns this?” conversations in the field.
+          </p>
+          <ul class="coord-list">
+            <li>Clear scopes written with the other companies in mind</li>
+            <li>Shared schedules and budget expectations</li>
+            <li>One phone call to adjust framing, drywall, or finish</li>
+          </ul>
+        </div>
+        <div>
+          <div class="coord-side-label">Working with Apex</div>
+          <div class="coord-side-box">
+            Bring us in through your GC, or through
+            <strong>Executive Custom Construction</strong> as part of a full
+            group package. Either way, you’ll know who to call when you need
+            framing, drywall, or finish support.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section class="section">
+      <div class="cta-card">
+        <div>
+          <h3 class="cta-title">Ready to talk through an upcoming project?</h3>
+          <p class="cta-text">
+            Whether you’re budgeting early or ready to move into framing and
+            drywall, we can help you understand scope, pricing, and how Apex fits
+            into your schedule.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <div class="cta-buttons-row">
+            <a href="contact.html" class="cta-button">Use contact form</a>
+            <a href="index.html" class="cta-button secondary">Back to main site</a>
+          </div>
+          <div class="cta-contact-line">
+            Or email
+            <strong>estimating@executive-company.com</strong> or call
+            <strong>(719) 531-0707</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Apex Coatings — part of Executive Companies</div>
+      <div class="footer-contact-line">
+        (719) 531-0707 &nbsp;|&nbsp; 13540 Meadowgrass Dr, Colorado Springs, CO
+        80921
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
