@@ -133,6 +133,8 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       white-space: nowrap;
+      transition: border-color 0.15s ease, background 0.15s ease,
+        box-shadow 0.15s ease, transform 0.15s ease;
     }
 
     .nav-button.primary {
@@ -144,6 +146,7 @@
 
     .nav-button:hover {
       border-color: var(--gold);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 720px) {
@@ -230,22 +233,13 @@
       max-width: 32rem;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-badge {
-      font-size: 0.78rem;
-      padding: 0.23rem 0.75rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: var(--apex-blue-softer);
-      color: #1f2933;
+    .hero-capabilities {
+      font-size: 0.85rem;
+      color: var(--apex-blue);
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      margin: 0 0 0.75rem;
     }
 
     .hero-actions {
@@ -271,6 +265,12 @@
       letter-spacing: 0.16em;
       box-shadow: 0 18px 40px rgba(37, 99, 235, 0.45);
       cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .hero-cta:hover {
+      box-shadow: 0 20px 46px rgba(37, 99, 235, 0.55);
+      transform: translateY(-1px);
     }
 
     .hero-note {
@@ -324,11 +324,16 @@
       margin-bottom: 2.2rem;
     }
 
+    .section:not(:first-of-type) {
+      border-top: 1px solid var(--apex-blue-border);
+      padding-top: 1.6rem;
+    }
+
     .section-title {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.17em;
-      color: var(--text-muted);
+      color: var(--apex-blue); /* more blue accent */
       margin: 0 0 0.3rem;
     }
 
@@ -365,6 +370,14 @@
       border: 1px solid var(--apex-blue-border);
       padding: 0.9rem 1rem 1rem;
       box-shadow: 0 14px 35px rgba(148, 163, 184, 0.35);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--apex-blue);
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+      transform: translateY(-2px);
     }
 
     .service-label {
@@ -399,6 +412,10 @@
       margin-bottom: 0.2rem;
     }
 
+    .service-list li::marker {
+      color: var(--apex-blue);
+    }
+
     /* PROJECT TYPES --------------------------------------------- */
 
     .chips-row {
@@ -414,6 +431,14 @@
       border: 1px solid rgba(148, 163, 184, 0.85);
       background: #ffffff;
       color: #111827;
+      transition: border-color 0.15s ease, background 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--apex-blue);
+      background: var(--apex-blue-softer);
+      transform: translateY(-1px);
     }
 
     /* FEATURED PROJECT ------------------------------------------ */
@@ -438,6 +463,14 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--apex-blue);
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+      transform: translateY(-2px);
     }
 
     .project-image-wrap {
@@ -483,12 +516,20 @@
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
       gap: 1.3rem;
       align-items: center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
     }
 
     @media (max-width: 840px) {
       .coord-card {
         grid-template-columns: minmax(0, 1fr);
       }
+    }
+
+    .coord-card:hover {
+      border-color: var(--apex-blue);
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+      transform: translateY(-2px);
     }
 
     .coord-title {
@@ -512,6 +553,10 @@
 
     .coord-list li {
       margin-bottom: 0.2rem;
+    }
+
+    .coord-list li::marker {
+      color: var(--apex-blue);
     }
 
     .coord-side-label {
@@ -543,12 +588,20 @@
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
       gap: 1.3rem;
       align-items: center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.15s ease;
     }
 
     @media (max-width: 840px) {
       .cta-card {
         grid-template-columns: minmax(0, 1fr);
       }
+    }
+
+    .cta-card:hover {
+      border-color: var(--apex-blue);
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+      transform: translateY(-2px);
     }
 
     .cta-title {
@@ -590,12 +643,19 @@
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.14em;
+      transition: background 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease, transform 0.15s ease;
     }
 
     .cta-button.secondary {
       background: transparent;
       color: #111827;
       border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--apex-blue);
     }
 
     .cta-contact-line {
@@ -678,12 +738,9 @@
             look intentional.
           </p>
 
-          <div class="hero-badges">
-            <span class="hero-badge">Framing</span>
-            <span class="hero-badge">Drywall</span>
-            <span class="hero-badge">Texture &amp; Finish</span>
-            <span class="hero-badge">New builds &amp; remodels</span>
-          </div>
+          <p class="hero-capabilities">
+            Framing • Drywall • Texture &amp; Finish • New builds &amp; remodels
+          </p>
 
           <div class="hero-actions">
             <a href="contact.html" class="hero-cta">Request pricing</a>
@@ -771,7 +828,7 @@
 
       <div class="chips-row">
         <span class="chip">New residential builds</span>
-        <span class="chip">55+ and condo projects</span>
+        <span class="chip">Condo projects</span>
         <span class="chip">Commercial interiors</span>
         <span class="chip">Tenant finish &amp; TI work</span>
         <span class="chip">Remodels &amp; additions</span>
@@ -782,9 +839,9 @@
     <!-- FEATURED PROJECT: LOFTS --------------------------------- -->
     <section class="section">
       <p class="section-title">Featured work</p>
-      <h2 class="section-heading">55+ condo project — The Lofts</h2>
+      <h2 class="section-heading">The Lofts — Condo Project</h2>
       <p class="section-text">
-        A recent 55+ condo project where Apex handled key interior scopes. Light,
+        A recent condo project where Apex handled key interior scopes. Light,
         clean spaces built around how residents actually live and move in the units
         and common areas.
       </p>
@@ -792,7 +849,7 @@
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-image-wrap">
-            <img src="lofts-1.jpg" alt="Lofts 55+ condo project interior view 1" />
+            <img src="lofts-1.jpg" alt="Lofts condo project interior view 1" />
           </div>
           <div class="project-body">
             <div class="project-name">Unit interiors — structural and finish scopes</div>
@@ -806,13 +863,13 @@
 
         <div class="project-card">
           <div class="project-image-wrap">
-            <img src="lofts-2.jpg" alt="Lofts 55+ condo project interior view 2" />
+            <img src="lofts-2.jpg" alt="Lofts condo project interior view 2" />
           </div>
           <div class="project-body">
             <div class="project-name">Finish details for everyday use</div>
             <p class="project-text">
               Smooth walls, clean transitions, and trim details tuned for daily use
-              and long-term durability in a 55+ living environment.
+              and long-term durability.
             </p>
           </div>
         </div>
