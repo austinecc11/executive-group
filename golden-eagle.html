@@ -15,7 +15,7 @@
       --ge-orange-soft: #fed7aa;
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
-      --bg: #111111; /* neutral dark gray */
+      --bg: #18181b; /* lighter neutral dark gray */
     }
 
     * {
@@ -28,7 +28,7 @@
         sans-serif;
       background:
         radial-gradient(circle at top, rgba(249, 115, 22, 0.22), transparent 55%),
-        linear-gradient(#1f1f1f, #111111);
+        linear-gradient(#262626, #18181b);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -38,9 +38,9 @@
     /* HEADER ---------------------------------------------------- */
 
     header {
-      background: #111111;
+      background: #18181b;
       border-bottom: 1px solid rgba(63, 63, 70, 0.9);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
     }
 
@@ -125,7 +125,7 @@
       padding: 0.42rem 1.05rem;
       border-radius: 999px;
       border: 1px solid rgba(82, 82, 91, 0.9);
-      background: rgba(24, 24, 27, 0.95); /* dark gray */
+      background: rgba(38, 38, 38, 0.95); /* medium gray */
       color: #e5e7eb;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -142,7 +142,7 @@
         #ea580c 45%,
         #c2410c 100%
       );
-      color: #111111;
+      color: #18181b;
       box-shadow: 0 14px 35px rgba(234, 88, 12, 0.7);
     }
 
@@ -186,11 +186,11 @@
         linear-gradient(
           135deg,
           rgba(249, 115, 22, 0.32) 0%,
-          #262626 35%,
-          #1a1a1a 100%
-        ); /* orange → gray, no blue */
-      border: 1px solid rgba(63, 63, 70, 0.95);
-      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.95);
+          #303030 35%,
+          #232323 100%
+        ); /* orange → lighter gray */
+      border: 1px solid rgba(75, 75, 85, 0.95);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
       display: grid;
       grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
       gap: 1.5rem;
@@ -262,7 +262,7 @@
       border-radius: 999px;
       border: none;
       background: #f97316;
-      color: #111111;
+      color: #18181b;
       font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
@@ -331,7 +331,7 @@
     .section { margin-bottom: 2.2rem; }
 
     .section:not(:first-of-type) {
-      border-top: 1px solid rgba(39, 39, 42, 0.9);
+      border-top: 1px solid rgba(55, 55, 65, 0.9);
       padding-top: 1.6rem;
     }
 
@@ -376,11 +376,11 @@
         linear-gradient(
           145deg,
           rgba(249, 115, 22, 0.06),
-          #18181b
-        );                 /* dark gray */
-      border: 1px solid rgba(63, 63, 70, 0.95);
+          #27272f
+        );                 /* medium gray */
+      border: 1px solid rgba(75, 75, 85, 0.95);
       padding: 0.9rem 1rem 1rem;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
       transition: border-color 0.15s ease, box-shadow 0.15s ease,
         transform 0.15s ease;
     }
@@ -427,6 +427,49 @@
       color: var(--ge-orange);
     }
 
+    /* PREVIOUS JOBS / PROJECTS --------------------------------- */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-card {
+      border-radius: 18px;
+      background: #232329;
+      border: 1px solid rgba(75, 75, 85, 0.9);
+      padding: 0.9rem 1rem 1rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f9fafb;
+      margin: 0 0 0.35rem;
+    }
+
+    .project-meta {
+      font-size: 0.82rem;
+      color: var(--ge-orange-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.25rem;
+    }
+
+    .project-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
     /* PROJECT TYPES --------------------------------------------- */
 
     .chips-row {
@@ -440,7 +483,7 @@
       padding: 0.26rem 0.8rem;
       border-radius: 999px;
       border: 1px solid rgba(82, 82, 91, 0.9);
-      background: rgba(24, 24, 27, 0.95); /* dark gray pill */
+      background: rgba(38, 38, 38, 0.95); /* gray pill */
       color: #e5e7eb;
       transition: border-color 0.15s ease, background 0.15s ease,
         transform 0.15s ease;
@@ -448,80 +491,8 @@
 
     .chip:hover {
       border-color: var(--ge-orange);
-      background: #27272f;
+      background: #32323a;
       transform: translateY(-1px);
-    }
-
-    /* GROUP COORDINATION ---------------------------------------- */
-
-    .coord-card {
-      border-radius: 20px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(249, 115, 22, 0.18),
-          #18181b
-        );
-      border: 1px solid rgba(63, 63, 70, 0.95);
-      padding: 1.1rem 1.2rem 1.2rem;
-      box-shadow: 0 22px 70px rgba(0, 0, 0, 1);
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
-      gap: 1.3rem;
-      align-items: center;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease,
-        transform 0.15s ease;
-    }
-
-    @media (max-width: 840px) {
-      .coord-card { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    .coord-card:hover {
-      border-color: rgba(249, 115, 22, 0.7);
-      transform: translateY(-2px);
-    }
-
-    .coord-title {
-      font-size: 1.1rem;
-      color: #f9fafb;
-      margin: 0 0 0.4rem;
-    }
-
-    .coord-text {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      margin: 0 0 0.4rem;
-    }
-
-    .coord-list {
-      margin: 0;
-      padding-left: 1.1rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .coord-list li {
-      margin-bottom: 0.2rem;
-    }
-
-    .coord-list li::marker { color: var(--ge-orange); }
-
-    .coord-side-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ge-orange-soft);
-      margin-bottom: 0.4rem;
-    }
-
-    .coord-side-box {
-      border-radius: 14px;
-      border: 1px dashed rgba(82, 82, 91, 0.9);
-      background: #18181b;
-      padding: 0.7rem 0.8rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
     }
 
     /* CTA ------------------------------------------------------- */
@@ -532,9 +503,9 @@
         linear-gradient(
           135deg,
           rgba(249, 115, 22, 0.22),
-          #18181b 60%
+          #27272f 60%
         );
-      border: 1px solid rgba(63, 63, 70, 0.95);
+      border: 1px solid rgba(75, 75, 85, 0.95);
       padding: 1rem 1.2rem 1.1rem;
       box-shadow: 0 22px 70px rgba(0, 0, 0, 1);
       display: grid;
@@ -587,7 +558,7 @@
       border-radius: 999px;
       border: 1px solid var(--ge-orange-deep);
       background: var(--ge-orange);
-      color: #111111;
+      color: #18181b;
       font-size: 0.86rem;
       font-weight: 600;
       text-decoration: none;
@@ -611,6 +582,7 @@
     .cta-contact-line {
       font-size: 0.88rem;
       color: var(--text-muted);
+      white-space: nowrap; /* keep email + phone on one line on desktop */
     }
 
     .cta-contact-line strong { color: #f9fafb; }
@@ -618,8 +590,8 @@
     /* FOOTER ---------------------------------------------------- */
 
     footer {
-      border-top: 1px solid rgba(39, 39, 42, 0.9);
-      background: #111111;
+      border-top: 1px solid rgba(55, 55, 65, 0.9);
+      background: #18181b;
     }
 
     .footer-inner {
@@ -664,7 +636,7 @@
       }
 
       .service-card,
-      .coord-card,
+      .project-card,
       .cta-card {
         border-radius: 18px;
       }
@@ -679,8 +651,9 @@
         justify-content: center;
       }
 
-      .footer-contact-line {
-        white-space: normal;
+      .footer-contact-line,
+      .cta-contact-line {
+        white-space: normal; /* allow wrapping on small screens */
       }
     }
 
@@ -809,6 +782,46 @@
       </div>
     </section>
 
+    <!-- PREVIOUS JOBS -->
+    <section class="section">
+      <p class="section-title">Previous jobs</p>
+      <h2 class="section-heading">Examples of Golden Eagle site work</h2>
+      <p class="section-text">
+        A sample of projects where Golden Eagle handled the excavation, utilities,
+        or flatwork scopes. We can build on this experience as you add new work to
+        the schedule.
+      </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-name">After Sunset Hotel</div>
+          <div class="project-meta">Hospitality &nbsp;•&nbsp; site &amp; flatwork</div>
+          <p class="project-text">
+            Building pads, utilities, and exterior flatwork coordinated with tight
+            access and staging around an active corridor.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Ford Amphitheater</div>
+          <div class="project-meta">Venue &nbsp;•&nbsp; excavation &amp; concrete</div>
+          <p class="project-text">
+            Mass excavation, foundation digs, and concrete scopes to support large
+            crowds, circulation paths, and back-of-house operations.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Sierra Junction Apartments</div>
+          <div class="project-meta">Multi-family &nbsp;•&nbsp; site development</div>
+          <p class="project-text">
+            Multi-building pads, utilities, and flatwork delivered in phases to keep
+            vertical construction moving.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECT TYPES -->
     <section class="section">
       <p class="section-title">Project types</p>
@@ -825,38 +838,6 @@
         <span class="chip">Light commercial pads</span>
         <span class="chip">Remodels with sitework</span>
         <span class="chip">Flatwork &amp; approaches</span>
-      </div>
-    </section>
-
-    <!-- GROUP COORDINATION -->
-    <section class="section">
-      <p class="section-title">Part of the group</p>
-      <h2 class="section-heading">How Golden Eagle works with the other companies</h2>
-
-      <div class="coord-card">
-        <div>
-          <h3 class="coord-title">From first dig through framing and finish</h3>
-          <p class="coord-text">
-            Because Golden Eagle is inside the Executive Companies group, we’re
-            used to coordinating with the GC and framing teams before we ever mobilize.
-            That means fewer surprises on elevations, utilities, or concrete scopes —
-            and fewer gaps between what’s drawn and what gets built.
-          </p>
-          <ul class="coord-list">
-            <li>Pads, utilities, and flatwork scoped with GC and framing in mind</li>
-            <li>Shared schedules and expectations across companies</li>
-            <li>One phone call to adjust sitework, foundations, or flatwork</li>
-          </ul>
-        </div>
-        <div>
-          <div class="coord-side-label">Working with Golden Eagle</div>
-          <div class="coord-side-box">
-            Bring us in as your site and concrete partner, or as part of a full
-            <strong>Executive Companies</strong> package with GC and interior
-            scopes. Either way, you’ll know who to call when it’s time to dig,
-            trench, or pour.
-          </div>
-        </div>
       </div>
     </section>
 
@@ -877,8 +858,7 @@
             <a href="index.html" class="cta-button secondary">Back to main site</a>
           </div>
           <div class="cta-contact-line">
-            Or email
-            <strong>estimating@executive-company.com</strong> or call
+            Or email <strong>estimating@executive-company.com</strong> or call
             <strong>(719) 531-0707</strong>.
           </div>
         </div>
