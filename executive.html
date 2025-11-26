@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Executive Custom Construction | Executive Companies</title>
+  <title>Executive Custom Construction | Major Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Executive Custom Construction provides general contracting and project management for residential, commercial, and remodel work as part of Executive Companies in Colorado Springs." />
+  <meta
+    name="description"
+    content="Executive Custom Construction provides general contracting and project management for residential, commercial, and remodel work."
+  />
   <style>
     :root {
-      --ecc-blue: #005f9e;
-      --ecc-gold: #f9a825;
-      --page-bg: #020617;
-      --panel-bg: #030712;
-      --panel-soft: #020919;
-      --text-main: #e5e7eb;
+      --ecc-blue: #0ea5e9;
+      --ecc-blue-deep: #0284c7;
+      --ecc-gold: #facc15;
+      --ecc-gold-soft: #fef08a;
+      --text-main: #f9fafb;
       --text-muted: #9ca3af;
-      --border-subtle: rgba(55, 65, 81, 0.9);
-      --radius-lg: 20px;
-      --radius-pill: 999px;
+      --bg: #020617;
     }
 
     * {
@@ -25,55 +25,62 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--page-bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(14, 165, 233, 0.22), transparent 55%),
+        linear-gradient(#020617, #020617);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
+    /* HEADER ---------------------------------------------------- */
+
     header {
-      background: #000000;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
-      border-top: 3px solid var(--ecc-gold);
+      background: #020617;
+      border-bottom: 1px solid rgba(30, 64, 175, 0.8);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 1.1rem 1.5rem 1.2rem;
+      padding: 0.8rem 1.5rem 0.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-    }
-
-    .header-main {
-      display: flex;
-      align-items: center;
       gap: 1.5rem;
     }
 
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .header-logo-wrap {
-      flex-shrink: 0;
-      width: 130px;
-      height: 130px;
-      border-radius: 32px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: #020617;
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: #000000;
+      border: 1px solid rgba(250, 204, 21, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.9);
     }
 
     .header-logo-wrap img {
-      max-width: 94%;
-      max-height: 94%;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
       display: block;
     }
@@ -81,493 +88,720 @@
     .header-text-block {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.1rem;
     }
 
-    .crumbs {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .crumbs a {
-      text-decoration: none;
-      color: var(--text-muted);
-    }
-
-    .crumbs a:hover {
-      text-decoration: underline;
-    }
-
-    .brand-line {
-      font-size: 0.78rem;
+    .header-brand-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ecc-gold);
+      color: rgba(148, 163, 184, 0.9);
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.1rem;
-      letter-spacing: 0.01em;
-      color: #f9fafb;
+    .header-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e5e7eb;
     }
 
-    .tagline {
-      margin-top: 0.1rem;
-      font-size: 0.96rem;
-      color: #d1d5db;
-      max-width: 44rem;
+    .header-subline {
+      font-size: 0.8rem;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .header-nav-company {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ecc-blue);
     }
 
     .header-buttons {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
     .nav-button {
-      font-size: 0.86rem;
-      text-decoration: none;
-      padding: 0.45rem 1.1rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
+      font-size: 0.8rem;
+      padding: 0.42rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       color: #e5e7eb;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      transition: border-color 0.15s ease, background 0.15s ease,
+        box-shadow 0.15s ease, transform 0.15s ease;
     }
 
     .nav-button.primary {
-      border-color: var(--ecc-blue);
-      background: var(--ecc-blue);
-    }
-
-    .nav-button.secondary {
-      border-color: var(--ecc-gold);
+      border-color: var(--ecc-blue-deep);
+      background: linear-gradient(
+        135deg,
+        #0ea5e9 0%,
+        #0369a1 40%,
+        #1e293b 100%
+      );
+      color: #e5e7eb;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.7);
     }
 
     .nav-button:hover {
-      border-color: var(--ecc-gold);
+      border-color: var(--ecc-blue);
+      transform: translateY(-1px);
     }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 1.2rem;
+      }
+      .header-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    /* SHELL ----------------------------------------------------- */
 
     .shell {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 1.8rem 1.5rem 3rem;
+      padding: 1.8rem 1.5rem 2.5rem;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.1fr);
-      gap: 1.8rem;
-      margin-top: 0.8rem;
-    }
-
-    @media (max-width: 980px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .header-inner {
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-inner {
-        padding-inline: 1.2rem;
-        gap: 0.9rem;
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    @media (max-width: 720px) {
       .shell {
-        padding-inline: 1.2rem;
-      }
-      h1 {
-        font-size: 1.7rem;
-      }
-      .header-main {
-        gap: 1rem;
-      }
-      .header-logo-wrap {
-        width: 110px;
-        height: 110px;
+        padding: 1.6rem 1.2rem 2.3rem;
       }
     }
 
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background: linear-gradient(160deg, var(--panel-bg), var(--panel-soft));
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
-      padding: 1.3rem 1.4rem 1.45rem;
-      position: relative;
-      overflow: hidden;
+    /* HERO ------------------------------------------------------ */
+
+    .hero {
+      margin-bottom: 2rem;
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.4);
-      opacity: 0.7;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card h2 {
-      margin: 0 0 0.6rem;
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      position: relative;
-      padding-bottom: 0.35rem;
-    }
-
-    .card h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 72px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--ecc-gold), transparent);
-    }
-
-    .card p {
-      margin: 0 0 0.8rem;
-      font-size: 0.94rem;
-      line-height: 1.7;
-      color: #e5e7eb;
-    }
-
-    .bullets {
-      padding-left: 1.1rem;
-      margin: 0;
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .bullets li {
-      margin-bottom: 0.25rem;
-    }
-
-    .projects-grid {
-      margin-top: 1rem;
+    .hero-inner {
+      border-radius: 28px;
+      padding: 1.6rem 1.6rem 1.9rem;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.9) 0%,
+          #020617 50%,
+          #020617 100%
+        );
+      border: 1px solid rgba(30, 64, 175, 0.8);
+      box-shadow: 0 28px 80px rgba(15, 23, 42, 1);
       display: grid;
-      grid-template-columns: 3fr 2fr;
-      grid-auto-rows: auto;
-      gap: 1.6rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: center;
     }
 
     @media (max-width: 880px) {
-      .projects-grid {
+      .hero-inner {
         grid-template-columns: minmax(0, 1fr);
       }
-      .project-card--ford,
-      .project-card--topgolf,
-      .project-card--basspro,
-      .project-card--roths {
-        grid-column: auto !important;
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ecc-blue);
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      line-height: 1.15;
+      margin: 0 0 0.25rem;
+      color: #f9fafb;
+      border-bottom: 2px solid rgba(148, 163, 184, 0.35);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0;
+      max-width: 34rem;
+    }
+
+    .hero-actions {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: #0ea5e9;
+      color: #020617;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      box-shadow: 0 20px 48px rgba(37, 99, 235, 0.8);
+      cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .hero-cta.secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      box-shadow: none;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-logo-wrap {
+      width: 260px;
+      height: 180px;
+      border-radius: 24px;
+      background: #000000;
+      border: 2px solid rgba(250, 204, 21, 0.9);
+      box-shadow:
+        0 0 0 3px rgba(15, 23, 42, 0.9),
+        0 24px 80px rgba(15, 23, 42, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-logo-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-logo-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero-logo-wrap {
+        width: 220px;
+        height: 160px;
       }
     }
 
-    .project-card {
-      border-radius: 18px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 0.7rem 0.85rem 0.85rem;
+    /* SECTIONS -------------------------------------------------- */
+
+    .section {
+      margin-bottom: 2.3rem;
+    }
+
+    .section:not(:first-of-type) {
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      padding-top: 1.6rem;
+    }
+
+    .section-title {
       font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: var(--ecc-gold-soft);
+      margin: 0 0 0.3rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      color: #f9fafb;
+      margin: 0 0 0.45rem;
+    }
+
+    .section-text {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      max-width: 44rem;
+      margin: 0 0 1.05rem;
+    }
+
+    /* PROJECT ROWS (FULL-WIDTH) -------------------------------- */
+
+    .projects-stack {
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
-      position: relative;
-      overflow: hidden;
+      gap: 1.4rem;
     }
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -1px;
-      right: -1px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--ecc-blue), var(--ecc-gold));
+    .project-row {
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top left, rgba(15, 23, 42, 0.8), #020617 55%);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.95);
+      padding: 1rem 1rem 1.1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 1rem;
+      align-items: center;
     }
 
-    .project-inner {
-      position: relative;
-      z-index: 1;
+    .project-row--reverse {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
     }
 
-    .project-image-wrap {
+    .project-row--reverse .project-media {
+      order: 2;
+    }
+
+    .project-row--reverse .project-copy {
+      order: 1;
+    }
+
+    @media (max-width: 880px) {
+      .project-row,
+      .project-row--reverse {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .project-row--reverse .project-media {
+        order: 1;
+      }
+      .project-row--reverse .project-copy {
+        order: 2;
+      }
+    }
+
+    .project-media {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 18px;
       overflow: hidden;
       background: #020617;
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(30, 64, 175, 0.7);
     }
 
-    .project-image-wrap img {
+    .project-media img {
       width: 100%;
-      height: 420px;
+      height: 100%;
+      max-height: 320px;
       object-fit: cover;
       display: block;
     }
 
-    /* Asym layout specifics */
-    .project-card--ford {
-      grid-column: 1 / -1; /* full width hero */
+    @media (max-width: 640px) {
+      .project-media img {
+        max-height: 260px;
+      }
     }
 
-    .project-card--topgolf {
-      grid-column: 1 / 2;  /* wide left */
+    .project-copy {
+      padding: 0.2rem 0.2rem 0.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
-    .project-card--basspro {
-      grid-column: 1 / -1; /* now full width to avoid squish */
-    }
-
-    .project-card--roths {
-      grid-column: 1 / -1; /* full width bottom */
-    }
-
-    .project-card h3 {
-      margin: 0;
-      font-size: 1rem;
+    .project-name {
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #f9fafb;
+      margin: 0;
     }
 
     .project-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.15rem;
+      font-size: 0.83rem;
+      color: var(--ecc-gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin: 0 0 0.1rem;
     }
 
-    .proj-bullets {
-      margin: 0.1rem 0 0;
+    .project-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0 0 0.2rem;
+    }
+
+    .project-list {
+      margin: 0;
       padding-left: 1.1rem;
       font-size: 0.88rem;
-      color: #e5e7eb;
+      color: var(--text-muted);
     }
 
-    .proj-bullets li {
+    .project-list li {
       margin-bottom: 0.2rem;
     }
 
-    .side-card-title {
+    .project-list li::marker {
+      color: var(--ecc-blue);
+    }
+
+    /* CTA ------------------------------------------------------- */
+
+    .cta-card {
+      border-radius: 20px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.25),
+          #020617 60%
+        );
+      border: 1px solid rgba(30, 64, 175, 0.8);
+      padding: 1rem 1.2rem 1.1rem;
+      box-shadow: 0 22px 70px rgba(15, 23, 42, 1);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .cta-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .cta-title {
+      font-size: 1.1rem;
+      color: #f9fafb;
       margin: 0 0 0.4rem;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: #f9fafb;
-      position: relative;
-      padding-bottom: 0.35rem;
     }
 
-    .side-card-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 64px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--ecc-gold), transparent);
-    }
-
-    .side-card-line {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-      margin-bottom: 0.25rem;
-    }
-
-    .side-card-line strong {
-      color: #f9fafb;
-    }
-
-    .side-card-muted {
-      font-size: 0.82rem;
+    .cta-text {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      margin-top: 0.6rem;
+      margin: 0;
     }
 
-    .back-link {
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .cta-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cta-button {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      margin-top: 2.4rem;
-      font-size: 0.86rem;
-      text-decoration: none;
-      color: #e5e7eb;
-      padding: 0.4rem 0.9rem;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
       border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
+      border: 1px solid #0ea5e9;
+      background: #0ea5e9;
+      color: #020617;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      transition: background 0.15s ease, color 0.15s ease,
+        border-color 0.15s ease, transform 0.15s ease;
     }
 
-    .back-link span.icon {
-      font-size: 1rem;
-      color: var(--ecc-blue);
+    .cta-button.secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--ecc-blue);
+    }
+
+    .cta-contact-line {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .cta-contact-line strong {
+      color: #f9fafb;
+    }
+
+    /* FOOTER ---------------------------------------------------- */
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: #020617;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 1.3rem;
+      font-size: 0.84rem;
+      color: rgba(148, 163, 184, 0.96);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 720px) {
+      .footer-inner {
+        padding-inline: 1.2rem;
+        flex-direction: column;
+      }
+    }
+
+    .footer-contact-line {
+      white-space: nowrap;
+    }
+
+    /* MOBILE TWEAKS -------------------------------------------- */
+
+    @media (max-width: 640px) {
+      .hero-inner {
+        border-radius: 22px;
+        padding: 1.2rem 1.1rem 1.4rem;
+      }
+
+      .hero-title {
+        font-size: 1.7rem;
+      }
+
+      .projects-stack .project-row {
+        border-radius: 20px;
+      }
+
+      .project-media img {
+        max-height: 220px;
+      }
+
+      .cta-card {
+        border-radius: 18px;
+      }
+
+      .cta-buttons-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-contact-line,
+      .cta-contact-line {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <div class="header-main">
+      <div class="header-left">
         <div class="header-logo-wrap">
-          <img src="ecc-logo.png" alt="Executive Custom Construction logo">
+          <img src="ecc-logo.png" alt="Executive Custom Construction logo" />
         </div>
         <div class="header-text-block">
-          <div class="crumbs">
-            <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Executive Custom Construction
-          </div>
-          <div class="brand-line">Executive Custom Construction</div>
-          <h1>General contracting &amp; project management</h1>
-          <p class="tagline">
-            Executive Custom Construction is the GC and coordination arm of the group—tying scopes, budgets,
-            and schedules together across residential, commercial, and remodel work. Projects include Topgolf,
-            Ford Amphitheater, Bass Pro Shops, and Roth’s Sea &amp; Steak.
-          </p>
+          <div class="header-brand-line">Executive Companies</div>
+          <div class="header-title">Executive Custom Construction</div>
+          <div class="header-subline">General contracting &amp; project management</div>
         </div>
       </div>
-      <div class="header-buttons">
-        <a href="index.html" class="nav-button primary">Home</a>
-        <a href="contact.html" class="nav-button secondary">Contact Us</a>
+      <div class="header-nav">
+        <div class="header-nav-company">ECC Projects</div>
+        <div class="header-buttons">
+          <a href="index.html" class="nav-button">Home</a>
+          <a href="contact.html" class="nav-button primary">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="shell">
-    <div class="layout">
-      <!-- Main content: what we do + accomplishments -->
-      <section class="card">
-        <div class="card-inner">
-          <h2>What we handle</h2>
-          <p>
-            Executive Custom Construction acts as your single point of contact inside the Executive Companies group.
-            We keep excavation, framing, interiors, and flatwork aligned so field crews and office teams stay on the
-            same page from first dig through final punch.
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <div class="hero-tagline">General contracting &amp; coordination</div>
+          <h1 class="hero-title">Executive Custom Construction</h1>
+          <p class="hero-text">
+            ECC ties together the field work, budget, and schedule for projects across
+            residential, commercial, and remodel work. Below are a few of the jobs
+            we’re proud to have helped build as part of our team’s experience.
           </p>
-
-          <ul class="bullets">
-            <li>Full general contracting for new residential, commercial, and remodel projects</li>
-            <li>Schedule building, trade coordination, and job sequencing</li>
-            <li>Budget tracking and scope alignment across multiple companies</li>
-            <li>Support from early budgeting through final inspections and closeout</li>
-          </ul>
-
-          <h2 style="margin-top:1.6rem;">Proud to have helped build</h2>
-          <p>
-            A few of the entertainment, retail, and restaurant projects where Executive provided general contracting
-            and coordination support.
+          <div class="hero-actions">
+            <a href="contact.html" class="hero-cta">Request project pricing</a>
+            <a href="index.html" class="hero-cta secondary">Back to main site</a>
+          </div>
+          <p class="hero-note">
+            We can help from early budgeting through full construction—whether you have
+            a complete plan set or are still working through concepts and layouts.
           </p>
-
-          <div class="projects-grid">
-            <!-- Ford Amphitheater - full width hero -->
-            <div class="project-card project-card--ford">
-              <div class="project-inner">
-                <div class="project-image-wrap">
-                  <img src="ford-amphitheater-2.png" alt="Ford Amphitheater wide aerial view">
-                </div>
-                <h3>Ford Amphitheater</h3>
-                <div class="project-meta">Entertainment venue · GC &amp; site coordination</div>
-                <ul class="proj-bullets">
-                  <li>Coordinated site work, structural concrete, and stepped seating.</li>
-                  <li>Aligned construction phases with concert schedules and events.</li>
-                  <li>Managed access, traffic flow, and guest arrival paths.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Topgolf - wide left -->
-            <div class="project-card project-card--topgolf">
-              <div class="project-inner">
-                <div class="project-image-wrap">
-                  <img src="topgolf.png" alt="Topgolf facility with illuminated targets and building">
-                </div>
-                <h3>Topgolf</h3>
-                <div class="project-meta">Recreation facility · GC support</div>
-                <ul class="proj-bullets">
-                  <li>Supported GC coordination on a multi-level golf and entertainment facility.</li>
-                  <li>Kept structure, site access, and finishes moving together.</li>
-                  <li>Worked around phased turnover and operational deadlines.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Bass Pro Shops - now full width -->
-            <div class="project-card project-card--basspro">
-              <div class="project-inner">
-                <div class="project-image-wrap">
-                  <img src="bass-pro.png" alt="Bass Pro Shops Outdoor World exterior in winter">
-                </div>
-                <h3>Bass Pro Shops Outdoor World</h3>
-                <div class="project-meta">Retail · GC &amp; exterior coordination</div>
-                <ul class="proj-bullets">
-                  <li>Coordinated structural, exterior, and site scopes on a destination retail project.</li>
-                  <li>Integrated heavy timber detailing with building and entry elements.</li>
-                  <li>Focused on guest arrival, parking, and overall site experience.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Roth's Sea & Steak - full width bottom -->
-            <div class="project-card project-card--roths">
-              <div class="project-inner">
-                <div class="project-image-wrap">
-                  <!-- placeholder block until a Roth's photo is available -->
-                  <img src="ford-amphitheater-2.png" alt="" style="opacity:0;">
-                </div>
-                <h3>Roth’s Sea &amp; Steak</h3>
-                <div class="project-meta">Restaurant · Build-out</div>
-                <ul class="proj-bullets">
-                  <li>Interior build-out support for dining, bar, and kitchen areas.</li>
-                  <li>Coordinated layout, finishes, and kitchen-related scopes.</li>
-                  <li>Kept inspections and opening timelines on track.</li>
-                </ul>
-              </div>
-            </div>
+        </div>
+        <div class="hero-side">
+          <div class="hero-logo-wrap">
+            <img src="ecc-logo.png" alt="Executive Custom Construction logo large" />
+          </div>
+          <div class="hero-logo-caption">
+            A company within the Executive Companies group.
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Side column: quick facts / contact -->
-      <aside class="card">
-        <div class="card-inner">
-          <p class="side-card-title">At a glance</p>
-          <p class="side-card-line"><strong>Typical role:</strong> GC &amp; coordinating contractor</p>
-          <p class="side-card-line"><strong>Project types:</strong> residential, commercial, and remodel</p>
+    <!-- MAJOR ACCOMPLISHMENTS -->
+    <section class="section">
+      <p class="section-title">Major accomplishments</p>
+      <h2 class="section-heading">Proud to have helped build</h2>
+      <p class="section-text">
+        These projects represent the type of work our team gravitates toward:
+        clear scopes, coordinated schedules, and high-visibility results for owners
+        and end users.
+      </p>
 
-          <p class="side-card-title" style="margin-top:1.1rem;">Bid requests &amp; questions</p>
-          <p class="side-card-line">
-            For new projects, budgeting help, or schedule questions, reach out to the Executive Companies estimating team:
-          </p>
-          <p class="side-card-line">
-            <strong>Phone:</strong> (719) 531-0707<br />
-            <strong>Email:</strong> estimating@executive-company.com
-          </p>
-          <p class="side-card-muted">
-            Share whatever you have—plan sets, concepts, or rough sketches—and we’ll follow up with
-            scope questions and a clear, line-item proposal.
+      <div class="projects-stack">
+        <!-- Ford Amphitheater -->
+        <article class="project-row">
+          <div class="project-media">
+            <img src="ford-amphitheater-1.png" alt="Ford Amphitheater project photo">
+          </div>
+          <div class="project-copy">
+            <p class="project-meta">Venue &nbsp;•&nbsp; public gathering</p>
+            <h3 class="project-name">Ford Amphitheater</h3>
+            <p class="project-text">
+              A performance venue that mixes public access, back-of-house operations,
+              and tight construction windows.
+            </p>
+            <ul class="project-list">
+              <li>Coordinated work across large public areas and support spaces</li>
+              <li>Kept trades aligned around events, access, and staging</li>
+              <li>Focused on finish quality in a highly visible environment</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Topgolf -->
+        <article class="project-row project-row--reverse">
+          <div class="project-media">
+            <img src="topgolf.png" alt="Topgolf project photo">
+          </div>
+          <div class="project-copy">
+            <p class="project-meta">Entertainment &nbsp;•&nbsp; hospitality</p>
+            <h3 class="project-name">Topgolf</h3>
+            <p class="project-text">
+              A high-traffic entertainment space with complex coordination between
+              structure, interiors, and site.
+            </p>
+            <ul class="project-list">
+              <li>Balanced schedule milestones with owner opening dates</li>
+              <li>Coordinated work in and around specialty systems and equipment</li>
+              <li>Kept scopes aligned with a detailed, multi-phase buildout</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Bass Pro Shops -->
+        <article class="project-row">
+          <div class="project-media">
+            <img src="bass-pro.png" alt="Bass Pro Shops project photo">
+          </div>
+          <div class="project-copy">
+            <p class="project-meta">Retail &nbsp;•&nbsp; large-format</p>
+            <h3 class="project-name">Bass Pro Shops</h3>
+            <p class="project-text">
+              A destination retail project where schedule, customer experience, and
+              vendor coordination all mattered.
+            </p>
+            <ul class="project-list">
+              <li>Worked around intricate interior features and specialty displays</li>
+              <li>Coordinated with multiple owner vendors and fixture packages</li>
+              <li>Maintained clean turnover in a high-traffic environment</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section class="section">
+      <div class="cta-card">
+        <div>
+          <h3 class="cta-title">Planning your next project?</h3>
+          <p class="cta-text">
+            Whether you’re working on a new build, a commercial space, or a remodel,
+            ECC can help line up scopes, budgets, and schedules—and plug in the rest
+            of the Executive Companies group where it makes sense.
           </p>
         </div>
-      </aside>
-    </div>
-
-    <a href="index.html#brands" class="back-link">
-      <span class="icon">←</span>
-      <span>Back to all brands</span>
-    </a>
+        <div class="cta-actions">
+          <div class="cta-buttons-row">
+            <a href="contact.html" class="cta-button">Use contact form</a>
+            <a href="index.html" class="cta-button secondary">Back to main site</a>
+          </div>
+          <div class="cta-contact-line">
+            Or email <strong>estimating@executive-company.com</strong> or call
+            <strong>(719) 531-0707</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Executive Custom Construction — part of Executive Companies</div>
+      <div class="footer-contact-line">
+        (719) 531-0707 &nbsp;|&nbsp; 13540 Meadowgrass Dr, Colorado Springs, CO 80921
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
