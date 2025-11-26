@@ -15,7 +15,7 @@
       --ge-orange-soft: #fed7aa;
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
-      --bg: #18181b; /* lighter neutral dark gray */
+      --bg: #18181b;
     }
 
     * {
@@ -125,7 +125,7 @@
       padding: 0.42rem 1.05rem;
       border-radius: 999px;
       border: 1px solid rgba(82, 82, 91, 0.9);
-      background: rgba(38, 38, 38, 0.95); /* medium gray */
+      background: rgba(38, 38, 38, 0.95);
       color: #e5e7eb;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -188,7 +188,7 @@
           rgba(249, 115, 22, 0.32) 0%,
           #303030 35%,
           #232323 100%
-        ); /* orange → lighter gray */
+        );
       border: 1px solid rgba(75, 75, 85, 0.95);
       box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
       display: grid;
@@ -290,7 +290,6 @@
       gap: 0.7rem;
     }
 
-    /* RECTANGULAR LOGO TILE */
     .hero-logo-wrap {
       width: 230px;
       height: 170px;
@@ -326,9 +325,11 @@
       }
     }
 
-    /* GENERAL SECTIONS ------------------------------------------ */
+    /* FEATURED SLIDER ------------------------------------------ */
 
-    .section { margin-bottom: 2.2rem; }
+    .section {
+      margin-bottom: 2.2rem;
+    }
 
     .section:not(:first-of-type) {
       border-top: 1px solid rgba(55, 55, 65, 0.9);
@@ -356,6 +357,70 @@
       margin: 0 0 1.05rem;
     }
 
+    .ge-slider {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #111827;
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
+      aspect-ratio: 16 / 9;
+    }
+
+    .ge-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .ge-slide.active {
+      opacity: 1;
+    }
+
+    .ge-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ge-slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .ge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.9);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .ge-dot.active {
+      background: var(--ge-orange);
+      border-color: var(--ge-orange-soft);
+    }
+
+    @media (max-width: 640px) {
+      .ge-slider {
+        border-radius: 18px;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
     /* CORE SERVICES --------------------------------------------- */
 
     .services-grid {
@@ -377,7 +442,7 @@
           145deg,
           rgba(249, 115, 22, 0.06),
           #27272f
-        );                 /* medium gray */
+        );
       border: 1px solid rgba(75, 75, 85, 0.95);
       padding: 0.9rem 1rem 1rem;
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
@@ -483,7 +548,7 @@
       padding: 0.26rem 0.8rem;
       border-radius: 999px;
       border: 1px solid rgba(82, 82, 91, 0.9);
-      background: rgba(38, 38, 38, 0.95); /* gray pill */
+      background: rgba(38, 38, 38, 0.95);
       color: #e5e7eb;
       transition: border-color 0.15s ease, background 0.15s ease,
         transform 0.15s ease;
@@ -582,7 +647,7 @@
     .cta-contact-line {
       font-size: 0.88rem;
       color: var(--text-muted);
-      white-space: nowrap; /* keep email + phone on one line on desktop */
+      white-space: nowrap;
     }
 
     .cta-contact-line strong { color: #f9fafb; }
@@ -653,7 +718,7 @@
 
       .footer-contact-line,
       .cta-contact-line {
-        white-space: normal; /* allow wrapping on small screens */
+        white-space: normal;
       }
     }
 
@@ -722,6 +787,35 @@
           <div class="hero-logo-caption">
             A company within the Executive Companies group.
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED SLIDER -->
+    <section class="section">
+      <p class="section-title">Featured work</p>
+      <h2 class="section-heading">Golden Eagle in the field</h2>
+      <p class="section-text">
+        A look at recent excavation, utility, and flatwork scopes. These are the
+        kinds of sites where we coordinate closely with GC and framing schedules
+        to keep the project moving.
+      </p>
+
+      <div class="ge-slider" aria-label="Golden Eagle project photos">
+        <div class="ge-slide active">
+          <img src="golden-1.jpg" alt="Golden Eagle excavation site image 1">
+        </div>
+        <div class="ge-slide">
+          <img src="golden-2.jpg" alt="Golden Eagle excavation site image 2">
+        </div>
+        <div class="ge-slide">
+          <img src="golden-3.jpg" alt="Golden Eagle excavation site image 3">
+        </div>
+
+        <div class="ge-slider-dots">
+          <button class="ge-dot active" type="button" aria-label="Show slide 1"></button>
+          <button class="ge-dot" type="button" aria-label="Show slide 2"></button>
+          <button class="ge-dot" type="button" aria-label="Show slide 3"></button>
         </div>
       </div>
     </section>
@@ -875,5 +969,44 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.ge-slide');
+      const dots = document.querySelectorAll('.ge-dot');
+      let current = 0;
+      let timer = null;
+
+      function showSlide(index) {
+        slides.forEach((s, i) => {
+          s.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle('active', i === index);
+        });
+        current = index;
+      }
+
+      function nextSlide() {
+        const next = (current + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function startAuto() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(nextSlide, 5000); // 5 seconds
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          startAuto();
+        });
+      });
+
+      showSlide(0);
+      startAuto();
+    });
+  </script>
 </body>
 </html>
