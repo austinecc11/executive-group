@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact | Executive Companies</title>
+  <title>Contact Us | Executive Companies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact Executive Companies for residential, commercial, and remodel construction projects. Send plans, concepts, or questions through this form." />
+  <meta
+    name="description"
+    content="Get in touch with Executive Companies for residential, commercial, and remodel projects. We can help with excavation, general contracting, and interior scopes from concept through construction."
+  />
   <style>
     :root {
-      --ecc-blue: #005f9e;
-      --ecc-gold: #f9a825;
-      --page-bg: #020617;
-      --panel-bg: #030712;
-      --panel-soft: #020919;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(55, 65, 81, 0.9);
+      --blue: #005f9e;
+      --blue-soft: #e6f0f8;
+      --blue-soft-alt: #f3f6fb;
+      --gold: #f9a825;
+      --gold-rich: #f59e0b;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --bg: #f3f4f6;
+      --bg-card: #ffffff;
+      --border-subtle: rgba(148, 163, 184, 0.4);
       --radius-lg: 20px;
       --radius-pill: 999px;
     }
@@ -26,406 +31,547 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--page-bg);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 55%),
+        var(--bg);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
+    /* HEADER -------------------------------------------------- */
+
     header {
-      background: #000000;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+      background: #ffffff;
+      border-bottom: 1px solid rgba(209, 213, 219, 0.8);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 30;
     }
 
     .header-inner {
-      max-width: 960px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 1.1rem 1.5rem 1.2rem;
+      padding: 0.9rem 1.5rem 0.95rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
-    .header-title-block {
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .header-logo-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      background: #000000;
+      border: 2px solid rgba(249, 168, 37, 0.9);
+      box-shadow:
+        0 0 0 2px rgba(249, 168, 37, 0.4),
+        0 12px 30px rgba(15, 23, 42, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-logo-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-text-block {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.1rem;
     }
 
-    .crumbs {
+    .header-brand-line {
       font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .crumbs a {
-      text-decoration: none;
-      color: var(--text-muted);
-    }
-
-    .crumbs a:hover {
-      text-decoration: underline;
-    }
-
-    .brand-line {
-      font-size: 0.78rem;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ecc-gold);
+      color: var(--gold-rich);
     }
 
-    h1 {
-      margin: 0;
-      font-size: 1.9rem;
-      letter-spacing: 0.01em;
-      color: #f9fafb;
+    .header-subline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .header-nav-links {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     .header-buttons {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
-    .nav-btn {
-      font-size: 0.86rem;
+    .nav-button {
+      font-size: 0.82rem;
       text-decoration: none;
-      padding: 0.45rem 1.1rem;
+      padding: 0.42rem 1.1rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(255, 255, 255, 0.95);
+      color: #111827;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      transition: border-color 0.15s ease, background 0.15s ease,
+        box-shadow 0.15s ease, transform 0.15s ease;
     }
 
-    .nav-btn.primary {
-      border-color: var(--ecc-blue);
-      background: var(--ecc-blue);
+    .nav-button.primary {
+      border-color: var(--gold-rich);
+      background: linear-gradient(120deg, #000000 0%, var(--gold-rich) 90%);
+      color: #f9fafb;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
     }
 
-    .nav-btn:hover {
-      border-color: var(--ecc-gold);
+    .nav-button:hover {
+      border-color: var(--gold);
+      background: #f9fafb;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+      transform: translateY(-1px);
     }
 
-    .shell {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.8rem 1.5rem 3rem;
+    .nav-button.primary:hover {
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.6rem;
-    }
-
-    @media (max-width: 880px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    @media (max-width: 720px) {
       .header-inner {
         flex-direction: column;
         align-items: flex-start;
+        padding-inline: 1.2rem;
       }
-      .header-buttons {
+      .header-nav {
         width: 100%;
+        justify-content: space-between;
       }
     }
 
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background: linear-gradient(160deg, var(--panel-bg), var(--panel-soft));
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
-      padding: 1.3rem 1.4rem 1.45rem;
-      position: relative;
-      overflow: hidden;
+    /* SHELL --------------------------------------------------- */
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 2.5rem;
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.4);
-      opacity: 0.7;
+    @media (max-width: 720px) {
+      .shell {
+        padding-inline: 1.2rem;
+      }
     }
 
-    .card-inner {
-      position: relative;
-      z-index: 1;
+    /* CONTACT LAYOUT ------------------------------------------ */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
     }
 
-    .card h2 {
-      margin: 0 0 0.6rem;
-      font-size: 1.02rem;
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-intro-card {
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-soft) 0%,
+          #ffffff 45%,
+          var(--blue-soft-alt) 100%
+        );
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+    }
+
+    .section-title {
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin: 0 0 0.3rem;
+    }
+
+    .section-heading {
+      font-size: 1.6rem;
+      margin: 0 0 0.5rem;
+      color: #030712;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0 0 0.9rem;
+    }
+
+    .contact-highlight {
+      font-size: 0.9rem;
+      color: #111827;
+      margin: 0 0 1rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: 14px;
+      background: rgba(250, 250, 250, 0.9);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.9rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
     }
 
-    .card p {
-      margin: 0 0 0.9rem;
-      font-size: 0.94rem;
-      line-height: 1.7;
-      color: #e5e7eb;
+    .contact-list li {
+      margin-bottom: 0.4rem;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 0.4rem;
+    .contact-label {
+      font-weight: 600;
+      color: #030712;
+    }
+
+    .contact-note {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* FORM CARD ----------------------------------------------- */
+
+    .form-card {
+      border-radius: 22px;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background: #ffffff;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+    }
+
+    .form-title {
+      font-size: 1.1rem;
+      margin: 0 0 0.4rem;
+      color: #030712;
+    }
+
+    .form-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0 0 0.9rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .form-field {
+      margin-bottom: 0.8rem;
     }
 
     label {
+      display: block;
       font-size: 0.85rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      font-weight: 500;
+      color: #111827;
+      margin-bottom: 0.25rem;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"],
-    select,
-    textarea {
-      background: #020617;
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.9rem;
       border-radius: 10px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      padding: 0.55rem 0.7rem;
-      font-size: 0.92rem;
-      color: #e5e7eb;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: #f9fafb;
+      color: #111827;
       outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
     }
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #6b7280;
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--blue);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
     }
 
     textarea {
-      min-height: 120px;
       resize: vertical;
+      min-height: 120px;
     }
 
-    .inline-fields {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
+    .form-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
     }
 
-    @media (max-width: 640px) {
-      .inline-fields {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .form-actions {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
     }
 
-    .helper-text {
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: linear-gradient(135deg, #000000 0%, var(--gold-rich) 90%);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+      transition: box-shadow 0.15s ease, transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.26);
+      background: linear-gradient(135deg, #111827 0%, #fbbf24 90%);
+    }
+
+    .form-small-note {
       font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    .submit-row {
+    /* FOOTER --------------------------------------------------- */
+
+    footer {
+      border-top: 1px solid rgba(209, 213, 219, 0.9);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 1.3rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-      margin-top: 0.4rem;
+      gap: 0.75rem;
+      justify-content: space-between;
     }
 
-    button[type="submit"] {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--ecc-gold);
-      background: linear-gradient(135deg, var(--ecc-gold), #fbbf24);
-      color: #111827;
-      padding: 0.55rem 1.4rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.9);
+    @media (max-width: 720px) {
+      .footer-inner {
+        padding-inline: 1.2rem;
+        flex-direction: column;
+      }
     }
 
-    button[type="submit"]:hover {
-      filter: brightness(1.04);
+    .footer-contact-line {
+      white-space: nowrap;
     }
 
-    .submit-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .side-list {
-      list-style: none;
-      margin: 0.6rem 0 0;
-      padding: 0;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .side-list li {
-      margin-bottom: 0.45rem;
-    }
-
-    .side-divider {
-      height: 1px;
-      margin: 0.9rem 0;
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.6), rgba(249, 168, 37, 0.8), rgba(15, 23, 42, 0.6));
-    }
-
-    .side-muted {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
+    @media (max-width: 640px) {
+      .footer-contact-line {
+        white-space: normal;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <div class="header-title-block">
-        <div class="crumbs">
-          <a href="index.html">Executive Companies</a> &nbsp;/&nbsp; Contact
+      <div class="header-left">
+        <div class="header-logo-wrap">
+          <img src="executive-companies.png" alt="Executive Companies logo" />
         </div>
-        <div class="brand-line">Contact Executive Companies</div>
-        <h1>Tell us about your project</h1>
+        <div class="header-text-block">
+          <div class="header-brand-line">Executive Companies</div>
+          <div class="header-subline">Construction • Excavation • Interiors</div>
+        </div>
       </div>
-      <div class="header-buttons">
-        <a href="index.html" class="nav-btn">Home</a>
-        <a href="executive.html" class="nav-btn">ECC</a>
+      <div class="header-nav">
+        <div class="header-nav-links">Contact our team</div>
+        <div class="header-buttons">
+          <a href="index.html" class="nav-button">Home</a>
+          <a href="contact.html" class="nav-button primary">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="shell">
-    <div class="layout">
-      <!-- Form -->
-      <section class="card">
-        <div class="card-inner">
-          <h2>Project inquiry form</h2>
-          <p>
-            Share a few details about your project. Plans and full schedules are helpful but not required—
-            we regularly help owners and builders price work from concepts and early layouts.
-          </p>
+    <div class="contact-grid">
+      <!-- LEFT: INTRO / DIRECT CONTACT -->
+      <section class="contact-intro-card">
+        <p class="section-title">Get in touch</p>
+        <h1 class="section-heading">Tell us about your project</h1>
+        <p class="section-text">
+          Whether you’re working on a new build, a remodel, or early budgeting,
+          we can help with excavation, general contracting, and interior scopes.
+        </p>
 
-          <!--
-            FORM HANDLING:
-            1. Create a free Formspree account at formspree.io
-            2. Make a new form and copy the endpoint URL they give you.
-            3. Replace "YOUR_FORMSPREE_ID" below with your actual Formspree form ID.
-            Submissions will then be emailed to you and visible in your Formspree dashboard.
-          -->
-          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <div class="inline-fields">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required placeholder="Full name" />
-              </div>
-              <div class="field">
-                <label for="company">Company (optional)</label>
-                <input id="company" name="company" type="text" placeholder="Company or organization" />
-              </div>
+        <p class="contact-highlight">
+          You don’t need a full plan set to reach out. Rough layouts, concepts,
+          or simple descriptions are enough for us to start the conversation.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Phone:</span>
+            &nbsp;(719) 531-0707
+          </li>
+          <li>
+            <span class="contact-label">Estimating email:</span>
+            &nbsp;estimating@executive-company.com
+          </li>
+          <li>
+            <span class="contact-label">Address:</span>
+            &nbsp;13540 Meadowgrass Dr, Colorado Springs, CO 80921
+          </li>
+        </ul>
+
+        <p class="contact-note">
+          If you’d rather email directly, feel free to send site info, drawings,
+          or notes to our estimating inbox, and we’ll route it to the right part
+          of the group.
+        </p>
+      </section>
+
+      <!-- RIGHT: FORM -->
+      <section class="form-card">
+        <h2 class="form-title">Project inquiry form</h2>
+        <p class="form-text">
+          Share a few details below and we’ll follow up to talk through scope,
+          schedule, and next steps.
+        </p>
+
+        <!-- Note: This form does not submit anywhere by default.
+             A backend or form service (like Formspree) can be wired later. -->
+        <form>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" />
             </div>
-
-            <div class="inline-fields">
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="you@example.com" />
-              </div>
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" required placeholder="(xxx) xxx-xxxx" />
-              </div>
+            <div class="form-field">
+              <label for="company">Company (optional)</label>
+              <input type="text" id="company" name="company" autocomplete="organization" />
             </div>
+          </div>
 
-            <div class="field">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
               <label for="project-type">Project type</label>
-              <select id="project-type" name="project_type" required>
-                <option value="">Select one</option>
+              <select id="project-type" name="project-type">
+                <option value="">Select an option</option>
                 <option value="residential">Residential</option>
                 <option value="commercial">Commercial</option>
                 <option value="remodel">Remodel / addition</option>
-                <option value="site-only">Site / earthwork only</option>
-                <option value="other">Other / not sure</option>
+                <option value="site-only">Site / excavation / utilities</option>
+                <option value="interiors-only">Framing / drywall / finish</option>
+                <option value="other">Other / not sure yet</option>
               </select>
             </div>
-
-            <div class="field">
-              <label for="location">Project location</label>
-              <input id="location" name="location" type="text" placeholder="City, area, or subdivision" />
-              <div class="helper-text">Example: Colorado Springs, Black Forest, Monument, etc.</div>
+            <div class="form-field">
+              <label for="location">Project location (city / area)</label>
+              <input type="text" id="location" name="location" />
             </div>
+          </div>
 
-            <div class="field">
-              <label for="details">Project details</label>
-              <textarea id="details" name="details" required placeholder="Scope, rough size, timelines, and anything else we should know."></textarea>
+          <div class="form-field">
+            <label for="details">Project details</label>
+            <textarea
+              id="details"
+              name="details"
+              placeholder="What are you looking for help with? Timelines, rough budget, and any scopes you know so far are helpful."
+            ></textarea>
+            <div class="form-hint">
+              It’s fine if you’re still early. Just let us know what you’re
+              thinking and we’ll help fill in the gaps.
             </div>
+          </div>
 
-            <div class="field">
-              <label for="plans">Plans / documents</label>
-              <textarea id="plans" name="plans_info" placeholder="Share links to plan sets, sketches, or documents (Google Drive, Dropbox, etc.)."></textarea>
-              <div class="helper-text">
-                File uploads aren’t handled directly on this page—share a link and we’ll pull the drawings from there.
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="timeline">Rough timeline</label>
-              <input id="timeline" name="timeline" type="text" placeholder="For example: 'Summer 2025 start' or 'ASAP pricing only'" />
-            </div>
-
-            <div class="submit-row">
-              <button type="submit">Send inquiry</button>
-              <div class="submit-note">
-                You’ll receive a follow-up from the estimating team after we review your details.
-              </div>
-            </div>
-          </form>
-        </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-button">Send inquiry</button>
+            <span class="form-small-note">
+              You can also email&nbsp;<strong>estimating@executive-company.com</strong>
+              directly with attachments.
+            </span>
+          </div>
+        </form>
       </section>
-
-      <!-- Side info -->
-      <aside class="card">
-        <div class="card-inner">
-          <h2>Other ways to reach us</h2>
-          <ul class="side-list">
-            <li><strong>Phone:</strong> (719) 531-0707</li>
-            <li><strong>Email:</strong> estimating@executive-company.com</li>
-            <li><strong>Address:</strong> 13540 Meadowgrass Dr, Colorado Springs, CO 80921</li>
-          </ul>
-
-          <div class="side-divider"></div>
-
-          <p class="side-card-title">Helpful to include</p>
-          <ul class="side-list">
-            <li>Any plan sets, sketches, or concept drawings</li>
-            <li>Target start dates or key milestones</li>
-            <li>Whether you’re looking for budget pricing or a formal bid</li>
-          </ul>
-
-          <p class="side-muted">
-            Don’t have drawings yet? That’s fine. Share what you know today and we’ll help you work toward
-            a clear scope and pricing path.
-          </p>
-        </div>
-      </aside>
     </div>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Executive Companies &mdash; Construction, Excavation, Interiors</div>
+      <div class="footer-contact-line">
+        (719) 531-0707 &nbsp;|&nbsp; 13540 Meadowgrass Dr, Colorado Springs, CO 80921
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
