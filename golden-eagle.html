@@ -372,7 +372,7 @@
       filter: saturate(1.06) contrast(1.02);
     }
 
-    /* CONTACT STRIP (lighter + no awkward wrap) */
+    /* CONTACT STRIP */
     .contact-strip{
       margin-top: 1.8rem;
       border-radius: 20px;
@@ -471,8 +471,8 @@
       text-transform: uppercase;
       cursor:pointer;
       backdrop-filter: blur(8px);
-      transition: border-color .15s ease, transform .15s ease;
       user-select:none;
+      transition: border-color .15s ease;
     }
     .lb-close{ right:.75rem; }
     .lb-prev{ left:.75rem; top: 50%; transform: translateY(-50%); }
@@ -613,13 +613,10 @@
 
 <script>
   /**
-   * Images are in /assets per your plan:
-   * assets/gee-gal-1.jpg ... assets/gee-gal-15.jpg
-   *
-   * If you use a subfolder, change this to:
-   * const GALLERY_BASE = "assets/golden-eagle/";
+   * Images are in the SAME folder as this HTML file:
+   * gee-gal-1.jpg ... gee-gal-15.jpg
    */
-  const GALLERY_BASE = "assets/";
+  const GALLERY_BASE = "";
 
   const IMAGES = [
     "gee-gal-1.jpg",
