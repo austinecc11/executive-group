@@ -8,7 +8,6 @@
 
   <style>
     :root{
-      /* Apex theme (light blue + white + navy accents) */
       --blue: #0b72b5;
       --blue-2: #1f8ad0;
       --sky: #e7f3ff;
@@ -37,7 +36,6 @@
 
     a{ color:inherit; text-decoration:none; }
 
-    /* HEADER */
     header{
       position: sticky;
       top: 0;
@@ -179,14 +177,12 @@
       .nav{ flex-direction:column; align-items:flex-start; gap:.5rem; }
     }
 
-    /* LAYOUT */
     .shell{
       max-width: var(--max);
       margin: 0 auto;
       padding: 1.4rem 1.2rem 2.8rem;
     }
 
-    /* HERO */
     .hero{
       border-radius: 26px;
       overflow:hidden;
@@ -276,7 +272,6 @@
       .hero-h1{ font-size: 1.7rem; }
     }
 
-    /* SECTION */
     .section{ margin-top: 1.6rem; }
 
     .section-top{
@@ -310,7 +305,6 @@
       font-size: .95rem;
     }
 
-    /* SCOPE CARDS */
     .scopes{
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -366,7 +360,6 @@
       line-height:1.65;
     }
 
-    /* GALLERY GRID */
     .grid{
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -411,7 +404,6 @@
       filter: saturate(1.03) contrast(1.01);
     }
 
-    /* CONTACT STRIP */
     .contact-strip{
       margin-top: 1.8rem;
       border-radius: 20px;
@@ -461,7 +453,6 @@
     }
     .contact-inline b{ color:#0b1220; }
 
-    /* LIGHTBOX */
     .lightbox{
       position: fixed;
       inset: 0;
@@ -593,7 +584,6 @@
     </div>
   </section>
 
-  <!-- CORE SCOPES -->
   <section class="section" id="scopes">
     <div class="section-top">
       <div>
@@ -644,7 +634,21 @@
     <div class="grid" id="framingGrid"></div>
   </section>
 
-  <!-- CONTACT STRIP -->
+  <!-- DRYWALL GALLERY -->
+  <section class="section" id="drywall">
+    <div class="section-top">
+      <div>
+        <p class="section-kicker">Gallery</p>
+        <h2 class="section-h2">Drywall</h2>
+        <p class="section-desc">
+          Drywall progress shots including hang, tape, and finish readiness. Tap any photo to view full size.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" id="drywallGrid"></div>
+  </section>
+
   <section class="contact-strip" aria-label="Contact">
     <div class="contact-left">
       <p class="contact-title">Need pricing or schedule support?</p>
@@ -666,7 +670,6 @@
 
 </main>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <div class="lb-inner">
     <img class="lb-img" id="lbImg" alt="Gallery image">
@@ -677,10 +680,6 @@
 </div>
 
 <script>
-  /**
-   * Photos are assumed to be in the SAME folder as apex.html.
-   * If you move them to /assets, set: const GALLERY_BASE = "assets/";
-   */
   const GALLERY_BASE = "";
 
   const FRAMING_IMAGES = [
@@ -697,27 +696,42 @@
     "apex-fram-11.jpg"
   ];
 
+  const DRYWALL_IMAGES = [
+    "apex-dry-1.jpg",
+    "apex-dry-2.jpg",
+    "apex-dry-3.jpg"
+  ];
+
   const framingGrid = document.getElementById("framingGrid");
+  const drywallGrid = document.getElementById("drywallGrid");
+
+  // Lightbox shared across all sections
   const allRendered = [];
 
-  FRAMING_IMAGES.forEach((file, index) => {
-    allRendered.push(file);
+  function addGallery(gridEl, images, altText){
+    images.forEach((file) => {
+      const index = allRendered.length;
+      allRendered.push(file);
 
-    const tile = document.createElement("div");
-    tile.className = "tile";
-    tile.dataset.index = index;
+      const tile = document.createElement("div");
+      tile.className = "tile";
+      tile.dataset.index = index;
 
-    const img = document.createElement("img");
-    img.className = "thumb";
-    img.loading = "lazy";
-    img.src = GALLERY_BASE + file;
-    img.alt = "Apex framing work";
+      const img = document.createElement("img");
+      img.className = "thumb";
+      img.loading = "lazy";
+      img.src = GALLERY_BASE + file;
+      img.alt = altText;
 
-    tile.appendChild(img);
-    framingGrid.appendChild(tile);
-  });
+      tile.appendChild(img);
+      gridEl.appendChild(tile);
+    });
+  }
 
-  // Lightbox
+  addGallery(framingGrid, FRAMING_IMAGES, "Apex framing work");
+  addGallery(drywallGrid, DRYWALL_IMAGES, "Apex drywall work");
+
+  // Lightbox behavior
   const lightbox = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
   const lbClose = document.getElementById("lbClose");
