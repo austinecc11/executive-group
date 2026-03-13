@@ -203,6 +203,13 @@
         transform 0.15s ease;
     }
 
+    .nav-button.active {
+      border-color: rgba(0, 95, 158, 0.7);
+      background: rgba(0, 95, 158, 0.08);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
     .nav-button.primary {
       border-color: var(--gold-rich);
       background: linear-gradient(120deg, var(--blue) 0%, var(--gold-rich) 100%);
@@ -368,7 +375,7 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.6rem;
       margin-bottom: 1rem;
     }
 
@@ -378,12 +385,14 @@
       justify-content: center;
       padding: 0.62rem 1rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.72);
-      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.78);
       color: #0f172a;
       font-size: 0.8rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
       transition:
         transform 0.15s ease,
         box-shadow 0.15s ease,
@@ -392,17 +401,23 @@
     }
 
     .btn-pill:hover {
-      transform: translateY(-1px);
-      border-color: rgba(245, 158, 11, 0.85);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.9);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
     }
 
     .btn-pill-primary {
       border-color: rgba(245, 158, 11, 0.95);
-      background: linear-gradient(135deg, #0b72b5, #f59e0b);
+      background: linear-gradient(135deg, #005f9e 0%, #f59e0b 100%);
       color: #fff;
       font-weight: 800;
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-pill-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.22);
     }
 
     .hero-note {
@@ -658,10 +673,52 @@
 
     /* SCOPES */
 
+    .scopes-section {
+      position: relative;
+    }
+
+    .scopes-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 1.2rem;
+      align-items: end;
+      margin-bottom: 1.35rem;
+    }
+
+    @media (max-width: 860px) {
+      .scopes-header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scopes-side-note {
+      border-radius: 20px;
+      padding: 1rem 1.05rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(239,244,248,0.95));
+      border: 1px solid rgba(209, 213, 219, 0.92);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .scopes-side-note-title {
+      margin: 0 0 0.3rem;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-rich);
+      font-weight: 800;
+    }
+
+    .scopes-side-note-text {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
     .scopes-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
     @media (max-width: 960px) {
@@ -671,86 +728,162 @@
     }
 
     .scope-card {
-      border-radius: 20px;
-      padding: 1rem 1rem 1.05rem;
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.06);
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 1.15rem 1.1rem 1.15rem;
       border: 1px solid rgba(209, 213, 219, 0.88);
-      background: #fff;
+      box-shadow: 0 22px 42px rgba(15, 23, 42, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .scope-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 54px rgba(15, 23, 42, 0.11);
+    }
+
+    .scope-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
     }
 
     .scope-card--ecc {
-      background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-      border: 2px solid #000000;
-      border-top: 5px solid #000000;
+      background:
+        radial-gradient(circle at top right, rgba(0, 0, 0, 0.04), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%);
+      border-color: rgba(17, 24, 39, 0.15);
     }
 
-    .scope-card--ecc .scope-tag {
-      background: #000;
-      color: #fff;
-    }
-
-    .scope-card--ecc .scope-name {
-      color: #000;
+    .scope-card--ecc::before {
+      background: #111827;
     }
 
     .scope-card--apex {
-      border-top: 4px solid var(--blue);
-      background: linear-gradient(180deg, #eef6fb 0%, #e6f0f8 100%);
+      background:
+        radial-gradient(circle at top right, rgba(0, 95, 158, 0.1), transparent 32%),
+        linear-gradient(180deg, #f4f9fc 0%, #eaf4fa 100%);
+      border-color: rgba(0, 95, 158, 0.16);
     }
 
-    .scope-card--apex .scope-tag {
-      background: var(--blue);
-      color: #fff;
+    .scope-card--apex::before {
+      background: linear-gradient(90deg, #005f9e, #3d8bc0);
     }
 
     .scope-card--golden {
-      border-top: 4px solid #c97a00;
-      background: linear-gradient(180deg, #fff8ea 0%, #fff1d3 100%);
+      background:
+        radial-gradient(circle at top right, rgba(201, 122, 0, 0.12), transparent 32%),
+        linear-gradient(180deg, #fff9ee 0%, #fff2d9 100%);
+      border-color: rgba(201, 122, 0, 0.18);
     }
 
-    .scope-card--golden .scope-tag {
-      background: #c97a00;
-      color: #fffaf0;
+    .scope-card--golden::before {
+      background: linear-gradient(90deg, #c97a00, #f59e0b);
+    }
+
+    .scope-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
     }
 
     .scope-tag {
       display: inline-flex;
       align-items: center;
-      font-size: 0.74rem;
-      padding: 0.3rem 0.7rem;
+      font-size: 0.72rem;
+      padding: 0.34rem 0.72rem;
       border-radius: var(--radius-pill);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.15em;
       font-weight: 800;
-      background: var(--blue-soft-alt);
-      color: var(--blue);
+      margin: 0 0 0.6rem;
+    }
+
+    .scope-card--ecc .scope-tag {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .scope-card--apex .scope-tag {
+      background: #005f9e;
+      color: #ffffff;
+    }
+
+    .scope-card--golden .scope-tag {
+      background: #c97a00;
+      color: #ffffff;
+    }
+
+    .scope-badge {
+      flex-shrink: 0;
+      min-width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #0f172a;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.22);
     }
 
     .scope-name {
-      margin: 0 0 0.38rem;
-      font-size: 1rem;
+      margin: 0 0 0.35rem;
+      font-size: 1.08rem;
       font-weight: 800;
       color: #030712;
+      line-height: 1.3;
     }
 
     .scope-text {
-      margin: 0 0 0.55rem;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.65;
+      margin: 0 0 0.8rem;
+      font-size: 0.94rem;
+      color: #4b5563;
+      line-height: 1.7;
     }
 
     .scope-list {
+      list-style: none;
       margin: 0;
-      padding-left: 1.15rem;
-      font-size: 0.89rem;
-      color: #4b5563;
+      padding: 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .scope-list li {
+      position: relative;
+      padding-left: 1.45rem;
+      font-size: 0.9rem;
+      color: #374151;
       line-height: 1.6;
     }
 
-    .scope-list li + li {
-      margin-top: 0.22rem;
+    .scope-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+    }
+
+    .scope-card--ecc .scope-list li::before {
+      background: #111827;
+    }
+
+    .scope-card--apex .scope-list li::before {
+      background: #005f9e;
+    }
+
+    .scope-card--golden .scope-list li::before {
+      background: #c97a00;
     }
 
     /* ADVANTAGES */
@@ -950,10 +1083,7 @@
         </div>
 
         <div class="header-menu">
-          <a href="#brands" class="nav-link">Companies</a>
-          <a href="#scopes" class="nav-link">Scopes</a>
-          <a href="#why-us" class="nav-link">Why Us</a>
-          <a href="#project-fit" class="nav-link">Project Fit</a>
+          <a href="index.html" class="nav-button active">Home</a>
           <a href="contact.html" class="nav-button primary">Contact Us</a>
         </div>
       </div>
@@ -1062,21 +1192,39 @@
       </div>
     </section>
 
-    <section id="scopes">
-      <p class="section-title">Core scopes</p>
-      <h2 class="section-heading">Where we can plug into your project</h2>
-      <p class="section-text">
-        Whether you need a full GC or support around a specific phase, the group can flex to match what your project needs
-        without leaving gaps between site work, structure, and interior completion.
-      </p>
+    <section id="scopes" class="scopes-section">
+      <div class="scopes-header">
+        <div>
+          <p class="section-title">Core scopes</p>
+          <h2 class="section-heading">Where we can plug into your project</h2>
+          <p class="section-text">
+            Whether you need a full GC or support around a specific phase, the group can flex to match what your project needs
+            without leaving gaps between site work, structure, and interior completion.
+          </p>
+        </div>
+
+        <div class="scopes-side-note">
+          <p class="scopes-side-note-title">How clients use us</p>
+          <p class="scopes-side-note-text">
+            Some clients bring in the full group for coordinated delivery. Others use one company for a targeted scope while keeping the rest of their team in place.
+          </p>
+        </div>
+      </div>
 
       <div class="scopes-grid">
         <div class="scope-card scope-card--ecc">
-          <div class="scope-tag">Executive Custom Construction</div>
-          <h3 class="scope-name">General contracting &amp; coordination</h3>
+          <div class="scope-card-head">
+            <div>
+              <div class="scope-tag">Executive Custom Construction</div>
+              <h3 class="scope-name">General contracting &amp; coordination</h3>
+            </div>
+            <div class="scope-badge">GC</div>
+          </div>
+
           <p class="scope-text">
             A single point of contact tying field operations, budgets, and schedule expectations together.
           </p>
+
           <ul class="scope-list">
             <li>Full GC for residential, commercial, and remodel projects</li>
             <li>Schedule building, trade coordination, and field sequencing</li>
@@ -1085,11 +1233,18 @@
         </div>
 
         <div class="scope-card scope-card--apex">
-          <div class="scope-tag">Apex Coatings</div>
-          <h3 class="scope-name">Framing, drywall &amp; finish</h3>
+          <div class="scope-card-head">
+            <div>
+              <div class="scope-tag">Apex Coatings</div>
+              <h3 class="scope-name">Framing, drywall &amp; finish</h3>
+            </div>
+            <div class="scope-badge">AF</div>
+          </div>
+
           <p class="scope-text">
             Structural framing through drywall and finish details, coordinated with the rest of the project team.
           </p>
+
           <ul class="scope-list">
             <li>Structural and interior framing</li>
             <li>Drywall hang, tape, and texture</li>
@@ -1098,11 +1253,18 @@
         </div>
 
         <div class="scope-card scope-card--golden">
-          <div class="scope-tag">Golden Eagle Excavation</div>
-          <h3 class="scope-name">Excavation, utilities &amp; flatwork</h3>
+          <div class="scope-card-head">
+            <div>
+              <div class="scope-tag">Golden Eagle Excavation</div>
+              <h3 class="scope-name">Excavation, utilities &amp; flatwork</h3>
+            </div>
+            <div class="scope-badge">GE</div>
+          </div>
+
           <p class="scope-text">
             Site prep and concrete scopes that keep the project moving from the earliest field phase.
           </p>
+
           <ul class="scope-list">
             <li>Mass excavation and foundations</li>
             <li>Utilities and site services</li>
