@@ -67,16 +67,47 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(209, 213, 219, 0.75);
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.7);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
     }
 
-    .header-inner {
+    .header-utility {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.5));
+    }
+
+    .header-utility-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
+      padding: 0.45rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .header-utility-left,
+    .header-utility-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .header-utility strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .header-main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -86,19 +117,19 @@
     .header-left {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.95rem;
       min-width: 0;
     }
 
     .header-logo-wrap {
-      width: 90px;
-      height: 90px;
-      border-radius: 24px;
+      width: 72px;
+      height: 72px;
+      border-radius: 22px;
       background: #000;
       border: 2px solid rgba(249, 168, 37, 0.9);
       box-shadow:
-        0 0 0 2px rgba(249, 168, 37, 0.28),
-        0 14px 30px rgba(15, 23, 42, 0.2);
+        0 0 0 2px rgba(249, 168, 37, 0.24),
+        0 12px 26px rgba(15, 23, 42, 0.16);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -107,8 +138,8 @@
     }
 
     .header-logo-wrap img {
-      max-width: 86%;
-      max-height: 86%;
+      max-width: 84%;
+      max-height: 84%;
       object-fit: contain;
       display: block;
     }
@@ -116,67 +147,46 @@
     .header-text-block {
       display: flex;
       flex-direction: column;
-      gap: 0.18rem;
+      gap: 0.14rem;
       min-width: 0;
     }
 
     .header-brand-line {
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold-rich);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .header-title {
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: #030712;
     }
 
     .header-subline {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      max-width: 34rem;
+      max-width: 36rem;
       line-height: 1.5;
     }
 
     .header-nav {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.7rem;
-    }
-
-    .header-topline {
-      display: flex;
       align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .header-topline strong {
-      color: #111827;
-      font-weight: 700;
-    }
-
-    .header-menu {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
+      gap: 0.45rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav-link {
-      font-size: 0.8rem;
-      padding: 0.45rem 0.8rem;
+      font-size: 0.78rem;
+      padding: 0.5rem 0.82rem;
       border-radius: var(--radius-pill);
       color: #475569;
+      font-weight: 600;
       transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
 
@@ -186,15 +196,22 @@
       transform: translateY(-1px);
     }
 
+    .nav-link.active {
+      background: rgba(0, 95, 158, 0.08);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
     .nav-button {
-      font-size: 0.78rem;
-      padding: 0.52rem 1rem;
+      font-size: 0.76rem;
+      padding: 0.56rem 1rem;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.65);
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.92);
       color: #111827;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
+      font-weight: 700;
       white-space: nowrap;
       transition:
         border-color 0.15s ease,
@@ -203,61 +220,54 @@
         transform 0.15s ease;
     }
 
-    .nav-button.active {
-      border-color: rgba(0, 95, 158, 0.7);
-      background: rgba(0, 95, 158, 0.08);
-      color: var(--blue);
-      font-weight: 700;
+    .nav-button:hover {
+      border-color: rgba(245, 158, 11, 0.85);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+      transform: translateY(-1px);
     }
 
     .nav-button.primary {
       border-color: var(--gold-rich);
       background: linear-gradient(120deg, var(--blue) 0%, var(--gold-rich) 100%);
       color: #fff;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
     }
 
-    .nav-button:hover {
-      border-color: var(--gold);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-      transform: translateY(-1px);
-    }
+    @media (max-width: 980px) {
+      .header-utility-inner,
+      .header-main {
+        padding-inline: 1.2rem;
+      }
 
-    @media (max-width: 920px) {
-      .header-inner {
+      .header-main {
         flex-direction: column;
         align-items: flex-start;
       }
 
       .header-nav {
         width: 100%;
-        align-items: flex-start;
-      }
-
-      .header-topline,
-      .header-menu {
         justify-content: flex-start;
       }
     }
 
-    @media (max-width: 640px) {
-      .header-left {
+    @media (max-width: 720px) {
+      .header-utility-inner {
+        flex-direction: column;
         align-items: flex-start;
       }
 
       .header-logo-wrap {
-        width: 74px;
-        height: 74px;
-        border-radius: 20px;
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
       }
 
       .header-title {
-        font-size: 1rem;
+        font-size: 0.98rem;
       }
 
       .header-subline {
-        font-size: 0.8rem;
+        font-size: 0.79rem;
       }
     }
 
@@ -276,7 +286,7 @@
     }
 
     section + section {
-      margin-top: 2.75rem;
+      margin-top: 2.85rem;
     }
 
     /* HERO */
@@ -530,16 +540,16 @@
             rgba(255, 255, 255, 0.18) 100%
           );
       }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
       .hero-panel {
         border-radius: 22px;
         padding: 0.9rem;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1002,16 +1012,16 @@
     footer {
       margin-top: 2rem;
       border-top: 1px solid rgba(209, 213, 219, 0.85);
-      background: #fff;
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
     }
 
     .footer-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.4rem 1.5rem 1.6rem;
+      padding: 1.6rem 1.5rem 1.8rem;
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
-      gap: 1.2rem;
+      gap: 1.3rem;
       color: var(--text-muted);
       font-size: 0.88rem;
     }
@@ -1020,21 +1030,22 @@
       color: #111827;
       font-weight: 800;
       margin-bottom: 0.35rem;
+      font-size: 0.98rem;
     }
 
     .footer-heading {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: var(--gold-rich);
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.6rem;
       font-weight: 800;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
+      gap: 0.48rem;
     }
 
     .footer-links a:hover {
@@ -1060,7 +1071,22 @@
 </head>
 <body>
   <header>
-    <div class="header-inner">
+    <div class="header-utility">
+      <div class="header-utility-inner">
+        <div class="header-utility-left">
+          <span>Colorado Springs, Colorado</span>
+          <span>•</span>
+          <span>Residential • Commercial • Remodel</span>
+        </div>
+        <div class="header-utility-right">
+          <span><strong>(719) 531-0707</strong></span>
+          <span>•</span>
+          <span><strong>estimating@executive-company.com</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main">
       <div class="header-left">
         <a href="index.html" class="header-logo-wrap" aria-label="Executive Companies home">
           <img src="executive-companies.png" alt="Executive Companies logo">
@@ -1070,23 +1096,18 @@
           <div class="header-brand-line">Executive Companies</div>
           <div class="header-title">Construction • Excavation • Interiors</div>
           <div class="header-subline">
-            One coordinated team for residential, commercial, and remodel projects in Colorado Springs.
+            One coordinated team for residential, commercial, and remodel projects.
           </div>
         </div>
       </div>
 
-      <div class="header-nav">
-        <div class="header-topline">
-          <span><strong>(719) 531-0707</strong></span>
-          <span>•</span>
-          <span><strong>estimating@executive-company.com</strong></span>
-        </div>
-
-        <div class="header-menu">
-          <a href="index.html" class="nav-button active">Home</a>
-          <a href="contact.html" class="nav-button primary">Contact Us</a>
-        </div>
-      </div>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="executive.html" class="nav-link">Executive</a>
+        <a href="apex.html" class="nav-link">Apex</a>
+        <a href="golden-eagle.html" class="nav-link">Golden Eagle</a>
+        <a href="contact.html" class="nav-button primary">Contact Us</a>
+      </nav>
     </div>
   </header>
 
