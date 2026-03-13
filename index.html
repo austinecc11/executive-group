@@ -264,10 +264,8 @@
     }
 
     .hero-panel {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 1.8rem 1.8rem 1.85rem;
-      border-radius: 28px;
+      padding: 1.15rem;
+      border-radius: 30px;
       background:
         radial-gradient(circle at top left, var(--blue-soft) 0, #ffffff 48%, #eef2f7 100%);
       border: 1px solid rgba(209, 213, 219, 0.92);
@@ -288,14 +286,28 @@
       pointer-events: none;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 1.15rem;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.75rem 0.35rem 0.75rem 0.55rem;
+    }
+
     .hero-kicker {
       font-size: 0.8rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--gold-rich);
       margin: 0 0 0.55rem;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-title {
@@ -305,8 +317,6 @@
       margin: 0 0 0.8rem;
       color: #030712;
       max-width: 15ch;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-text {
@@ -315,8 +325,6 @@
       color: var(--text-muted);
       max-width: 38rem;
       margin: 0 0 1.1rem;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-actions {
@@ -325,35 +333,6 @@
       gap: 0.7rem;
       align-items: center;
       margin-bottom: 0.9rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      padding: 0.62rem 1.42rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #000000 0%, #f59e0b 90%);
-      color: #ffffff;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
-      cursor: pointer;
-      transition: box-shadow 0.15s ease, transform 0.15s ease,
-        background 0.15s ease;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-      background: linear-gradient(135deg, #1a1a1a 0%, #f9b439 90%);
     }
 
     .btn-pill {
@@ -389,20 +368,79 @@
     .hero-note {
       font-size: 0.83rem;
       color: var(--text-muted);
-      position: relative;
-      z-index: 1;
       margin: 0;
+    }
+
+    .hero-image-card {
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 100%;
+      background: #0b1120;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 20px 46px rgba(15, 23, 42, 0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 1rem 1.1rem 1rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.58) 100%);
+      color: #ffffff;
+    }
+
+    .hero-image-caption {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.92;
+      margin: 0 0 0.2rem;
+    }
+
+    .hero-image-subcaption {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-copy {
+        padding: 0.45rem 0.2rem 0.2rem;
+      }
+
+      .hero-title {
+        max-width: none;
+      }
+
+      .hero-image-card img {
+        min-height: 300px;
+      }
     }
 
     @media (max-width: 720px) {
       .hero-panel {
-        padding: 1.35rem 1.2rem 1.45rem;
+        padding: 0.9rem;
         border-radius: 22px;
       }
 
       .hero-title {
         font-size: 1.9rem;
-        max-width: none;
       }
 
       .hero-text {
@@ -775,23 +813,35 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-panel">
-        <p class="hero-kicker">One team. Three companies.</p>
-        <h1 class="hero-title">Site, structure, and finish under one coordinated group.</h1>
-        <p class="hero-text">
-          Executive Companies brings excavation, general contracting, and interiors under one umbrella.
-          Our crews and office teams stay aligned on scopes, budgets, and timelines from first dig through final punch.
-        </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker">One team. Three companies.</p>
+            <h1 class="hero-title">Site, structure, and finish under one coordinated group.</h1>
+            <p class="hero-text">
+              Executive Companies brings excavation, general contracting, and interiors under one umbrella.
+              Our crews and office teams stay aligned on scopes, budgets, and timelines from first dig through final punch.
+            </p>
 
-        <div class="hero-actions">
-          <a href="#brands" class="btn-pill">Our Companies</a>
-          <a href="#scopes" class="btn-pill">Core Scopes</a>
-          <a href="#project-fit" class="btn-pill">Project Fit</a>
-          <a href="contact.html" class="btn-pill btn-pill-primary">Start a Project</a>
+            <div class="hero-actions">
+              <a href="#brands" class="btn-pill">Our Companies</a>
+              <a href="#scopes" class="btn-pill">Core Scopes</a>
+              <a href="#project-fit" class="btn-pill">Project Fit</a>
+              <a href="contact.html" class="btn-pill btn-pill-primary">Start a Project</a>
+            </div>
+
+            <p class="hero-note">
+              No full plan set yet? That’s fine. We regularly help owners and builders price work from concepts and early layouts.
+            </p>
+          </div>
+
+          <div class="hero-image-card">
+            <img src="pikes-peak-png.png" alt="Pikes Peak mountain view">
+            <div class="hero-image-overlay">
+              <p class="hero-image-caption">Colorado roots</p>
+              <p class="hero-image-subcaption">Built in Colorado Springs, with local crews and coordinated delivery across every phase.</p>
+            </div>
+          </div>
         </div>
-
-        <p class="hero-note">
-          No full plan set yet? That’s fine. We regularly help owners and builders price work from concepts and early layouts.
-        </p>
       </div>
     </section>
 
