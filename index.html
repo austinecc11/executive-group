@@ -285,8 +285,8 @@
       padding: 1.1rem;
       border: 1px solid rgba(209, 213, 219, 0.9);
       background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(244, 247, 251, 0.9) 45%, rgba(238, 242, 247, 0.88) 100%),
-        url("pikes-peak-png.png") center center / cover no-repeat;
+        linear-gradient(135deg, rgba(255, 255, 255, 0.44) 0%, rgba(244, 247, 251, 0.26) 42%, rgba(230, 240, 248, 0.22) 100%),
+        url("pikes-peak-png.png") left center / cover no-repeat;
       box-shadow: var(--shadow-strong);
     }
 
@@ -308,7 +308,13 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.82) 38%, rgba(255, 255, 255, 0.45) 65%, rgba(255, 255, 255, 0.18) 100%);
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.72) 0%,
+          rgba(255, 255, 255, 0.52) 28%,
+          rgba(255, 255, 255, 0.20) 58%,
+          rgba(255, 255, 255, 0.08) 100%
+        );
       pointer-events: none;
       z-index: 0;
     }
@@ -327,6 +333,9 @@
       flex-direction: column;
       justify-content: center;
       padding: 0.8rem 0.45rem 0.8rem 0.55rem;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      backdrop-filter: blur(1.5px);
     }
 
     .hero-kicker {
@@ -345,13 +354,14 @@
       letter-spacing: -0.04em;
       color: #030712;
       max-width: 12ch;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
     }
 
     .hero-text {
       margin: 0 0 1.15rem;
       font-size: 1rem;
       line-height: 1.8;
-      color: #4b5563;
+      color: #374151;
       max-width: 38rem;
     }
 
@@ -369,7 +379,7 @@
       padding: 0.62rem 1rem;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.72);
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.94);
       color: #0f172a;
       font-size: 0.8rem;
       letter-spacing: 0.12em;
@@ -398,7 +408,7 @@
     .hero-note {
       margin: 0;
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #4b5563;
       line-height: 1.6;
     }
 
@@ -457,8 +467,8 @@
     .hero-stat {
       border-radius: 18px;
       padding: 0.9rem 1rem;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(209, 213, 219, 0.82);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
       backdrop-filter: blur(2px);
     }
@@ -467,7 +477,7 @@
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-muted);
+      color: #6b7280;
       margin-bottom: 0.35rem;
     }
 
@@ -485,6 +495,7 @@
 
       .hero-copy {
         padding: 0.45rem 0.2rem 0.2rem;
+        max-width: none;
       }
 
       .hero-title {
@@ -497,7 +508,12 @@
 
       .hero-panel::after {
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.8) 42%, rgba(255, 255, 255, 0.36) 100%);
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.78) 0%,
+            rgba(255, 255, 255, 0.58) 42%,
+            rgba(255, 255, 255, 0.18) 100%
+          );
       }
     }
 
