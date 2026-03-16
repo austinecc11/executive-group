@@ -689,10 +689,10 @@
 
     .scopes-header {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 1.2rem;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 1.25rem;
       align-items: end;
-      margin-bottom: 1.35rem;
+      margin-bottom: 1.5rem;
     }
 
     @media (max-width: 860px) {
@@ -702,16 +702,16 @@
     }
 
     .scopes-side-note {
-      border-radius: 20px;
-      padding: 1rem 1.05rem;
-      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(239,244,248,0.95));
+      border-radius: 22px;
+      padding: 1.05rem 1.1rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,244,248,0.96));
       border: 1px solid rgba(209, 213, 219, 0.92);
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
     }
 
     .scopes-side-note-title {
       margin: 0 0 0.3rem;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--gold-rich);
@@ -720,145 +720,130 @@
 
     .scopes-side-note-text {
       margin: 0;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       line-height: 1.7;
       color: var(--text-muted);
     }
 
-    .scopes-grid {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
+      gap: 1.15rem;
     }
 
-    @media (max-width: 960px) {
-      .scopes-grid {
+    @media (max-width: 1020px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .services-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .scope-card {
+    .service-card {
       position: relative;
-      overflow: hidden;
       border-radius: 24px;
-      padding: 1.15rem 1.1rem 1.15rem;
-      border: 1px solid rgba(209, 213, 219, 0.88);
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
+      border: 1px solid rgba(209, 213, 219, 0.9);
       box-shadow: 0 22px 42px rgba(15, 23, 42, 0.06);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
     }
 
-    .scope-card:hover {
+    .service-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 28px 54px rgba(15, 23, 42, 0.11);
     }
 
-    .scope-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 5px;
+    .service-card--ecc:hover {
+      border-color: rgba(17, 24, 39, 0.22);
     }
 
-    .scope-card--ecc {
-      background:
-        radial-gradient(circle at top right, rgba(0, 0, 0, 0.04), transparent 32%),
-        linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%);
-      border-color: rgba(17, 24, 39, 0.15);
+    .service-card--apex:hover {
+      border-color: rgba(0, 95, 158, 0.24);
     }
 
-    .scope-card--ecc::before {
-      background: #111827;
+    .service-card--golden:hover {
+      border-color: rgba(201, 122, 0, 0.26);
     }
 
-    .scope-card--apex {
-      background:
-        radial-gradient(circle at top right, rgba(0, 95, 158, 0.1), transparent 32%),
-        linear-gradient(180deg, #f4f9fc 0%, #eaf4fa 100%);
-      border-color: rgba(0, 95, 158, 0.16);
+    .service-card-top {
+      height: 10px;
     }
 
-    .scope-card--apex::before {
-      background: linear-gradient(90deg, #005f9e, #3d8bc0);
+    .service-card--ecc .service-card-top {
+      background: linear-gradient(90deg, #111827 0%, #374151 100%);
     }
 
-    .scope-card--golden {
-      background:
-        radial-gradient(circle at top right, rgba(201, 122, 0, 0.12), transparent 32%),
-        linear-gradient(180deg, #fff9ee 0%, #fff2d9 100%);
-      border-color: rgba(201, 122, 0, 0.18);
+    .service-card--apex .service-card-top {
+      background: linear-gradient(90deg, #005f9e 0%, #3d8bc0 100%);
     }
 
-    .scope-card--golden::before {
-      background: linear-gradient(90deg, #c97a00, #f59e0b);
+    .service-card--golden .service-card-top {
+      background: linear-gradient(90deg, #c97a00 0%, #f59e0b 100%);
     }
 
-    .scope-card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
+    .service-card-body {
+      padding: 1.15rem 1.15rem 1.2rem;
     }
 
-    .scope-tag {
+    .service-company-pill {
       display: inline-flex;
       align-items: center;
-      font-size: 0.72rem;
-      padding: 0.34rem 0.72rem;
-      border-radius: var(--radius-pill);
+      margin: 0 0 0.7rem;
+      padding: 0.38rem 0.78rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.16em;
       font-weight: 800;
-      margin: 0 0 0.6rem;
     }
 
-    .scope-card--ecc .scope-tag {
+    .service-card--ecc .service-company-pill {
       background: #111827;
       color: #ffffff;
     }
 
-    .scope-card--apex .scope-tag {
+    .service-card--apex .service-company-pill {
       background: #005f9e;
       color: #ffffff;
     }
 
-    .scope-card--golden .scope-tag {
+    .service-card--golden .service-company-pill {
       background: #c97a00;
       color: #ffffff;
     }
 
-    .scope-badge {
-      flex-shrink: 0;
-      min-width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
+    .service-eyebrow {
+      display: inline-block;
+      margin: 0 0 0.5rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-rich);
       font-weight: 800;
-      letter-spacing: 0.08em;
+    }
+
+    .service-title {
+      margin: 0 0 0.55rem;
+      font-size: 1.18rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
       color: #0f172a;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-    }
-
-    .scope-name {
-      margin: 0 0 0.35rem;
-      font-size: 1.08rem;
       font-weight: 800;
-      color: #030712;
-      line-height: 1.3;
     }
 
-    .scope-text {
-      margin: 0 0 0.8rem;
-      font-size: 0.94rem;
-      color: #4b5563;
+    .service-text {
+      margin: 0 0 0.85rem;
+      font-size: 0.95rem;
       line-height: 1.7;
+      color: #4b5563;
     }
 
-    .scope-list {
+    .service-list {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -866,34 +851,43 @@
       gap: 0.55rem;
     }
 
-    .scope-list li {
+    .service-list li {
       position: relative;
-      padding-left: 1.45rem;
+      padding-left: 1.2rem;
       font-size: 0.9rem;
-      color: #374151;
       line-height: 1.6;
+      color: #374151;
     }
 
-    .scope-list li::before {
+    .service-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.55rem;
-      width: 8px;
-      height: 8px;
+      top: 0.56rem;
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
     }
 
-    .scope-card--ecc .scope-list li::before {
+    .service-card--ecc .service-list li::before {
       background: #111827;
     }
 
-    .scope-card--apex .scope-list li::before {
+    .service-card--apex .service-list li::before {
       background: #005f9e;
     }
 
-    .scope-card--golden .scope-list li::before {
+    .service-card--golden .service-list li::before {
       background: #c97a00;
+    }
+
+    .service-footer {
+      margin-top: 0.95rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.6;
     }
 
     /* ADVANTAGES */
@@ -1125,7 +1119,7 @@
 
             <div class="hero-actions">
               <a href="#brands" class="btn-pill">Our Companies</a>
-              <a href="#scopes" class="btn-pill">Core Scopes</a>
+              <a href="#scopes" class="btn-pill">Core Services</a>
               <a href="#project-fit" class="btn-pill">Project Fit</a>
               <a href="contact.html" class="btn-pill btn-pill-primary">Start a Project</a>
             </div>
@@ -1216,81 +1210,130 @@
     <section id="scopes" class="scopes-section">
       <div class="scopes-header">
         <div>
-          <p class="section-title">Core scopes</p>
-          <h2 class="section-heading">Where we can plug into your project</h2>
+          <p class="section-title">Core services</p>
+          <h2 class="section-heading">Services built around how clients actually hire</h2>
           <p class="section-text">
-            Whether you need a full GC or support around a specific phase, the group can flex to match what your project needs
-            without leaving gaps between site work, structure, and interior completion.
+            We organize our work around the scopes owners, builders, and developers actually need, while still keeping the
+            right company attached to the right service. That way the offerings stay clear, but the brand structure still makes sense.
           </p>
         </div>
 
         <div class="scopes-side-note">
-          <p class="scopes-side-note-title">How clients use us</p>
+          <p class="scopes-side-note-title">Flexible involvement</p>
           <p class="scopes-side-note-text">
-            Some clients bring in the full group for coordinated delivery. Others use one company for a targeted scope while keeping the rest of their team in place.
+            Bring us in for one targeted scope, or use multiple services together for smoother handoffs between site work,
+            structure, concrete, and interior completion.
           </p>
         </div>
       </div>
 
-      <div class="scopes-grid">
-        <div class="scope-card scope-card--ecc">
-          <div class="scope-card-head">
-            <div>
-              <div class="scope-tag">Executive Custom Construction</div>
-              <h3 class="scope-name">General contracting &amp; coordination</h3>
-            </div>
-            <div class="scope-badge">GC</div>
+      <div class="services-grid">
+        <div class="service-card service-card--ecc">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Executive Custom Construction</div>
+            <div class="service-eyebrow">Preconstruction</div>
+            <h3 class="service-title">Budgeting &amp; project planning</h3>
+            <p class="service-text">
+              Early-stage support to help owners and builders make informed decisions before work starts in the field.
+            </p>
+            <ul class="service-list">
+              <li>Conceptual budgeting</li>
+              <li>Scope review and planning</li>
+              <li>Preconstruction coordination</li>
+            </ul>
+            <div class="service-footer">Ideal for early pricing, feasibility, and project setup.</div>
           </div>
-
-          <p class="scope-text">
-            A single point of contact tying field operations, budgets, and schedule expectations together.
-          </p>
-
-          <ul class="scope-list">
-            <li>Full GC for residential, commercial, and remodel projects</li>
-            <li>Schedule building, trade coordination, and field sequencing</li>
-            <li>Budget tracking and scope alignment across the group</li>
-          </ul>
         </div>
 
-        <div class="scope-card scope-card--apex">
-          <div class="scope-card-head">
-            <div>
-              <div class="scope-tag">Apex Coatings</div>
-              <h3 class="scope-name">Framing, drywall &amp; finish</h3>
-            </div>
-            <div class="scope-badge">AF</div>
+        <div class="service-card service-card--golden">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Golden Eagle Excavation</div>
+            <div class="service-eyebrow">Sitework</div>
+            <h3 class="service-title">Excavation, utilities &amp; grading</h3>
+            <p class="service-text">
+              Field-ready site packages that help get projects out of the ground efficiently and set up correctly.
+            </p>
+            <ul class="service-list">
+              <li>Mass excavation and foundations</li>
+              <li>Underground utilities and services</li>
+              <li>Site prep and grading</li>
+            </ul>
+            <div class="service-footer">A strong fit for new construction, development, and infrastructure phases.</div>
           </div>
-
-          <p class="scope-text">
-            Structural framing through drywall and finish details, coordinated with the rest of the project team.
-          </p>
-
-          <ul class="scope-list">
-            <li>Structural and interior framing</li>
-            <li>Drywall hang, tape, and texture</li>
-            <li>Interior trim, doors, and finish details</li>
-          </ul>
         </div>
 
-        <div class="scope-card scope-card--golden">
-          <div class="scope-card-head">
-            <div>
-              <div class="scope-tag">Golden Eagle Excavation</div>
-              <h3 class="scope-name">Excavation, utilities &amp; flatwork</h3>
-            </div>
-            <div class="scope-badge">GE</div>
+        <div class="service-card service-card--golden">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Golden Eagle Excavation</div>
+            <div class="service-eyebrow">Concrete</div>
+            <h3 class="service-title">Flatwork &amp; exterior concrete</h3>
+            <p class="service-text">
+              Concrete scopes coordinated with the rest of the project so site and structural phases move cleanly.
+            </p>
+            <ul class="service-list">
+              <li>Exterior flatwork</li>
+              <li>Walks, pads, and approach work</li>
+              <li>Concrete tied into site sequencing</li>
+            </ul>
+            <div class="service-footer">Often paired with excavation and utility scopes for cleaner delivery.</div>
           </div>
+        </div>
 
-          <p class="scope-text">
-            Site prep and concrete scopes that keep the project moving from the earliest field phase.
-          </p>
+        <div class="service-card service-card--ecc">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Executive Custom Construction</div>
+            <div class="service-eyebrow">Construction</div>
+            <h3 class="service-title">General contracting &amp; coordination</h3>
+            <p class="service-text">
+              A single point of contact for budgeting, scheduling, trade coordination, and overall project delivery.
+            </p>
+            <ul class="service-list">
+              <li>Full GC services</li>
+              <li>Trade sequencing and schedule control</li>
+              <li>Budget and scope coordination</li>
+            </ul>
+            <div class="service-footer">Best for clients wanting one team to manage the full process.</div>
+          </div>
+        </div>
 
-          <ul class="scope-list">
-            <li>Mass excavation and foundations</li>
-            <li>Utilities and site services</li>
-            <li>Flatwork and exterior concrete</li>
-          </ul>
+        <div class="service-card service-card--apex">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Apex Coatings</div>
+            <div class="service-eyebrow">Interior build</div>
+            <h3 class="service-title">Framing, drywall &amp; finish</h3>
+            <p class="service-text">
+              Interior and structural build scopes coordinated with the field team to keep production moving.
+            </p>
+            <ul class="service-list">
+              <li>Structural and interior framing</li>
+              <li>Drywall hang, tape, and texture</li>
+              <li>Trim, doors, and finish details</li>
+            </ul>
+            <div class="service-footer">Works well for new builds, tenant improvements, and remodel projects.</div>
+          </div>
+        </div>
+
+        <div class="service-card service-card--ecc">
+          <div class="service-card-top"></div>
+          <div class="service-card-body">
+            <div class="service-company-pill">Executive Custom Construction</div>
+            <div class="service-eyebrow">Remodels</div>
+            <h3 class="service-title">Renovations, additions &amp; phased improvements</h3>
+            <p class="service-text">
+              Flexible support for occupied spaces, additions, and renovation work where sequencing and communication matter.
+            </p>
+            <ul class="service-list">
+              <li>Residential remodels and additions</li>
+              <li>Commercial renovations</li>
+              <li>Phased construction planning</li>
+            </ul>
+            <div class="service-footer">A good fit for owners upgrading existing homes or commercial spaces.</div>
+          </div>
         </div>
       </div>
     </section>
