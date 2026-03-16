@@ -771,29 +771,44 @@
     }
 
     .service-card-top {
-      height: 10px;
+      position: relative;
+      height: 54px;
+      overflow: hidden;
+    }
+
+    .service-card-top::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
     }
 
     .service-card--ecc .service-card-top {
-      background: linear-gradient(90deg, #111827 0%, #374151 100%);
+      background:
+        radial-gradient(circle at right, rgba(255,255,255,0.14), transparent 38%),
+        linear-gradient(90deg, #111827 0%, #374151 100%);
     }
 
     .service-card--apex .service-card-top {
-      background: linear-gradient(90deg, #005f9e 0%, #3d8bc0 100%);
+      background:
+        radial-gradient(circle at right, rgba(255,255,255,0.18), transparent 38%),
+        linear-gradient(90deg, #005f9e 0%, #3d8bc0 100%);
     }
 
     .service-card--golden .service-card-top {
-      background: linear-gradient(90deg, #c97a00 0%, #f59e0b 100%);
+      background:
+        radial-gradient(circle at right, rgba(255,255,255,0.18), transparent 38%),
+        linear-gradient(90deg, #c97a00 0%, #f59e0b 100%);
     }
 
     .service-card-body {
       padding: 1.15rem 1.15rem 1.2rem;
     }
 
-    .service-company-pill {
+    .service-activity-pill {
       display: inline-flex;
       align-items: center;
-      margin: 0 0 0.7rem;
+      margin: 0 0 0.72rem;
       padding: 0.38rem 0.78rem;
       border-radius: 999px;
       font-size: 0.7rem;
@@ -802,33 +817,26 @@
       font-weight: 800;
     }
 
-    .service-card--ecc .service-company-pill {
-      background: #111827;
-      color: #ffffff;
+    .service-card--ecc .service-activity-pill {
+      background: rgba(17, 24, 39, 0.08);
+      color: #111827;
+      border: 1px solid rgba(17, 24, 39, 0.12);
     }
 
-    .service-card--apex .service-company-pill {
-      background: #005f9e;
-      color: #ffffff;
+    .service-card--apex .service-activity-pill {
+      background: rgba(0, 95, 158, 0.09);
+      color: #005f9e;
+      border: 1px solid rgba(0, 95, 158, 0.14);
     }
 
-    .service-card--golden .service-company-pill {
-      background: #c97a00;
-      color: #ffffff;
-    }
-
-    .service-eyebrow {
-      display: inline-block;
-      margin: 0 0 0.5rem;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold-rich);
-      font-weight: 800;
+    .service-card--golden .service-activity-pill {
+      background: rgba(201, 122, 0, 0.10);
+      color: #b66e00;
+      border: 1px solid rgba(201, 122, 0, 0.16);
     }
 
     .service-title {
-      margin: 0 0 0.55rem;
+      margin: 0 0 0.58rem;
       font-size: 1.18rem;
       line-height: 1.15;
       letter-spacing: -0.03em;
@@ -1231,8 +1239,7 @@
         <div class="service-card service-card--ecc">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Executive Custom Construction</div>
-            <div class="service-eyebrow">Preconstruction</div>
+            <div class="service-activity-pill">Preconstruction</div>
             <h3 class="service-title">Budgeting &amp; project planning</h3>
             <p class="service-text">
               Early-stage support to help owners and builders make informed decisions before work starts in the field.
@@ -1242,15 +1249,14 @@
               <li>Scope review and planning</li>
               <li>Preconstruction coordination</li>
             </ul>
-            <div class="service-footer">Ideal for early pricing, feasibility, and project setup.</div>
+            <div class="service-footer">Typically coordinated through Executive Custom Construction.</div>
           </div>
         </div>
 
         <div class="service-card service-card--golden">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Golden Eagle Excavation</div>
-            <div class="service-eyebrow">Sitework</div>
+            <div class="service-activity-pill">Sitework</div>
             <h3 class="service-title">Excavation, utilities &amp; grading</h3>
             <p class="service-text">
               Field-ready site packages that help get projects out of the ground efficiently and set up correctly.
@@ -1260,15 +1266,14 @@
               <li>Underground utilities and services</li>
               <li>Site prep and grading</li>
             </ul>
-            <div class="service-footer">A strong fit for new construction, development, and infrastructure phases.</div>
+            <div class="service-footer">Delivered through Golden Eagle Excavation for new construction and development work.</div>
           </div>
         </div>
 
         <div class="service-card service-card--golden">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Golden Eagle Excavation</div>
-            <div class="service-eyebrow">Concrete</div>
+            <div class="service-activity-pill">Concrete</div>
             <h3 class="service-title">Flatwork &amp; exterior concrete</h3>
             <p class="service-text">
               Concrete scopes coordinated with the rest of the project so site and structural phases move cleanly.
@@ -1278,16 +1283,15 @@
               <li>Walks, pads, and approach work</li>
               <li>Concrete tied into site sequencing</li>
             </ul>
-            <div class="service-footer">Often paired with excavation and utility scopes for cleaner delivery.</div>
+            <div class="service-footer">Most often paired with Golden Eagle sitework and utility scopes.</div>
           </div>
         </div>
 
         <div class="service-card service-card--ecc">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Executive Custom Construction</div>
-            <div class="service-eyebrow">Construction</div>
-            <h3 class="service-title">General contracting &amp; coordination</h3>
+            <div class="service-activity-pill">General Contracting</div>
+            <h3 class="service-title">Project delivery &amp; coordination</h3>
             <p class="service-text">
               A single point of contact for budgeting, scheduling, trade coordination, and overall project delivery.
             </p>
@@ -1296,15 +1300,14 @@
               <li>Trade sequencing and schedule control</li>
               <li>Budget and scope coordination</li>
             </ul>
-            <div class="service-footer">Best for clients wanting one team to manage the full process.</div>
+            <div class="service-footer">Led through Executive Custom Construction as part of the larger group.</div>
           </div>
         </div>
 
         <div class="service-card service-card--apex">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Apex Coatings</div>
-            <div class="service-eyebrow">Interior build</div>
+            <div class="service-activity-pill">Interior Build</div>
             <h3 class="service-title">Framing, drywall &amp; finish</h3>
             <p class="service-text">
               Interior and structural build scopes coordinated with the field team to keep production moving.
@@ -1314,15 +1317,14 @@
               <li>Drywall hang, tape, and texture</li>
               <li>Trim, doors, and finish details</li>
             </ul>
-            <div class="service-footer">Works well for new builds, tenant improvements, and remodel projects.</div>
+            <div class="service-footer">Delivered through Apex Coatings for new builds, tenant improvements, and remodels.</div>
           </div>
         </div>
 
         <div class="service-card service-card--ecc">
           <div class="service-card-top"></div>
           <div class="service-card-body">
-            <div class="service-company-pill">Executive Custom Construction</div>
-            <div class="service-eyebrow">Remodels</div>
+            <div class="service-activity-pill">Remodels</div>
             <h3 class="service-title">Renovations, additions &amp; phased improvements</h3>
             <p class="service-text">
               Flexible support for occupied spaces, additions, and renovation work where sequencing and communication matter.
@@ -1332,7 +1334,7 @@
               <li>Commercial renovations</li>
               <li>Phased construction planning</li>
             </ul>
-            <div class="service-footer">A good fit for owners upgrading existing homes or commercial spaces.</div>
+            <div class="service-footer">Often managed through Executive Custom Construction with coordinated trade support.</div>
           </div>
         </div>
       </div>
