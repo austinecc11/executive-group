@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | Executive Companies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Learn about Executive Companies, our history, our values, and our commitment to serving the Colorado Springs community."
+  />
+  <style>
+    :root {
+      --blue: #005f9e;
+      --blue-deep: #0b3f66;
+      --blue-soft: #e6f0f8;
+      --blue-soft-alt: #f3f6fb;
+      --gold: #f9a825;
+      --gold-rich: #f59e0b;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --border-light: rgba(209, 213, 219, 0.82);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --shadow-strong: 0 26px 64px rgba(15, 23, 42, 0.14);
+      --max-width: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0, 95, 158, 0.08), transparent 55%),
+        linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.7);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .header-utility {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.5));
+    }
+
+    .header-utility-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.45rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .header-utility-left,
+    .header-utility-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .header-utility strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .header-main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      min-width: 0;
+    }
+
+    .header-logo-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 22px;
+      background: #000;
+      border: 2px solid rgba(249, 168, 37, 0.9);
+      box-shadow:
+        0 0 0 2px rgba(249, 168, 37, 0.24),
+        0 12px 26px rgba(15, 23, 42, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-logo-wrap img {
+      max-width: 84%;
+      max-height: 84%;
+      object-fit: contain;
+    }
+
+    .header-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.14rem;
+      min-width: 0;
+    }
+
+    .header-brand-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-rich);
+      font-weight: 800;
+    }
+
+    .header-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #030712;
+    }
+
+    .header-subline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      line-height: 1.5;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+      padding: 0.5rem 0.82rem;
+      border-radius: var(--radius-pill);
+      color: #475569;
+      font-weight: 600;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(0, 95, 158, 0.08);
+      color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      background: rgba(0, 95, 158, 0.08);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .nav-button {
+      font-size: 0.76rem;
+      padding: 0.56rem 1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      white-space: nowrap;
+      transition:
+        border-color 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .nav-button:hover {
+      border-color: rgba(245, 158, 11, 0.85);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .nav-button.primary {
+      border-color: var(--gold-rich);
+      background: linear-gradient(120deg, var(--blue) 0%, var(--gold-rich) 100%);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
+    }
+
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem 3rem;
+    }
+
+    section + section {
+      margin-top: 2.8rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      padding: 1.25rem;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(243,246,251,0.9) 55%, rgba(238,242,247,0.88) 100%);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 1.15rem;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      padding: 0.3rem 0.25rem 0.3rem 0.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-kicker {
+      margin: 0 0 0.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-rich);
+      font-weight: 800;
+    }
+
+    .hero-title {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: #030712;
+      max-width: 12ch;
+    }
+
+    .hero-text {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #4b5563;
+      max-width: 42rem;
+    }
+
+    .hero-side {
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 100%;
+      background:
+        linear-gradient(180deg, rgba(0,95,158,0.96), rgba(11,63,102,0.96));
+      color: #fff;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 46px rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-side-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.85;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-side-quote {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .hero-side-note {
+      margin-top: 1.2rem;
+      font-size: 0.86rem;
+      line-height: 1.7;
+      opacity: 0.92;
+    }
+
+    .section-title {
+      margin: 0 0 0.45rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-rich);
+      font-weight: 700;
+    }
+
+    .section-heading {
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      color: #030712;
+      letter-spacing: -0.03em;
+    }
+
+    .section-text {
+      margin: 0 0 1.3rem;
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      max-width: 46rem;
+      line-height: 1.75;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .story-card,
+    .side-card,
+    .value-card,
+    .cta-card {
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
+      border: 1px solid rgba(209, 213, 219, 0.92);
+      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.06);
+    }
+
+    .story-card {
+      padding: 1.3rem;
+    }
+
+    .story-copy p {
+      margin: 0 0 1rem;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #4b5563;
+    }
+
+    .story-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .side-card {
+      padding: 1.15rem;
+    }
+
+    .side-card-title {
+      margin: 0 0 0.65rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-rich);
+      font-weight: 800;
+    }
+
+    .side-card-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .side-card-list li {
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      color: #4b5563;
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .side-card-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .value-card {
+      padding: 1.1rem;
+    }
+
+    .value-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+      font-size: 0.92rem;
+    }
+
+    .value-title {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #030712;
+    }
+
+    .value-text {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .charity-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .charity-main,
+    .charity-side {
+      border-radius: 24px;
+      border: 1px solid rgba(209, 213, 219, 0.92);
+      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.06);
+    }
+
+    .charity-main {
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
+      padding: 1.3rem;
+    }
+
+    .charity-main p {
+      margin: 0 0 1rem;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #4b5563;
+    }
+
+    .charity-main p:last-child {
+      margin-bottom: 0;
+    }
+
+    .charity-side {
+      background:
+        linear-gradient(135deg, rgba(0,95,158,0.06), rgba(245,158,11,0.08)),
+        #ffffff;
+      padding: 1.2rem;
+    }
+
+    .charity-points {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .charity-points li {
+      position: relative;
+      padding-left: 1.15rem;
+      color: #475569;
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
+
+    .charity-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #005f9e, #f59e0b);
+    }
+
+    .cta-card {
+      padding: 1.3rem;
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 34%),
+        linear-gradient(135deg, #ffffff, #eef2f7);
+    }
+
+    .cta-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    .cta-title {
+      margin: 0 0 0.45rem;
+      font-size: 1.16rem;
+      font-weight: 800;
+      color: #030712;
+    }
+
+    .cta-text {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: flex-end;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.62rem 1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      background: rgba(255, 255, 255, 0.96);
+      color: #111827;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.9);
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-pill-primary {
+      border-color: rgba(245, 158, 11, 0.95);
+      background: linear-gradient(135deg, #005f9e 0%, #f59e0b 100%);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+    }
+
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid rgba(209, 213, 219, 0.85);
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.6rem 1.5rem 1.8rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
+      gap: 1.3rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-brand {
+      color: #111827;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      font-size: 0.98rem;
+    }
+
+    .footer-heading {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-rich);
+      margin-bottom: 0.6rem;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.48rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    .footer-note {
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .story-grid,
+      .charity-section,
+      .cta-row,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell,
+      .footer-inner {
+        padding-inline: 1.15rem;
+      }
+
+      .hero-panel {
+        border-radius: 22px;
+        padding: 0.95rem;
+      }
+
+      .hero-side,
+      .story-card,
+      .side-card,
+      .charity-main,
+      .charity-side,
+      .cta-card {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-utility">
+      <div class="header-utility-inner">
+        <div class="header-utility-left">
+          <span>Colorado Springs, Colorado</span>
+          <span>•</span>
+          <span>Residential • Commercial • Remodel</span>
+        </div>
+        <div class="header-utility-right">
+          <span><strong>(719) 531-0707</strong></span>
+          <span>•</span>
+          <span><strong>estimating@executive-company.com</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main">
+      <div class="header-left">
+        <a href="index.html" class="header-logo-wrap" aria-label="Executive Companies home">
+          <img src="executive-companies.png" alt="Executive Companies logo">
+        </a>
+
+        <div class="header-text-block">
+          <div class="header-brand-line">Executive Companies</div>
+          <div class="header-title">Construction • Excavation • Interiors</div>
+          <div class="header-subline">
+            One coordinated team for residential, commercial, and remodel projects.
+          </div>
+        </div>
+      </div>
+
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="executive.html" class="nav-link">Executive</a>
+        <a href="apex.html" class="nav-link">Apex</a>
+        <a href="golden-eagle.html" class="nav-link">Golden Eagle</a>
+        <a href="contact.html" class="nav-button primary">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section>
+      <div class="hero-panel">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker">About Executive Companies</p>
+            <h1 class="hero-title">Built on work ethic, relationships, and service.</h1>
+            <p class="hero-text">
+              Executive Companies was built with a simple goal: create a group that can serve clients well, build quality work,
+              and stay grounded in something bigger than the job itself. Our history is rooted in construction, but our purpose
+              also includes the people and communities around us.
+            </p>
+          </div>
+
+          <div class="hero-side">
+            <div>
+              <div class="hero-side-title">What matters to us</div>
+              <p class="hero-side-quote">
+                We believe good work should create more than finished projects. It should build trust, open doors for others,
+                and leave a positive mark on the community we live in.
+              </p>
+            </div>
+            <div class="hero-side-note">
+              Our group brings together construction, excavation, and interior scopes under one coordinated umbrella,
+              with a long-term focus on quality, relationships, and giving back.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-title">Our story</p>
+      <h2 class="section-heading">How the company grew</h2>
+      <p class="section-text">
+        This page is designed so you can tell your story in a more personal way than the homepage. The wording below is polished,
+        but easy to swap once you want to tighten the details around your exact history.
+      </p>
+
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-copy">
+            <p>
+              Executive Companies began with a commitment to do work the right way — with strong communication, dependable follow-through,
+              and a level of care that clients can feel throughout the project. Over time, that commitment grew into a broader vision:
+              bring together the right people, the right scopes, and the right structure to better serve clients from the ground up.
+            </p>
+            <p>
+              As the company evolved, the group expanded to include specialized capabilities across general construction, excavation,
+              and interior build scopes. That growth was not just about adding services. It was about building a more coordinated team
+              that could create cleaner handoffs, stronger accountability, and better overall project outcomes.
+            </p>
+            <p>
+              Today, Executive Companies reflects that larger vision. Each company within the group has its own strengths, but all of them
+              work toward the same goal: delivering quality work, building long-term relationships, and representing the business with integrity.
+            </p>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h3 class="side-card-title">The group today</h3>
+          <ul class="side-card-list">
+            <li><strong>Executive Custom Construction</strong><br>General contracting, coordination, and project delivery.</li>
+            <li><strong>Apex Coatings</strong><br>Framing, drywall, and finish-related scopes.</li>
+            <li><strong>Golden Eagle Excavation</strong><br>Excavation, utilities, grading, and concrete-related site services.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-title">What we value</p>
+      <h2 class="section-heading">The principles behind the work</h2>
+      <p class="section-text">
+        A premium brand is not only about visuals. It is also about clarity, consistency, and the way people are treated throughout the process.
+      </p>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-number">01</div>
+          <h3 class="value-title">Integrity</h3>
+          <p class="value-text">
+            We want our word, our work, and our follow-through to mean something. That starts with honesty, clear communication, and doing what we say we will do.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">02</div>
+          <h3 class="value-title">Excellence</h3>
+          <p class="value-text">
+            We care about craftsmanship, coordination, and the overall experience clients have working with us — not just the final result.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">03</div>
+          <h3 class="value-title">Service</h3>
+          <p class="value-text">
+            We believe strong businesses should serve more than themselves. Our work should benefit clients, strengthen relationships, and support the broader community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-title">Community & charity</p>
+      <h2 class="section-heading">A company with a charitable focus</h2>
+      <p class="section-text">
+        This section gives you a place to talk about the heart behind the business. You can keep it broad, or later make it more specific with names of organizations,
+        local causes, events, projects, or giving initiatives.
+      </p>
+
+      <div class="charity-section">
+        <div class="charity-main">
+          <p>
+            At Executive Companies, we want our work to reflect more than professionalism and production. We want it to reflect purpose.
+            That includes finding meaningful ways to support families, local organizations, and causes that make a real difference in the Colorado Springs community.
+          </p>
+          <p>
+            Our charitable focus is rooted in the belief that business can be a tool for good. Whether that means supporting local outreach,
+            helping meet practical needs, investing time and resources into community efforts, or partnering with organizations doing meaningful work,
+            we want to be known as a company that gives back.
+          </p>
+          <p>
+            As the company continues to grow, so does our desire to expand that impact. We are not interested in charity as a marketing idea.
+            We see it as part of our responsibility and part of the legacy we hope to build through this business.
+          </p>
+        </div>
+
+        <div class="charity-side">
+          <h3 class="side-card-title">Ways this can be shown</h3>
+          <ul class="charity-points">
+            <li>Highlight community projects, sponsorships, or partnerships.</li>
+            <li>Share the causes or types of organizations the company wants to support.</li>
+            <li>Talk about why giving back matters to your leadership and culture.</li>
+            <li>Add photos later from volunteer work, events, or charitable builds.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-card">
+        <div class="cta-row">
+          <div>
+            <h3 class="cta-title">Let’s build something meaningful</h3>
+            <p class="cta-text">
+              Whether you are reaching out about a project, a partnership, or a community opportunity, we would love to connect.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="contact.html" class="btn-pill btn-pill-primary">Contact Us</a>
+            <a href="index.html" class="btn-pill">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Executive Companies</div>
+        <div class="footer-note">
+          Construction, excavation, and interiors under one coordinated group in Colorado Springs.
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-heading">Quick links</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="executive.html">Executive Custom Construction</a>
+          <a href="apex.html">Apex Coatings</a>
+          <a href="golden-eagle.html">Golden Eagle Excavation</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <span>(719) 531-0707</span>
+          <span>estimating@executive-company.com</span>
+          <span>13540 Meadowgrass Dr<br>Colorado Springs, CO 80921</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
