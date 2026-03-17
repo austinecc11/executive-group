@@ -948,6 +948,83 @@
       line-height: 1.7;
     }
 
+    /* ABOUT PREVIEW */
+
+    .about-preview-card {
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 40%),
+        linear-gradient(135deg, #ffffff, #eef2f7);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      padding: 1.4rem;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .about-preview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .about-preview-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-preview-text {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin: 0 0 0.9rem;
+      max-width: 44rem;
+    }
+
+    .about-preview-actions {
+      margin-top: 0.4rem;
+    }
+
+    .about-preview-side {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .about-preview-highlight {
+      border-radius: 20px;
+      padding: 1rem;
+      background: #ffffff;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .about-preview-highlight.alt {
+      background: linear-gradient(135deg, rgba(0,95,158,0.05), rgba(245,158,11,0.06));
+    }
+
+    .about-highlight-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-rich);
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .about-preview-highlight p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    @media (max-width: 900px) {
+      .about-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* FIT */
 
     .fit-card {
@@ -1105,6 +1182,7 @@
 
       <nav class="header-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="executive.html" class="nav-link">Executive</a>
         <a href="apex.html" class="nav-link">Apex</a>
         <a href="golden-eagle.html" class="nav-link">Golden Eagle</a>
@@ -1374,6 +1452,47 @@
       </div>
     </section>
 
+    <section id="about-preview">
+      <div class="about-preview-card">
+        <div class="about-preview-grid">
+          <div class="about-preview-content">
+            <p class="section-title">About the company</p>
+            <h2 class="section-heading">Built on work ethic, relationships, and purpose</h2>
+
+            <p class="about-preview-text">
+              Executive Companies is a family-owned business rooted in Colorado Springs since 1975. What began with Gary Erickson
+              as a residential framer grew over decades into a coordinated construction group built on trust, hard work, and long-term relationships.
+            </p>
+
+            <p class="about-preview-text">
+              Today, that same foundation still shapes how we operate. We care about quality work, strong communication,
+              and building a company that supports both clients and the community around us.
+            </p>
+
+            <div class="about-preview-actions">
+              <a href="about.html" class="btn-pill btn-pill-primary">Learn More About Us</a>
+            </div>
+          </div>
+
+          <div class="about-preview-side">
+            <div class="about-preview-highlight">
+              <div class="about-highlight-title">Since 1975</div>
+              <p>
+                Founded by Gary Erickson, Executive Companies has been serving Colorado Springs for nearly 50 years with a family-owned approach and long-term local roots.
+              </p>
+            </div>
+
+            <div class="about-preview-highlight alt">
+              <div class="about-highlight-title">Community focus</div>
+              <p>
+                We want the company to stand for more than completed projects — we want it to reflect service, integrity, and a meaningful charitable focus in the community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="project-fit">
       <div class="fit-card">
         <div class="fit-row">
@@ -1418,6 +1537,7 @@
         <div class="footer-heading">Quick links</div>
         <div class="footer-links">
           <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="executive.html">Executive Custom Construction</a>
           <a href="apex.html">Apex Coatings</a>
           <a href="golden-eagle.html">Golden Eagle Excavation</a>
