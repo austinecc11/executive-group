@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Learn about Executive Companies, our history, our values, and our commitment to serving the Colorado Springs community."
+    content="Learn about Executive Companies, our history, our mission, and the values that have shaped our family-owned business in Colorado Springs since 1975."
   />
   <style>
     :root {
@@ -55,6 +55,8 @@
       max-width: 100%;
       display: block;
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
@@ -225,6 +227,8 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
     }
 
+    /* MAIN */
+
     .shell {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -239,10 +243,9 @@
       position: relative;
       overflow: hidden;
       border-radius: 32px;
-      padding: 1.25rem;
+      padding: 1.2rem;
       border: 1px solid rgba(209, 213, 219, 0.9);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(243,246,251,0.9) 55%, rgba(238,242,247,0.88) 100%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(243,246,251,0.92) 55%, rgba(238,242,247,0.9) 100%);
       box-shadow: var(--shadow-strong);
     }
 
@@ -262,13 +265,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
       gap: 1.15rem;
       align-items: stretch;
     }
 
     .hero-copy {
-      padding: 0.3rem 0.25rem 0.3rem 0.35rem;
+      padding: 0.25rem 0.25rem 0.25rem 0.35rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -284,7 +287,7 @@
     }
 
     .hero-title {
-      margin: 0 0 0.8rem;
+      margin: 0 0 0.85rem;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
@@ -297,15 +300,14 @@
       font-size: 1rem;
       line-height: 1.8;
       color: #4b5563;
-      max-width: 42rem;
+      max-width: 46rem;
     }
 
     .hero-side {
       border-radius: 24px;
       overflow: hidden;
       min-height: 100%;
-      background:
-        linear-gradient(180deg, rgba(0,95,158,0.96), rgba(11,63,102,0.96));
+      background: linear-gradient(180deg, rgba(0,95,158,0.96), rgba(11,63,102,0.96));
       color: #fff;
       padding: 1.2rem;
       display: flex;
@@ -323,7 +325,7 @@
     }
 
     .hero-side-quote {
-      font-size: 1.02rem;
+      font-size: 1rem;
       line-height: 1.8;
       margin: 0;
       font-weight: 500;
@@ -360,15 +362,7 @@
       line-height: 1.75;
     }
 
-    .story-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 1.2rem;
-      align-items: start;
-    }
-
     .story-card,
-    .side-card,
     .value-card,
     .cta-card {
       border-radius: 24px;
@@ -382,48 +376,10 @@
     }
 
     .story-copy p {
-      margin: 0 0 1rem;
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: #4b5563;
-    }
-
-    .story-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .side-card {
-      padding: 1.15rem;
-    }
-
-    .side-card-title {
-      margin: 0 0 0.65rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold-rich);
-      font-weight: 800;
-    }
-
-    .side-card-list {
-      list-style: none;
       margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .side-card-list li {
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      font-size: 0.98rem;
+      line-height: 1.9;
       color: #4b5563;
-      line-height: 1.7;
-      font-size: 0.94rem;
-    }
-
-    .side-card-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
     }
 
     .value-grid {
@@ -462,70 +418,6 @@
       font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.7;
-    }
-
-    .charity-section {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 1.2rem;
-      align-items: stretch;
-    }
-
-    .charity-main,
-    .charity-side {
-      border-radius: 24px;
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.06);
-    }
-
-    .charity-main {
-      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
-      padding: 1.3rem;
-    }
-
-    .charity-main p {
-      margin: 0 0 1rem;
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: #4b5563;
-    }
-
-    .charity-main p:last-child {
-      margin-bottom: 0;
-    }
-
-    .charity-side {
-      background:
-        linear-gradient(135deg, rgba(0,95,158,0.06), rgba(245,158,11,0.08)),
-        #ffffff;
-      padding: 1.2rem;
-    }
-
-    .charity-points {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .charity-points li {
-      position: relative;
-      padding-left: 1.15rem;
-      color: #475569;
-      line-height: 1.75;
-      font-size: 0.94rem;
-    }
-
-    .charity-points li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.7rem;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #005f9e, #f59e0b);
     }
 
     .cta-card {
@@ -598,6 +490,8 @@
       box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
     }
 
+    /* FOOTER */
+
     footer {
       margin-top: 2rem;
       border-top: 1px solid rgba(209, 213, 219, 0.85);
@@ -646,9 +540,22 @@
     }
 
     @media (max-width: 980px) {
+      .header-utility-inner,
+      .header-main {
+        padding-inline: 1.2rem;
+      }
+
+      .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
       .hero-grid,
-      .story-grid,
-      .charity-section,
       .cta-row,
       .footer-inner {
         grid-template-columns: 1fr;
@@ -661,11 +568,30 @@
 
     @media (max-width: 900px) {
       .value-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 720px) {
+      .header-utility-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-logo-wrap {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+      }
+
+      .header-title {
+        font-size: 0.98rem;
+      }
+
+      .header-subline {
+        font-size: 0.79rem;
+      }
+
       .shell,
       .footer-inner {
         padding-inline: 1.15rem;
@@ -678,11 +604,15 @@
 
       .hero-side,
       .story-card,
-      .side-card,
-      .charity-main,
-      .charity-side,
+      .value-card,
       .cta-card {
         border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .value-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -736,25 +666,21 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <p class="hero-kicker">About Executive Companies</p>
-            <h1 class="hero-title">Built on work ethic, relationships, and service.</h1>
+            <h1 class="hero-title">Built in Colorado Springs. Built to last.</h1>
             <p class="hero-text">
-              Executive Companies was built with a simple goal: create a group that can serve clients well, build quality work,
-              and stay grounded in something bigger than the job itself. Our history is rooted in construction, but our purpose
-              also includes the people and communities around us.
+              Executive Companies is a family-owned business rooted in Colorado Springs since 1975. Founded by Gary Erickson, who began as a residential framer, the company was built through decades of hard work, strong relationships, and a commitment to doing quality work the right way. What started in the field has grown into a coordinated group spanning construction, excavation, and interior scopes — while still holding onto the same values that built the company from the beginning.
             </p>
           </div>
 
           <div class="hero-side">
             <div>
-              <div class="hero-side-title">What matters to us</div>
+              <div class="hero-side-title">Since 1975</div>
               <p class="hero-side-quote">
-                We believe good work should create more than finished projects. It should build trust, open doors for others,
-                and leave a positive mark on the community we live in.
+                From residential framing to a multi-scope construction group, our story is still grounded in craftsmanship, trust, and long-term commitment to the community.
               </p>
             </div>
             <div class="hero-side-note">
-              Our group brings together construction, excavation, and interior scopes under one coordinated umbrella,
-              with a long-term focus on quality, relationships, and giving back.
+              Family-owned. Colorado Springs based. Built on nearly 50 years of experience.
             </div>
           </div>
         </div>
@@ -762,111 +688,67 @@
     </section>
 
     <section>
-      <p class="section-title">Our story</p>
-      <h2 class="section-heading">How the company grew</h2>
-      <p class="section-text">
-        This page is designed so you can tell your story in a more personal way than the homepage. The wording below is polished,
-        but easy to swap once you want to tighten the details around your exact history.
-      </p>
-
-      <div class="story-grid">
-        <div class="story-card">
-          <div class="story-copy">
-            <p>
-              Executive Companies began with a commitment to do work the right way — with strong communication, dependable follow-through,
-              and a level of care that clients can feel throughout the project. Over time, that commitment grew into a broader vision:
-              bring together the right people, the right scopes, and the right structure to better serve clients from the ground up.
-            </p>
-            <p>
-              As the company evolved, the group expanded to include specialized capabilities across general construction, excavation,
-              and interior build scopes. That growth was not just about adding services. It was about building a more coordinated team
-              that could create cleaner handoffs, stronger accountability, and better overall project outcomes.
-            </p>
-            <p>
-              Today, Executive Companies reflects that larger vision. Each company within the group has its own strengths, but all of them
-              work toward the same goal: delivering quality work, building long-term relationships, and representing the business with integrity.
-            </p>
-          </div>
-        </div>
-
-        <div class="side-card">
-          <h3 class="side-card-title">The group today</h3>
-          <ul class="side-card-list">
-            <li><strong>Executive Custom Construction</strong><br>General contracting, coordination, and project delivery.</li>
-            <li><strong>Apex Coatings</strong><br>Framing, drywall, and finish-related scopes.</li>
-            <li><strong>Golden Eagle Excavation</strong><br>Excavation, utilities, grading, and concrete-related site services.</li>
-          </ul>
+      <p class="section-title">Our mission</p>
+      <h2 class="section-heading">Why we do what we do</h2>
+      <div class="story-card">
+        <div class="story-copy">
+          <p>
+            Our mission is to build with excellence, serve with integrity, and create lasting value for the clients and communities we work with. We want every project to reflect strong communication, dependable execution, and a level of care that people can trust. Just as importantly, we want the company itself to stand for something meaningful — supporting our team, strengthening relationships, and making a positive impact in Colorado Springs through both our work and our charitable focus.
+          </p>
         </div>
       </div>
     </section>
 
     <section>
-      <p class="section-title">What we value</p>
-      <h2 class="section-heading">The principles behind the work</h2>
-      <p class="section-text">
-        A premium brand is not only about visuals. It is also about clarity, consistency, and the way people are treated throughout the process.
-      </p>
-
+      <p class="section-title">Our values</p>
+      <h2 class="section-heading">What guides the company</h2>
       <div class="value-grid">
         <div class="value-card">
           <div class="value-number">01</div>
           <h3 class="value-title">Integrity</h3>
           <p class="value-text">
-            We want our word, our work, and our follow-through to mean something. That starts with honesty, clear communication, and doing what we say we will do.
+            We believe our word should mean something. We value honesty, accountability, and following through on what we say we will do.
           </p>
         </div>
 
         <div class="value-card">
           <div class="value-number">02</div>
-          <h3 class="value-title">Excellence</h3>
+          <h3 class="value-title">Work ethic</h3>
           <p class="value-text">
-            We care about craftsmanship, coordination, and the overall experience clients have working with us — not just the final result.
+            The company was built from the ground up through hard work, and that mindset still shapes how we approach every project and relationship.
           </p>
         </div>
 
         <div class="value-card">
           <div class="value-number">03</div>
+          <h3 class="value-title">Quality</h3>
+          <p class="value-text">
+            We care deeply about doing the job right — with attention to detail, strong coordination, and pride in the finished product.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">04</div>
+          <h3 class="value-title">Relationships</h3>
+          <p class="value-text">
+            Long-term trust matters to us. We want to build strong relationships with clients, trade partners, employees, and the community.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">05</div>
           <h3 class="value-title">Service</h3>
           <p class="value-text">
-            We believe strong businesses should serve more than themselves. Our work should benefit clients, strengthen relationships, and support the broader community.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <p class="section-title">Community & charity</p>
-      <h2 class="section-heading">A company with a charitable focus</h2>
-      <p class="section-text">
-        This section gives you a place to talk about the heart behind the business. You can keep it broad, or later make it more specific with names of organizations,
-        local causes, events, projects, or giving initiatives.
-      </p>
-
-      <div class="charity-section">
-        <div class="charity-main">
-          <p>
-            At Executive Companies, we want our work to reflect more than professionalism and production. We want it to reflect purpose.
-            That includes finding meaningful ways to support families, local organizations, and causes that make a real difference in the Colorado Springs community.
-          </p>
-          <p>
-            Our charitable focus is rooted in the belief that business can be a tool for good. Whether that means supporting local outreach,
-            helping meet practical needs, investing time and resources into community efforts, or partnering with organizations doing meaningful work,
-            we want to be known as a company that gives back.
-          </p>
-          <p>
-            As the company continues to grow, so does our desire to expand that impact. We are not interested in charity as a marketing idea.
-            We see it as part of our responsibility and part of the legacy we hope to build through this business.
+            We want the company to have an impact beyond the jobsite by supporting people, giving back locally, and creating opportunities to serve others.
           </p>
         </div>
 
-        <div class="charity-side">
-          <h3 class="side-card-title">Ways this can be shown</h3>
-          <ul class="charity-points">
-            <li>Highlight community projects, sponsorships, or partnerships.</li>
-            <li>Share the causes or types of organizations the company wants to support.</li>
-            <li>Talk about why giving back matters to your leadership and culture.</li>
-            <li>Add photos later from volunteer work, events, or charitable builds.</li>
-          </ul>
+        <div class="value-card">
+          <div class="value-number">06</div>
+          <h3 class="value-title">Legacy</h3>
+          <p class="value-text">
+            We are building for the long term — not just in the projects we complete, but in the reputation, culture, and community impact we leave behind.
+          </p>
         </div>
       </div>
     </section>
@@ -875,9 +757,9 @@
       <div class="cta-card">
         <div class="cta-row">
           <div>
-            <h3 class="cta-title">Let’s build something meaningful</h3>
+            <h3 class="cta-title">Built on a strong foundation</h3>
             <p class="cta-text">
-              Whether you are reaching out about a project, a partnership, or a community opportunity, we would love to connect.
+              From our beginnings in residential framing to the coordinated group we are today, Executive Companies continues to grow with the same commitment to quality, integrity, and service.
             </p>
           </div>
 
