@@ -14,14 +14,11 @@
       --blue-deep: #0b3f66;
       --blue-soft: #e6f0f8;
       --gold-rich: #f59e0b;
-      --gold-soft: #fff5df;
       --text-main: #111827;
       --text-muted: #6b7280;
-      --border-subtle: rgba(148, 163, 184, 0.32);
       --border-light: rgba(209, 213, 219, 0.85);
       --radius-xl: 30px;
       --radius-lg: 24px;
-      --radius-md: 18px;
       --radius-pill: 999px;
       --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.07);
       --shadow-card: 0 22px 48px rgba(15, 23, 42, 0.08);
@@ -56,8 +53,6 @@
       max-width: 100%;
       display: block;
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -228,8 +223,6 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
     }
 
-    /* MAIN */
-
     .shell {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -263,8 +256,6 @@
       max-width: 48rem;
       line-height: 1.8;
     }
-
-    /* SHARED GRAPHICS */
 
     .decor-card {
       position: relative;
@@ -404,8 +395,6 @@
       padding: 1.4rem;
     }
 
-    /* HERO */
-
     .about-hero {
       position: relative;
       overflow: hidden;
@@ -450,7 +439,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(310px, 0.9fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.95fr);
       gap: 1.15rem;
       align-items: stretch;
     }
@@ -485,7 +474,7 @@
     .legacy-badge {
       display: inline-flex;
       align-items: center;
-      margin: 0 0 0.95rem;
+      margin: 0 0 0.55rem;
       padding: 0.42rem 0.8rem;
       border-radius: 999px;
       background: rgba(17, 24, 39, 0.06);
@@ -525,6 +514,44 @@
       box-shadow: 0 20px 46px rgba(15, 23, 42, 0.18);
     }
 
+    .legacy-panel--graphic {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .legacy-panel-bg-number {
+      position: absolute;
+      right: 16px;
+      top: 10px;
+      font-size: 6rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .legacy-panel-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.14;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 85%);
+    }
+
+    .legacy-panel-title,
+    .legacy-panel-copy,
+    .legacy-mini-list {
+      position: relative;
+      z-index: 1;
+    }
+
     .legacy-panel-title {
       margin: 0 0 0.5rem;
       font-size: 0.76rem;
@@ -539,6 +566,36 @@
       font-size: 0.96rem;
       line-height: 1.8;
       opacity: 0.96;
+    }
+
+    .legacy-mini-list {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .legacy-mini-item {
+      display: grid;
+      gap: 0.12rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(2px);
+    }
+
+    .legacy-mini-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      font-weight: 700;
+    }
+
+    .legacy-mini-item strong {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #ffffff;
     }
 
     .legacy-stats {
@@ -569,13 +626,10 @@
       color: var(--text-muted);
     }
 
-    /* STORY BAND */
-
     .story-band {
       border-radius: var(--radius-lg);
       padding: 1.3rem;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.94), rgba(250,251,253,0.96));
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(250,251,253,0.96));
       border: 1px solid rgba(209, 213, 219, 0.92);
       box-shadow: var(--shadow-card);
       position: relative;
@@ -599,8 +653,6 @@
       position: relative;
       z-index: 1;
     }
-
-    /* MISSION */
 
     .mission-wrap {
       border-radius: var(--radius-lg);
@@ -650,8 +702,6 @@
       line-height: 1.7;
       color: #475569;
     }
-
-    /* CHARITY */
 
     .charity-wrap {
       border-radius: var(--radius-lg);
@@ -710,8 +760,6 @@
       border-radius: 999px;
       background: linear-gradient(135deg, #005f9e, #f59e0b);
     }
-
-    /* VALUES */
 
     .values-section {
       position: relative;
@@ -782,8 +830,6 @@
       color: var(--text-muted);
       line-height: 1.72;
     }
-
-    /* CTA */
 
     .cta-card {
       padding: 1.35rem;
@@ -859,8 +905,6 @@
       font-weight: 800;
       box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
     }
-
-    /* FOOTER */
 
     footer {
       margin-top: 2rem;
@@ -998,6 +1042,10 @@
       .value-grid {
         grid-template-columns: 1fr;
       }
+
+      .legacy-panel-bg-number {
+        font-size: 4.5rem;
+      }
     }
   </style>
 </head>
@@ -1058,27 +1106,46 @@
             <p class="about-kicker">About Executive Companies</p>
             <h1 class="about-title">Built in Colorado Springs. Built to last.</h1>
             <div class="legacy-badge">Family-owned in Colorado Springs since 1975</div>
+            <div class="graphic-divider"></div>
             <p class="about-lead">
               Executive Companies is a family-owned business rooted in Colorado Springs since 1975. Founded by Gary Erickson, who began as a residential framer, the company was built through decades of hard work, strong relationships, and a commitment to doing quality work the right way. What started in the field has grown into a coordinated group spanning construction, excavation, and interior scopes — while still holding onto the same values that built the company from the beginning.
             </p>
           </div>
 
           <div class="about-hero-side">
-            <div class="legacy-panel">
+            <div class="legacy-panel legacy-panel--graphic">
+              <div class="legacy-panel-bg-number">1975</div>
+              <div class="legacy-panel-lines"></div>
+
               <div class="legacy-panel-title">Our foundation</div>
               <p class="legacy-panel-copy">
-                From residential framing to a multi-scope construction group, our story is still grounded in craftsmanship, trust, and long-term commitment to the community.
+                From residential framing to a coordinated construction group, our story is grounded in craftsmanship, trust, and long-term commitment to Colorado Springs.
               </p>
+
+              <div class="legacy-mini-list">
+                <div class="legacy-mini-item">
+                  <span class="legacy-mini-label">Founded by</span>
+                  <strong>Gary Erickson</strong>
+                </div>
+                <div class="legacy-mini-item">
+                  <span class="legacy-mini-label">Started in</span>
+                  <strong>Residential Framing</strong>
+                </div>
+                <div class="legacy-mini-item">
+                  <span class="legacy-mini-label">Built on</span>
+                  <strong>Family Ownership &amp; Work Ethic</strong>
+                </div>
+              </div>
             </div>
 
             <div class="legacy-stats">
               <div class="legacy-stat">
-                <div class="legacy-stat-number">1975</div>
-                <div class="legacy-stat-label">Founded in Colorado Springs by Gary Erickson</div>
+                <div class="legacy-stat-number">50 Years</div>
+                <div class="legacy-stat-label">Serving Colorado Springs with long-term local roots</div>
               </div>
               <div class="legacy-stat">
-                <div class="legacy-stat-number">50 Years</div>
-                <div class="legacy-stat-label">Of family-owned experience and long-term local roots</div>
+                <div class="legacy-stat-number">3 Companies</div>
+                <div class="legacy-stat-label">Construction, excavation, and interiors under one group</div>
               </div>
             </div>
           </div>
