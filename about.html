@@ -17,7 +17,6 @@
       --gold-soft: #fff5df;
       --text-main: #111827;
       --text-muted: #6b7280;
-      --text-soft: #94a3b8;
       --border-subtle: rgba(148, 163, 184, 0.32);
       --border-light: rgba(209, 213, 219, 0.85);
       --radius-xl: 30px;
@@ -265,6 +264,146 @@
       line-height: 1.8;
     }
 
+    /* SHARED GRAPHICS */
+
+    .decor-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .graphic-dots {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      opacity: 0.18;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(245, 158, 11, 0.55) 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
+      z-index: 0;
+    }
+
+    .graphic-dots.top-right {
+      top: 20px;
+      right: 20px;
+    }
+
+    .graphic-dots.bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .graphic-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0, 95, 158, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 95, 158, 0.35) 1px, transparent 1px);
+      background-size: 26px 26px;
+      z-index: 0;
+    }
+
+    .graphic-angles {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      pointer-events: none;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .graphic-angles::before,
+    .graphic-angles::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(90deg, #111827, #f59e0b);
+    }
+
+    .graphic-angles::before {
+      width: 110px;
+      height: 2px;
+      top: 0;
+      right: 0;
+    }
+
+    .graphic-angles::after {
+      width: 2px;
+      height: 110px;
+      top: 0;
+      right: 0;
+    }
+
+    .graphic-angles.top-right {
+      top: 24px;
+      right: 24px;
+    }
+
+    .graphic-divider {
+      width: 72px;
+      height: 10px;
+      margin: 0 0 0.9rem;
+      position: relative;
+    }
+
+    .graphic-divider::before {
+      content: "";
+      position: absolute;
+      inset: 4px 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #111827 0%, #f59e0b 100%);
+    }
+
+    .graphic-divider::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      top: 1px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f59e0b;
+    }
+
+    .graphic-frame {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      z-index: 0;
+    }
+
+    .graphic-frame::before,
+    .graphic-frame::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(0, 95, 158, 0.5);
+    }
+
+    .graphic-frame::before {
+      top: 12px;
+      left: 12px;
+      width: 60px;
+      height: 60px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .graphic-frame::after {
+      bottom: 12px;
+      right: 12px;
+      width: 60px;
+      height: 60px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .alt-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+      border-radius: 24px;
+      padding: 1.4rem;
+    }
+
     /* HERO */
 
     .about-hero {
@@ -321,6 +460,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      z-index: 1;
     }
 
     .about-kicker {
@@ -369,6 +510,8 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 0.85rem;
+      position: relative;
+      z-index: 1;
     }
 
     .legacy-panel {
@@ -453,6 +596,8 @@
       color: #4b5563;
       max-width: 62rem;
       margin: 0;
+      position: relative;
+      z-index: 1;
     }
 
     /* MISSION */
@@ -468,6 +613,8 @@
     }
 
     .mission-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
       gap: 1.1rem;
@@ -515,6 +662,8 @@
     }
 
     .charity-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
       gap: 1.1rem;
@@ -564,11 +713,19 @@
 
     /* VALUES */
 
+    .values-section {
+      position: relative;
+    }
+
     .values-header {
       margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .value-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
@@ -639,6 +796,8 @@
     }
 
     .cta-row {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
       gap: 1.2rem;
@@ -810,7 +969,8 @@
         padding-inline: 1.15rem;
       }
 
-      .about-hero {
+      .about-hero,
+      .alt-section {
         border-radius: 22px;
         padding: 0.95rem;
       }
@@ -886,10 +1046,12 @@
 
   <main class="shell">
     <section>
-      <div class="about-hero">
+      <div class="about-hero decor-card">
+        <div class="graphic-frame"></div>
         <div class="about-watermark">
           <img src="ecc-logo.png" alt="Executive Custom Construction logo">
         </div>
+        <div class="graphic-dots top-right"></div>
 
         <div class="about-hero-grid">
           <div class="about-hero-copy">
@@ -927,17 +1089,22 @@
     <section>
       <p class="section-title">Our story</p>
       <h2 class="section-heading">From the field to the company we are today</h2>
-      <div class="story-band">
+      <div class="graphic-divider"></div>
+
+      <div class="story-band decor-card">
+        <div class="graphic-angles top-right"></div>
         <p class="story-copy">
           Gary Erickson started in residential framing, building the company the same way many strong businesses begin — through steady work, consistency, and a reputation earned over time. As the years went on, that foundation expanded into something bigger: a coordinated group with the ability to serve clients across construction, excavation, and interior scopes while still operating with the same mindset it was built on from the beginning. Today, Executive Companies continues to grow as a family-owned business with deep roots in Colorado Springs and a long-term commitment to doing quality work the right way.
         </p>
       </div>
     </section>
 
-    <section>
+    <section class="alt-section">
       <p class="section-title">Our mission</p>
       <h2 class="section-heading">Why we do what we do</h2>
-      <div class="mission-wrap">
+      <div class="mission-wrap decor-card">
+        <div class="graphic-grid"></div>
+
         <div class="mission-grid">
           <p class="mission-copy">
             Our mission is to deliver high-quality work through strong communication, dependable execution, and attention to detail at every phase of the project. We aim to build lasting relationships with our clients and partners while growing a company that reflects integrity, consistency, and a long-term commitment to the Colorado Springs community.
@@ -956,7 +1123,9 @@
     <section>
       <p class="section-title">Community & giving</p>
       <h2 class="section-heading">Supporting the community we’re part of</h2>
-      <div class="charity-wrap">
+      <div class="charity-wrap decor-card">
+        <div class="graphic-dots bottom-left"></div>
+
         <div class="charity-grid">
           <p class="charity-copy">
             As a company built in Colorado Springs, we believe our work should have an impact beyond the jobsite. We actively support organizations like Springs Rescue Mission and other faith-based groups that are making a difference in our community. Our goal is to continue growing a company that not only builds quality projects, but also contributes in a meaningful way to the people and organizations around us.
@@ -973,7 +1142,9 @@
       </div>
     </section>
 
-    <section>
+    <section class="values-section decor-card">
+      <div class="graphic-frame"></div>
+
       <div class="values-header">
         <p class="section-title">Our values</p>
         <h2 class="section-heading">What guides the company</h2>
@@ -1034,7 +1205,9 @@
     </section>
 
     <section>
-      <div class="cta-card">
+      <div class="cta-card decor-card">
+        <div class="graphic-frame"></div>
+
         <div class="cta-row">
           <div>
             <h3 class="cta-title">Built on a strong foundation</h3>
