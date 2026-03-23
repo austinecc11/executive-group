@@ -536,18 +536,18 @@
     .legacy-panel-lines {
       position: absolute;
       inset: 0;
-      opacity: 0.14;
+      opacity: 0.12;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
       background-size: 26px 26px;
       mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 85%);
     }
 
     .legacy-panel-title,
     .legacy-panel-copy,
-    .legacy-mini-list {
+    .legacy-mountain {
       position: relative;
       z-index: 1;
     }
@@ -568,34 +568,32 @@
       opacity: 0.96;
     }
 
-    .legacy-mini-list {
-      margin-top: 1rem;
-      display: grid;
-      gap: 0.7rem;
+    .legacy-mountain {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .legacy-mini-item {
-      display: grid;
-      gap: 0.12rem;
-      padding: 0.7rem 0.8rem;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(2px);
+    .legacy-mountain svg {
+      display: block;
+      width: 100%;
+      height: 120px;
     }
 
-    .legacy-mini-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
-      font-weight: 700;
+    .legacy-mountain path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    .legacy-mini-item strong {
-      font-size: 0.95rem;
-      line-height: 1.45;
-      color: #ffffff;
+    .legacy-mountain path:first-child {
+      stroke: rgba(255, 255, 255, 0.78);
+      stroke-width: 3;
+    }
+
+    .legacy-mountain path:last-child {
+      stroke: rgba(245, 158, 11, 0.72);
+      stroke-width: 2;
     }
 
     .legacy-stats {
@@ -1119,22 +1117,14 @@
 
               <div class="legacy-panel-title">Our foundation</div>
               <p class="legacy-panel-copy">
-                From residential framing to a coordinated construction group, our story is grounded in craftsmanship, trust, and long-term commitment to Colorado Springs.
+                From residential framing to a coordinated construction group, our story is grounded in craftsmanship, trust, and a long-term commitment to Colorado Springs.
               </p>
 
-              <div class="legacy-mini-list">
-                <div class="legacy-mini-item">
-                  <span class="legacy-mini-label">Founded by</span>
-                  <strong>Gary Erickson</strong>
-                </div>
-                <div class="legacy-mini-item">
-                  <span class="legacy-mini-label">Started in</span>
-                  <strong>Residential Framing</strong>
-                </div>
-                <div class="legacy-mini-item">
-                  <span class="legacy-mini-label">Built on</span>
-                  <strong>Family Ownership &amp; Work Ethic</strong>
-                </div>
+              <div class="legacy-mountain">
+                <svg viewBox="0 0 600 220" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M0 190 L95 120 L150 150 L240 65 L300 110 L365 78 L455 155 L520 118 L600 185" />
+                  <path d="M0 205 L80 165 L145 182 L225 122 L305 150 L388 118 L470 178 L540 150 L600 198" />
+                </svg>
               </div>
             </div>
 
