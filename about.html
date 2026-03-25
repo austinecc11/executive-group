@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Executive Companies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Learn about Executive Companies, our history, our mission, and the values that have shaped our family-owned business in Colorado Springs since 1975."
+    content="Learn about Executive Companies and the coordinated structure behind Executive Custom Construction, Apex Coatings, and Golden Eagle Excavation in Colorado Springs."
   />
   <style>
     :root {
-      --blue: #005f9e;
-      --blue-deep: #0b3f66;
-      --blue-soft: #e6f0f8;
-      --gold-rich: #f59e0b;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-light: rgba(209, 213, 219, 0.85);
+      --bg: #f5f4f1;
+      --surface: #ffffff;
+      --surface-soft: #eef1f4;
+      --text: #111111;
+      --text-soft: #5c6470;
+      --line: rgba(17, 17, 17, 0.1);
+      --dark: #101317;
+      --dark-soft: #171c22;
+      --ecc-blue: #0c5a8a;
+      --ecc-gold: #c79a3b;
+      --apex-blue: #bcd8ea;
+      --golden-orange: #c97a00;
+      --shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.08);
+      --shadow-card: 0 24px 50px rgba(0, 0, 0, 0.1);
+      --max: 1240px;
       --radius-xl: 30px;
-      --radius-lg: 24px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.07);
-      --shadow-card: 0 22px 48px rgba(15, 23, 42, 0.08);
-      --shadow-strong: 0 28px 68px rgba(15, 23, 42, 0.14);
-      --max-width: 1240px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --transition: 220ms ease;
     }
 
     * {
@@ -36,17 +41,10 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top left, rgba(0, 95, 158, 0.08), transparent 55%),
-        linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
     }
 
     img {
@@ -54,1329 +52,832 @@
       display: block;
     }
 
-    header {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(209, 213, 219, 0.7);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(16, 19, 23, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .header-utility {
-      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
-      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.5));
-    }
-
-    .header-utility-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.45rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
-
-    .header-utility-left,
-    .header-utility-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .header-utility strong {
-      color: #0f172a;
-      font-weight: 700;
-    }
-
-    .header-main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.85rem 1.5rem;
+    .header-inner {
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
+      gap: 28px;
     }
 
-    .header-left {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 0.95rem;
+      gap: 14px;
       min-width: 0;
     }
 
-    .header-logo-wrap {
-      width: 72px;
-      height: 72px;
-      border-radius: 22px;
-      background: #000;
-      border: 2px solid rgba(249, 168, 37, 0.9);
-      box-shadow:
-        0 0 0 2px rgba(249, 168, 37, 0.24),
-        0 12px 26px rgba(15, 23, 42, 0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.14);
+      display: grid;
+      place-items: center;
       overflow: hidden;
       flex-shrink: 0;
     }
 
-    .header-logo-wrap img {
-      max-width: 84%;
-      max-height: 84%;
-      object-fit: contain;
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .header-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.14rem;
-      min-width: 0;
-    }
-
-    .header-brand-line {
-      font-size: 0.7rem;
-      letter-spacing: 0.28em;
+    .brand-copy span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold-rich);
-      font-weight: 800;
+      color: rgba(255,255,255,0.66);
+      margin-bottom: 4px;
     }
 
-    .header-title {
-      font-size: 1.08rem;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: #030712;
+    .brand-copy strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+      white-space: nowrap;
     }
 
-    .header-subline {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      max-width: 36rem;
-      line-height: 1.5;
-    }
-
-    .header-nav {
+    .site-nav {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 28px;
+      margin-left: auto;
     }
 
-    .nav-link {
-      font-size: 0.78rem;
-      padding: 0.5rem 0.82rem;
-      border-radius: var(--radius-pill);
-      color: #475569;
-      font-weight: 600;
-      transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-    }
-
-    .nav-link:hover {
-      background: rgba(0, 95, 158, 0.08);
-      color: var(--blue);
-      transform: translateY(-1px);
-    }
-
-    .nav-link.active {
-      background: rgba(0, 95, 158, 0.08);
-      color: var(--blue);
-      font-weight: 700;
-    }
-
-    .nav-button {
-      font-size: 0.76rem;
-      padding: 0.56rem 1rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      background: rgba(255, 255, 255, 0.92);
-      color: #111827;
-      text-transform: uppercase;
+    .site-nav a {
+      font-size: 0.82rem;
       letter-spacing: 0.14em;
-      font-weight: 700;
-      white-space: nowrap;
-      transition:
-        border-color 0.15s ease,
-        background 0.15s ease,
-        box-shadow 0.15s ease,
-        transform 0.15s ease;
-    }
-
-    .nav-button:hover {
-      border-color: rgba(245, 158, 11, 0.85);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-      transform: translateY(-1px);
-    }
-
-    .nav-button.primary {
-      border-color: var(--gold-rich);
-      background: linear-gradient(120deg, var(--blue) 0%, var(--gold-rich) 100%);
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
-    }
-
-    .shell {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.8rem 1.5rem 3rem;
-    }
-
-    section + section {
-      margin-top: 2.6rem;
-    }
-
-    .section-title {
-      margin: 0 0 0.45rem;
-      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-rich);
+      color: rgba(255,255,255,0.82);
+      transition: color var(--transition);
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: #fff;
+    }
+
+    .header-cta,
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+    }
+
+    .header-cta {
+      min-height: 48px;
+      padding: 0 20px;
+      background: var(--ecc-gold);
+      color: #111;
+      font-size: 0.84rem;
       font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
-    .section-heading {
-      margin: 0 0 0.7rem;
-      font-size: clamp(1.55rem, 2vw, 2.1rem);
-      color: #030712;
-      letter-spacing: -0.03em;
+    .header-cta:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.16);
     }
 
-    .section-text {
-      margin: 0 0 1.2rem;
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      max-width: 48rem;
-      line-height: 1.8;
-    }
-
-    .decor-card {
+    .page-hero {
       position: relative;
       overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(199,154,59,0.16), transparent 26%),
+        linear-gradient(180deg, #171c22 0%, #101317 100%);
+      color: #fff;
+      padding: 110px 0 90px;
     }
 
-    .graphic-dots {
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      opacity: 0.18;
-      pointer-events: none;
-      background-image: radial-gradient(circle, rgba(245, 158, 11, 0.55) 1.2px, transparent 1.2px);
-      background-size: 14px 14px;
-      z-index: 0;
+    .page-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    .graphic-dots.top-right {
-      top: 20px;
-      right: 20px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.08);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
     }
 
-    .graphic-dots.bottom-left {
-      bottom: 20px;
-      left: 20px;
+    .page-hero h1 {
+      margin: 0;
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
     }
 
-    .graphic-grid {
-      position: absolute;
-      inset: 0;
-      opacity: 0.06;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(0, 95, 158, 0.35) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 95, 158, 0.35) 1px, transparent 1px);
-      background-size: 26px 26px;
-      z-index: 0;
+    .page-hero p {
+      margin: 24px 0 0;
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.8);
     }
 
-    .graphic-angles {
-      position: absolute;
-      width: 110px;
-      height: 110px;
-      pointer-events: none;
-      opacity: 0.18;
-      z-index: 0;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .graphic-angles::before,
-    .graphic-angles::after {
-      content: "";
-      position: absolute;
-      background: linear-gradient(90deg, #111827, #f59e0b);
+    .btn-primary,
+    .btn-secondary {
+      min-height: 54px;
+      padding: 0 24px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .graphic-angles::before {
-      width: 110px;
-      height: 2px;
-      top: 0;
-      right: 0;
+    .btn-primary {
+      background: var(--ecc-gold);
+      color: #111;
     }
 
-    .graphic-angles::after {
-      width: 2px;
-      height: 110px;
-      top: 0;
-      right: 0;
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+      background: rgba(255,255,255,0.06);
     }
 
-    .graphic-angles.top-right {
-      top: 24px;
-      right: 24px;
-    }
-
-    .graphic-divider {
-      width: 72px;
-      height: 10px;
-      margin: 0 0 0.9rem;
+    .hero-visual {
       position: relative;
+      min-height: 420px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      display: grid;
+      place-items: center;
+      padding: 38px;
     }
 
-    .graphic-divider::before {
+    .hero-visual::after {
       content: "";
       position: absolute;
-      inset: 4px 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #111827 0%, #f59e0b 100%);
+      inset: auto -10% -18% auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(199,154,59,0.14);
+      filter: blur(30px);
     }
 
-    .graphic-divider::after {
-      content: "";
-      position: absolute;
-      right: -18px;
-      top: 1px;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #f59e0b;
+    .hero-logo-stack {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: grid;
+      gap: 26px;
+      align-items: center;
+      justify-items: center;
     }
 
-    .graphic-frame {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      z-index: 0;
-    }
-
-    .graphic-frame::before,
-    .graphic-frame::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(0, 95, 158, 0.5);
-    }
-
-    .graphic-frame::before {
-      top: 12px;
-      left: 12px;
-      width: 60px;
-      height: 60px;
-      border-right: none;
-      border-bottom: none;
-    }
-
-    .graphic-frame::after {
-      bottom: 12px;
-      right: 12px;
-      width: 60px;
-      height: 60px;
-      border-left: none;
-      border-top: none;
-    }
-
-    .alt-section {
-      background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    .hero-main-logo {
+      width: min(100%, 340px);
+      padding: 26px;
       border-radius: 24px;
-      padding: 1.4rem;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
     }
 
-    .about-hero {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-      padding: 1.2rem;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      background:
-        linear-gradient(120deg, rgba(255,255,255,0.90) 0%, rgba(243,246,251,0.78) 42%, rgba(230,236,243,0.72) 100%),
-        radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 34%),
-        linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
-      box-shadow: var(--shadow-strong);
-    }
-
-    .about-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.38) 0%,
-          rgba(255,255,255,0.18) 38%,
-          rgba(255,255,255,0.04) 100%
-        );
-      pointer-events: none;
-    }
-
-    .about-watermark {
-      position: absolute;
-      right: 2rem;
-      bottom: 1.6rem;
-      width: 180px;
-      opacity: 0.06;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .about-watermark img {
+    .hero-main-logo img {
       width: 100%;
       height: auto;
       object-fit: contain;
     }
 
-    .about-hero::before {
-      content: "";
-      position: absolute;
-      right: -90px;
-      top: -90px;
-      width: 240px;
-      height: 240px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(0,95,158,0.10), transparent 68%);
-      pointer-events: none;
+    .hero-mountain {
+      width: min(100%, 280px);
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
     }
 
-    .about-hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.95fr);
-      gap: 1.15rem;
-      align-items: stretch;
-    }
-
-    .about-hero-copy {
-      padding: 0.35rem 0.45rem 0.35rem 0.45rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-kicker {
-      margin: 0 0 0.6rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-rich);
-      font-weight: 800;
-    }
-
-    .about-title {
-      margin: 0 0 0.65rem;
-      font-size: clamp(2.4rem, 4vw, 3.85rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      color: #030712;
-      max-width: 10.5ch;
-    }
-
-    .legacy-badge {
-      display: inline-flex;
-      align-items: center;
-      margin: 0 0 0.55rem;
-      padding: 0.42rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(17, 24, 39, 0.06);
-      border: 1px solid rgba(17, 24, 39, 0.12);
-      color: #111827;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 800;
-      width: fit-content;
-    }
-
-    .about-lead {
-      margin: 0;
-      font-size: 1.02rem;
-      line-height: 1.9;
-      color: #475569;
-      max-width: 50rem;
-    }
-
-    .about-hero-side {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.85rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .legacy-panel {
-      border-radius: var(--radius-lg);
-      padding: 1.05rem 1.05rem 1.1rem;
-      background:
-        radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 36%),
-        linear-gradient(180deg, #111827 0%, #000000 100%);
-      color: #fff;
-      border: 1px solid rgba(245, 158, 11, 0.18);
-      box-shadow: 0 20px 46px rgba(15, 23, 42, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .legacy-panel:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 26px 56px rgba(15, 23, 42, 0.22);
-    }
-
-    .legacy-panel--graphic {
-      position: relative;
-      overflow: hidden;
-      min-height: 320px;
-    }
-
-    .legacy-panel-bg-number {
-      position: absolute;
-      right: 16px;
-      top: 10px;
-      font-size: 6rem;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      color: rgba(255, 255, 255, 0.08);
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .legacy-panel-lines {
-      position: absolute;
-      inset: 0;
-      opacity: 0.12;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
-      background-size: 26px 26px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 85%);
-    }
-
-    .legacy-panel-title,
-    .legacy-panel-copy,
-    .legacy-mountain-image {
-      position: relative;
-      z-index: 1;
-    }
-
-    .legacy-panel-title {
-      margin: 0 0 0.5rem;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.88;
-      font-weight: 800;
-    }
-
-    .legacy-panel-copy {
-      margin: 0;
-      font-size: 0.96rem;
-      line-height: 1.8;
+    .hero-mountain img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       opacity: 0.96;
     }
 
-    .legacy-mountain-image {
-      margin-top: 1.2rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      position: relative;
-      z-index: 1;
+    section {
+      padding: 100px 0;
     }
 
-    .legacy-mountain-image img {
-      display: block;
-      width: 100%;
-      max-height: 150px;
-      object-fit: contain;
-      object-position: center bottom;
-      opacity: 1;
-      filter: contrast(1.1) saturate(1.1);
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 46px;
     }
 
-    .legacy-stats {
+    .section-heading .kicker {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ecc-blue);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.45rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 18px 0 0;
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 700px;
+    }
+
+    .story-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.85rem;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .legacy-stat {
-      border-radius: 20px;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(209, 213, 219, 0.9);
+    .story-card,
+    .stat-card,
+    .division-card,
+    .contact-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 26px;
       box-shadow: var(--shadow-soft);
     }
 
-    .legacy-stat-number {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 0.2rem;
+    .story-card {
+      padding: 34px;
+    }
+
+    .story-card p {
+      margin: 0 0 18px;
+      font-size: 1.02rem;
+      color: var(--text-soft);
+    }
+
+    .story-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 26px;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .stat-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+    }
+
+    .stat-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .divisions {
+      background: linear-gradient(180deg, #f8f7f4 0%, #f1f2f4 100%);
+    }
+
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .division-card {
+      position: relative;
+      padding: 30px;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .division-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      opacity: 0.9;
+    }
+
+    .division-card.ecc::before {
+      background: linear-gradient(90deg, #111111 0%, var(--ecc-gold) 100%);
+    }
+
+    .division-card.apex::before {
+      background: linear-gradient(90deg, #d8e8f3 0%, #7faecc 100%);
+    }
+
+    .division-card.golden::before {
+      background: linear-gradient(90deg, #7b4b00 0%, var(--golden-orange) 100%);
+    }
+
+    .division-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .division-logo {
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .division-logo.dark-logo {
+      background: #111111;
+      border-color: rgba(0,0,0,0.28);
+    }
+
+    .division-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    .division-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.48rem;
+      line-height: 1.04;
       letter-spacing: -0.03em;
     }
 
-    .legacy-stat-label {
-      font-size: 0.8rem;
-      line-height: 1.55;
-      color: var(--text-muted);
+    .division-card p {
+      margin: 0 0 18px;
+      color: var(--text-soft);
     }
 
-    .story-band {
-      border-radius: var(--radius-lg);
-      padding: 1.3rem;
-      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(250,251,253,0.96));
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
+    .division-scope {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-weight: 600;
     }
 
-    .story-band::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 5px;
-      background: linear-gradient(90deg, #111827 0%, #f59e0b 100%);
-    }
-
-    .story-copy {
-      font-size: 1rem;
-      line-height: 1.95;
-      color: #4b5563;
-      max-width: 62rem;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .mission-wrap {
-      border-radius: var(--radius-lg);
-      padding: 1.35rem;
-      background:
-        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 34%),
-        linear-gradient(135deg, #ffffff, #eef2f7);
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: var(--shadow-card);
-    }
-
-    .mission-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-      gap: 1.1rem;
-      align-items: start;
-    }
-
-    .mission-copy {
-      margin: 0;
-      font-size: 0.99rem;
-      line-height: 1.95;
-      color: #4b5563;
-    }
-
-    .mission-note {
-      border-radius: 20px;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(209, 213, 219, 0.88);
-    }
-
-    .mission-note-title {
-      margin: 0 0 0.4rem;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold-rich);
-      font-weight: 800;
-    }
-
-    .mission-note p {
-      margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #475569;
-    }
-
-    .charity-wrap {
-      border-radius: var(--radius-lg);
-      padding: 1.3rem;
-      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: var(--shadow-card);
-    }
-
-    .charity-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
-      gap: 1.1rem;
-      align-items: start;
-    }
-
-    .charity-copy {
-      margin: 0;
-      font-size: 0.98rem;
-      line-height: 1.9;
-      color: #4b5563;
-    }
-
-    .charity-side {
-      border-radius: 20px;
-      padding: 1rem;
-      background: linear-gradient(135deg, rgba(0,95,158,0.05), rgba(245,158,11,0.07));
-      border: 1px solid rgba(209, 213, 219, 0.88);
-    }
-
-    .charity-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .charity-list li {
-      position: relative;
-      padding-left: 1rem;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #475569;
-    }
-
-    .charity-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72rem;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #005f9e, #f59e0b);
-    }
-
-    .values-section {
-      position: relative;
-    }
-
-    .values-header {
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .value-grid {
-      position: relative;
-      z-index: 1;
+    .principles-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 24px;
     }
 
-    .value-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      padding: 1.15rem;
-      background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: var(--shadow-card);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    .principle-card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .value-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 5px;
-      background: linear-gradient(90deg, #111827 0%, #f59e0b 100%);
-    }
-
-    .value-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 26px 54px rgba(15, 23, 42, 0.10);
-    }
-
-    .value-number {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      font-size: 0.92rem;
-    }
-
-    .value-title {
-      margin: 0 0 0.35rem;
-      font-size: 1rem;
-      font-weight: 800;
-      color: #030712;
-    }
-
-    .value-text {
-      margin: 0;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.72;
-    }
-
-    .cta-card {
-      padding: 1.35rem;
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 34%),
-        linear-gradient(135deg, #ffffff, #eef2f7);
-      border: 1px solid rgba(209, 213, 219, 0.92);
-      box-shadow: var(--shadow-card);
-    }
-
-    .cta-row {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-      gap: 1.2rem;
-      align-items: center;
-    }
-
-    .cta-title {
-      margin: 0 0 0.45rem;
-      font-size: 1.16rem;
-      font-weight: 800;
-      color: #030712;
-    }
-
-    .cta-text {
-      margin: 0;
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      justify-content: flex-end;
-    }
-
-    .btn-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.62rem 1rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      background: rgba(255, 255, 255, 0.96);
-      color: #111827;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .principle-card span {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.76rem;
       font-weight: 700;
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        border-color 0.15s ease,
-        background 0.15s ease;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ecc-blue);
     }
 
-    .btn-pill:hover {
-      transform: translateY(-2px);
-      border-color: rgba(245, 158, 11, 0.9);
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    .principle-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.36rem;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
     }
 
-    .btn-pill-primary {
-      border-color: rgba(245, 158, 11, 0.95);
-      background: linear-gradient(135deg, #005f9e 0%, #f59e0b 100%);
+    .principle-card p {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .contact-band {
+      background: var(--dark);
       color: #fff;
-      font-weight: 800;
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
     }
 
-    footer {
-      margin-top: 2rem;
-      border-top: 1px solid rgba(209, 213, 219, 0.85);
-      background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+    .contact-band .section-heading .kicker {
+      color: rgba(255,255,255,0.66);
+    }
+
+    .contact-band .section-heading p {
+      color: rgba(255,255,255,0.74);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-panel {
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border-color: rgba(255,255,255,0.12);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 12px;
+      font-size: 1.24rem;
+      line-height: 1.08;
+    }
+
+    .contact-panel p,
+    .contact-panel a {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .contact-panel a:hover {
+      color: #fff;
+    }
+
+    .site-footer {
+      background: #0b0e11;
+      color: rgba(255,255,255,0.72);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.6rem 1.5rem 1.8rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
-      gap: 1.3rem;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .footer-brand {
-      color: #111827;
-      font-weight: 800;
-      margin-bottom: 0.35rem;
-      font-size: 0.98rem;
-    }
-
-    .footer-heading {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-rich);
-      margin-bottom: 0.6rem;
-      font-weight: 800;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.94rem;
     }
 
     .footer-links {
       display: flex;
-      flex-direction: column;
-      gap: 0.48rem;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .footer-links a:hover {
-      color: var(--blue);
-    }
-
-    .footer-note {
-      line-height: 1.7;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-      will-change: opacity, transform;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.08s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.16s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.24s;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal,
-      .reveal.is-visible,
-      .reveal-delay-1,
-      .reveal-delay-2,
-      .reveal-delay-3 {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
-    @media (max-width: 980px) {
-      .header-utility-inner,
-      .header-main {
-        padding-inline: 1.2rem;
-      }
-
-      .header-main {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-nav {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .about-hero-grid,
-      .mission-grid,
-      .charity-grid,
-      .cta-row,
-      .footer-inner {
+    @media (max-width: 1120px) {
+      .page-hero-grid,
+      .story-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .cta-actions {
-        justify-content: flex-start;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .value-grid {
+      .divisions-grid,
+      .principles-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 720px) {
-      .header-utility-inner {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width: 880px) {
+      .site-nav {
+        display: none;
       }
 
-      .header-logo-wrap {
-        width: 64px;
-        height: 64px;
-        border-radius: 18px;
+      section {
+        padding: 82px 0;
       }
 
-      .header-title {
-        font-size: 0.98rem;
-      }
-
-      .header-subline {
-        font-size: 0.79rem;
-      }
-
-      .shell,
-      .footer-inner {
-        padding-inline: 1.15rem;
-      }
-
-      .about-hero,
-      .alt-section {
-        border-radius: 22px;
-        padding: 0.95rem;
-      }
-
-      .about-watermark {
-        width: 130px;
-        right: 1rem;
-        bottom: 1rem;
-      }
-
-      .legacy-panel,
-      .legacy-stat,
-      .story-band,
-      .mission-wrap,
-      .charity-wrap,
-      .charity-side,
-      .value-card,
-      .cta-card {
-        border-radius: 20px;
+      .page-hero {
+        padding: 90px 0 74px;
       }
     }
 
-    @media (max-width: 640px) {
-      .legacy-stats,
-      .value-grid {
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .brand-copy strong {
+        font-size: 0.92rem;
+        white-space: normal;
+      }
+
+      .header-cta {
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 0.74rem;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.5rem, 11vw, 3.8rem);
+      }
+
+      .divisions-grid,
+      .principles-grid {
         grid-template-columns: 1fr;
       }
 
-      .legacy-panel-bg-number {
-        font-size: 4.5rem;
+      .story-card,
+      .stat-card,
+      .division-card,
+      .principle-card,
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .footer-inner {
+        min-height: auto;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-utility">
-      <div class="header-utility-inner">
-        <div class="header-utility-left">
-          <span>Colorado Springs, Colorado</span>
-          <span>•</span>
-          <span>Residential • Commercial • Remodel</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Executive Companies home">
+        <div class="brand-mark">
+          <img src="executive-companies.png" alt="Executive Companies logo" />
         </div>
-        <div class="header-utility-right">
-          <span><strong>(719) 531-0707</strong></span>
-          <span>•</span>
-          <span><strong>estimating@executive-company.com</strong></span>
+        <div class="brand-copy">
+          <span>Construction, Excavation, Interiors</span>
+          <strong>Executive Companies</strong>
         </div>
-      </div>
-    </div>
+      </a>
 
-    <div class="header-main">
-      <div class="header-left">
-        <a href="index.html" class="header-logo-wrap" aria-label="Executive Companies home">
-          <img src="/executive-group/executive-companies.png" alt="Executive Companies logo">
-        </a>
-
-        <div class="header-text-block">
-          <div class="header-brand-line">Executive Companies</div>
-          <div class="header-title">Construction • Excavation • Interiors</div>
-          <div class="header-subline">
-            One coordinated team for residential, commercial, and remodel projects.
-          </div>
-        </div>
-      </div>
-
-      <nav class="header-nav" aria-label="Primary navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="executive.html" class="nav-link">Executive</a>
-        <a href="apex.html" class="nav-link">Apex</a>
-        <a href="golden-eagle.html" class="nav-link">Golden Eagle</a>
-        <a href="contact.html" class="nav-button primary">Contact Us</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#companies">Our Companies</a>
+        <a href="index.html#capabilities">Capabilities</a>
+        <a class="active" href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
+
+      <a class="header-cta" href="contact.html">Start a Project</a>
     </div>
   </header>
 
-  <main class="shell">
-    <section class="reveal">
-      <div class="about-hero decor-card">
-        <div class="graphic-frame"></div>
-        <div class="about-watermark">
-          <img src="/executive-group/ecc-logo.png" alt="Executive Custom Construction logo">
-        </div>
-        <div class="graphic-dots top-right"></div>
-
-        <div class="about-hero-grid">
-          <div class="about-hero-copy">
-            <p class="about-kicker">About Executive Companies</p>
-            <h1 class="about-title">Built in Colorado Springs. Built to last.</h1>
-            <div class="legacy-badge">Family-owned in Colorado Springs since 1975</div>
-            <div class="graphic-divider"></div>
-            <p class="about-lead">
-              Executive Companies is a family-owned business rooted in Colorado Springs since 1975. Founded by Gary Erickson, who began as a residential framer, the company was built through decades of hard work, strong relationships, and a commitment to doing quality work the right way. What started in the field has grown into a coordinated group spanning construction, excavation, and interior scopes — while still holding onto the same values that built the company from the beginning.
-            </p>
-          </div>
-
-          <div class="about-hero-side">
-            <div class="legacy-panel legacy-panel--graphic">
-              <div class="legacy-panel-bg-number">1975</div>
-              <div class="legacy-panel-lines"></div>
-
-              <div class="legacy-panel-title">Our foundation</div>
-              <p class="legacy-panel-copy">
-                From residential framing to a coordinated construction group, our story is grounded in craftsmanship, trust, and a long-term commitment to Colorado Springs.
-              </p>
-
-              <div class="legacy-mountain-image">
-                <img src="/executive-group/about-mountain.png?v=2" alt="Mountain graphic">
-              </div>
-            </div>
-
-            <div class="legacy-stats">
-              <div class="legacy-stat">
-                <div class="legacy-stat-number">50 Years</div>
-                <div class="legacy-stat-label">Serving Colorado Springs with long-term local roots</div>
-              </div>
-              <div class="legacy-stat">
-                <div class="legacy-stat-number">3 Companies</div>
-                <div class="legacy-stat-label">Construction, excavation, and interiors under one group</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal reveal-delay-1">
-      <p class="section-title">Our story</p>
-      <h2 class="section-heading">From the field to the company we are today</h2>
-      <div class="graphic-divider"></div>
-
-      <div class="story-band decor-card">
-        <div class="graphic-angles top-right"></div>
-        <p class="story-copy">
-          Gary Erickson started in residential framing, building the company the same way many strong businesses begin — through steady work, consistency, and a reputation earned over time. As the years went on, that foundation expanded into something bigger: a coordinated group with the ability to serve clients across construction, excavation, and interior scopes while still operating with the same mindset it was built on from the beginning. Today, Executive Companies continues to grow as a family-owned business with deep roots in Colorado Springs and a long-term commitment to doing quality work the right way.
-        </p>
-      </div>
-    </section>
-
-    <section class="alt-section reveal reveal-delay-2">
-      <p class="section-title">Our mission</p>
-      <h2 class="section-heading">Why we do what we do</h2>
-      <div class="mission-wrap decor-card">
-        <div class="graphic-grid"></div>
-
-        <div class="mission-grid">
-          <p class="mission-copy">
-            Our mission is to deliver high-quality work through strong communication, dependable execution, and attention to detail at every phase of the project. We aim to build lasting relationships with our clients and partners while growing a company that reflects integrity, consistency, and a long-term commitment to the Colorado Springs community.
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="eyebrow">About Executive Companies</div>
+          <h1>Built Around Coordinated Execution.</h1>
+          <p>
+            Executive Companies brings together specialized teams in general contracting,
+            coatings, and excavation to support projects with a more aligned path from
+            early planning and sitework through final finish.
           </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="contact.html">Start a Project</a>
+            <a class="btn-secondary" href="index.html#companies">Our Companies</a>
+          </div>
+        </div>
 
-          <div class="mission-note">
-            <div class="mission-note-title">What that means</div>
+        <div class="hero-visual">
+          <div class="hero-logo-stack">
+            <div class="hero-main-logo">
+              <img src="executive-companies.png" alt="Executive Companies logo" />
+            </div>
+            <div class="hero-mountain">
+              <img src="mountain-graphic.png" alt="Colorado mountain graphic" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Our Story</span>
+          <h2>A group structured to support the full arc of the work.</h2>
+          <p>
+            The goal behind Executive Companies is simple: bring complementary capabilities together
+            in a way that supports cleaner coordination, practical execution, and stronger project delivery.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-card">
             <p>
-              Clear expectations, dependable follow-through, and a standard of work that reflects well on the people behind it.
+              Executive Companies was built to connect distinct parts of the construction process under one coordinated group.
+              Instead of approaching projects through isolated scopes alone, the structure supports a more aligned path between
+              site preparation, project management, and finish work.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal reveal-delay-1">
-      <p class="section-title">Community & giving</p>
-      <h2 class="section-heading">Supporting the community we’re part of</h2>
-      <div class="charity-wrap decor-card">
-        <div class="graphic-dots bottom-left"></div>
-
-        <div class="charity-grid">
-          <p class="charity-copy">
-            As a company built in Colorado Springs, we believe our work should have an impact beyond the jobsite. We actively support organizations like Springs Rescue Mission and other faith-based groups that are making a difference in our community. Our goal is to continue growing a company that not only builds quality projects, but also contributes in a meaningful way to the people and organizations around us.
-          </p>
-
-          <div class="charity-side">
-            <ul class="charity-list">
-              <li>Support for Springs Rescue Mission</li>
-              <li>Partnership with faith-based organizations</li>
-              <li>A long-term commitment to local impact</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="values-section decor-card reveal reveal-delay-2">
-      <div class="graphic-frame"></div>
-
-      <div class="values-header">
-        <p class="section-title">Our values</p>
-        <h2 class="section-heading">What guides the company</h2>
-        <p class="section-text">
-          The company has grown over time, but the core principles behind it have stayed the same.
-        </p>
-      </div>
-
-      <div class="value-grid">
-        <div class="value-card">
-          <div class="value-number">01</div>
-          <h3 class="value-title">Integrity</h3>
-          <p class="value-text">
-            We do what we say we’re going to do. Our word matters, and we stand behind our work.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">02</div>
-          <h3 class="value-title">Work ethic</h3>
-          <p class="value-text">
-            This company was built through hard work, and that standard still applies to every project we take on.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">03</div>
-          <h3 class="value-title">Quality</h3>
-          <p class="value-text">
-            We take pride in doing the job right, with attention to detail and a finished product we’re proud to stand behind.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">04</div>
-          <h3 class="value-title">Relationships</h3>
-          <p class="value-text">
-            We focus on building long-term relationships with clients, trade partners, and our team — not just completing projects.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">05</div>
-          <h3 class="value-title">Service</h3>
-          <p class="value-text">
-            We want the company to make an impact beyond construction by supporting people, giving back, and serving our community.
-          </p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">06</div>
-          <h3 class="value-title">Legacy</h3>
-          <p class="value-text">
-            We’re building something that lasts — in the projects we complete, the reputation we earn, and the impact we leave behind.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal reveal-delay-3">
-      <div class="cta-card decor-card">
-        <div class="graphic-frame"></div>
-
-        <div class="cta-row">
-          <div>
-            <h3 class="cta-title">Built on a strong foundation</h3>
-            <p class="cta-text">
-              From our beginnings in residential framing to the coordinated group we are today, Executive Companies continues to grow with the same commitment to quality, integrity, and service.
+            <p>
+              That coordination matters on real projects. It improves communication, supports scheduling, and helps create a more
+              efficient handoff between phases of work. Whether the need is excavation, coatings, or full general contracting support,
+              the group is positioned to move the job forward with practical field awareness.
+            </p>
+            <p>
+              Based in Colorado Springs, Executive Companies supports commercial, residential, and remodel work with an execution mindset
+              grounded in accountability, responsiveness, and pride in the finished result.
             </p>
           </div>
 
-          <div class="cta-actions">
-            <a href="contact.html" class="btn-pill btn-pill-primary">Contact Us</a>
-            <a href="index.html" class="btn-pill">Back to Home</a>
+          <div class="story-side">
+            <div class="stat-card">
+              <div>
+                <strong>3</strong>
+                <h3>Specialized Companies</h3>
+              </div>
+              <p>General contracting, coatings, and excavation organized under one umbrella.</p>
+            </div>
+            <div class="stat-card">
+              <div>
+                <strong>CO</strong>
+                <h3>Colorado Springs Based</h3>
+              </div>
+              <p>Local presence and project support rooted in the Colorado Springs market.</p>
+            </div>
+            <div class="stat-card">
+              <div>
+                <strong>Full</strong>
+                <h3>Project Range</h3>
+              </div>
+              <p>Support for commercial, residential, and remodel work from groundwork to finish.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="divisions">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">The Group</span>
+          <h2>Three companies. One coordinated structure.</h2>
+          <p>
+            Each division carries its own focus while contributing to a broader project delivery approach.
+          </p>
+        </div>
+
+        <div class="divisions-grid">
+          <a class="division-card ecc" href="executive.html">
+            <div class="division-logo dark-logo">
+              <img src="ecc-logo.png" alt="Executive Custom Construction logo" />
+            </div>
+            <h3>Executive Custom Construction</h3>
+            <p>General contracting and project management built to lead coordinated execution from planning through closeout.</p>
+            <div class="division-scope">General Contracting &amp; Project Management</div>
+          </a>
+
+          <a class="division-card apex" href="apex.html">
+            <div class="division-logo">
+              <img src="apex-logo.png" alt="Apex Coatings logo" />
+            </div>
+            <h3>Apex Coatings</h3>
+            <p>Painting, coatings, and finish support tailored for commercial, residential, and remodel projects.</p>
+            <div class="division-scope">Painting, Coatings, Finish</div>
+          </a>
+
+          <a class="division-card golden" href="golden-eagle.html">
+            <div class="division-logo dark-logo">
+              <img src="golden-eagle-logo.png" alt="Golden Eagle Excavation logo" />
+            </div>
+            <h3>Golden Eagle Excavation</h3>
+            <p>Excavation, utilities, and flatwork support built to move projects efficiently from early sitework forward.</p>
+            <div class="division-scope">Excavation, Utilities, Flatwork</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">How We Work</span>
+          <h2>What defines the way Executive Companies approaches a project.</h2>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card">
+            <span>01</span>
+            <h3>Coordination Over Handoffs</h3>
+            <p>Projects benefit when scopes are aligned early and communication stays clear through each phase of the work.</p>
+          </div>
+
+          <div class="principle-card">
+            <span>02</span>
+            <h3>Field-Driven Execution</h3>
+            <p>The group is built around practical jobsite awareness, responsiveness, and follow-through where it matters most.</p>
+          </div>
+
+          <div class="principle-card">
+            <span>03</span>
+            <h3>Built for Real Project Needs</h3>
+            <p>Commercial, residential, and remodel projects all require adaptable support, disciplined coordination, and quality-focused execution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Connect</span>
+          <h2>Start the conversation with the right team.</h2>
+          <p>
+            Whether you are planning, pricing, or actively building, Executive Companies can help direct your project to the right division.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>General Contact</h3>
+            <p><a href="tel:+17195310707">(719) 531-0707</a></p>
+          </div>
+
+          <div class="contact-panel">
+            <h3>Estimating &amp; Bid Requests</h3>
+            <p><a href="mailto:estimating@executive-company.com">estimating@executive-company.com</a></p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Executive Companies</div>
-        <div class="footer-note">
-          Construction, excavation, and interiors under one coordinated group in Colorado Springs.
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-heading">Quick links</div>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="executive.html">Executive Custom Construction</a>
-          <a href="apex.html">Apex</a>
-          <a href="golden-eagle.html">Golden Eagle Excavation</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-heading">Contact</div>
-        <div class="footer-links">
-          <span>(719) 531-0707</span>
-          <span>estimating@executive-company.com</span>
-          <span>13540 Meadowgrass Dr<br>Colorado Springs, CO 80921</span>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>Executive Companies · Construction, Excavation, Interiors</div>
+      <div class="footer-links">
+        <a href="executive.html">Executive</a>
+        <a href="apex.html">Apex</a>
+        <a href="golden-eagle.html">Golden Eagle</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    const revealItems = document.querySelectorAll('.reveal');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12
-    });
-
-    revealItems.forEach((item) => {
-      revealObserver.observe(item);
-    });
-  </script>
 </body>
 </html>
