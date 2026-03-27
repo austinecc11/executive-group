@@ -17,7 +17,6 @@
       --text-soft: #5c6470;
       --line: rgba(17, 17, 17, 0.1);
       --dark: #101317;
-      --dark-soft: #171c22;
       --ecc-blue: #0c5a8a;
       --ecc-gold: #c79a3b;
       --apex-blue: #bcd8ea;
@@ -270,43 +269,30 @@
       filter: blur(30px);
     }
 
-    .hero-logo-stack {
+    .retro-hero {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-retro-logo {
       position: relative;
       z-index: 2;
-      width: 100%;
-      display: grid;
-      gap: 26px;
-      align-items: center;
-      justify-items: center;
+      width: min(100%, 430px);
+      padding: 28px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+        #111111;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 55px rgba(0,0,0,0.28);
     }
 
-    .hero-main-logo {
-      width: min(100%, 340px);
-      padding: 26px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.96);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-    }
-
-    .hero-main-logo img {
+    .hero-retro-logo img {
       width: 100%;
       height: auto;
       object-fit: contain;
-    }
-
-    .hero-mountain {
-      width: min(100%, 280px);
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .hero-mountain img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      opacity: 0.96;
+      display: block;
     }
 
     section {
@@ -352,7 +338,10 @@
     .story-card,
     .stat-card,
     .division-card,
-    .contact-panel {
+    .community-card,
+    .community-list,
+    .contact-panel,
+    .principle-card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 26px;
@@ -500,10 +489,6 @@
 
     .principle-card {
       padding: 30px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
     }
 
     .principle-card span {
@@ -526,6 +511,49 @@
     .principle-card p {
       margin: 0;
       color: var(--text-soft);
+    }
+
+    .community-section {
+      background: linear-gradient(180deg, #f8f7f4 0%, #f1f2f4 100%);
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .community-card,
+    .community-list {
+      padding: 32px;
+    }
+
+    .community-card p,
+    .community-list p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .community-list {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .community-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(17,17,17,0.05);
+    }
+
+    .community-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+      line-height: 1.1;
     }
 
     .contact-band {
@@ -595,6 +623,7 @@
     @media (max-width: 1120px) {
       .page-hero-grid,
       .story-grid,
+      .community-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -647,6 +676,8 @@
       .story-card,
       .stat-card,
       .division-card,
+      .community-card,
+      .community-list,
       .principle-card,
       .contact-panel {
         padding: 24px;
@@ -691,7 +722,7 @@
       <div class="container page-hero-grid">
         <div>
           <div class="eyebrow">About Executive Companies</div>
-          <h1>Built Around Coordinated Execution.</h1>
+          <h1>Rooted in Colorado Springs. Built to Execute.</h1>
           <p>
             Executive Companies brings together specialized teams in general contracting,
             coatings, and excavation to support projects with a more aligned path from
@@ -703,14 +734,9 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-logo-stack">
-            <div class="hero-main-logo">
-              <img src="executive-companies.png" alt="Executive Companies logo" />
-            </div>
-            <div class="hero-mountain">
-              <img src="mountain-graphic.png" alt="Colorado mountain graphic" />
-            </div>
+        <div class="hero-visual retro-hero">
+          <div class="hero-retro-logo">
+            <img src="executive-retro.png" alt="Original Executive Companies logo" />
           </div>
         </div>
       </div>
@@ -732,7 +758,7 @@
             <p>
               Executive Companies was built to connect distinct parts of the construction process under one coordinated group.
               Instead of approaching projects through isolated scopes alone, the structure supports a more aligned path between
-              site preparation, project management, and finish work.
+              site preparation, project management, coatings, and finish work.
             </p>
             <p>
               That coordination matters on real projects. It improves communication, supports scheduling, and helps create a more
@@ -837,6 +863,37 @@
             <span>03</span>
             <h3>Built for Real Project Needs</h3>
             <p>Commercial, residential, and remodel projects all require adaptable support, disciplined coordination, and quality-focused execution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Community</span>
+          <h2>Committed to supporting our local community.</h2>
+          <p>
+            Executive Companies believes strong work should be matched by meaningful local support. We are proud to support organizations serving people and families in Colorado Springs.
+          </p>
+        </div>
+
+        <div class="community-grid">
+          <div class="community-card">
+            <p>
+              Beyond the work itself, we value being part of the Colorado Springs community in a practical and lasting way. Supporting local ministries and mission-driven organizations is one way we try to contribute beyond the jobsite.
+            </p>
+          </div>
+
+          <div class="community-list">
+            <div class="community-item">
+              <strong>Springs Rescue Mission</strong>
+              <p>Supporting a local organization serving neighbors in need across the Colorado Springs community.</p>
+            </div>
+            <div class="community-item">
+              <strong>Crossfire Ministries</strong>
+              <p>Supporting ministry-focused community outreach and care for local individuals and families.</p>
+            </div>
           </div>
         </div>
       </div>
