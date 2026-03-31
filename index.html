@@ -80,30 +80,12 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 0;
       min-width: 0;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.14);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-copy {
-      min-width: 0;
+    .brand-text-only {
+      padding-left: 0;
     }
 
     .brand-copy span {
@@ -112,14 +94,14 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.66);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .brand-copy strong {
       display: block;
-      font-size: 1rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.02em;
       color: #fff;
       white-space: nowrap;
     }
@@ -139,7 +121,8 @@
       transition: color var(--transition);
     }
 
-    .site-nav a:hover {
+    .site-nav a:hover,
+    .site-nav a.active {
       color: #fff;
     }
 
@@ -749,7 +732,7 @@
       }
 
       .brand-copy strong {
-        font-size: 0.92rem;
+        font-size: 1.05rem;
         white-space: normal;
       }
 
@@ -807,10 +790,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Executive Companies home">
-        <div class="brand-mark">
-          <img src="executive-companies.png" alt="Executive Companies logo" />
-        </div>
+      <a class="brand brand-text-only" href="index.html" aria-label="Executive Companies home">
         <div class="brand-copy">
           <span>Construction, Excavation, Interiors</span>
           <strong>Executive Companies</strong>
@@ -818,7 +798,7 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="#companies">Our Companies</a>
         <a href="#capabilities">Capabilities</a>
         <a href="about.html">About</a>
