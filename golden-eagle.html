@@ -26,13 +26,8 @@
       --max: 1240px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -42,17 +37,12 @@
       line-height: 1.65;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
 
     a:focus-visible,
+    button:focus-visible,
     summary:focus-visible {
       outline: 3px solid var(--orange);
       outline-offset: 4px;
@@ -115,7 +105,6 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .10em;
-      transition: color .2s;
     }
 
     .site-nav a:hover {
@@ -158,9 +147,7 @@
       background: rgba(255,255,255,.04);
     }
 
-    .mobile-nav {
-      display: none;
-    }
+    .mobile-nav { display: none; }
 
     /* HERO */
 
@@ -273,7 +260,7 @@
       );
     }
 
-    /* INTRO BAR */
+    /* INTRO */
 
     .intro-bar {
       background: #fff;
@@ -310,9 +297,7 @@
 
     /* SECTIONS */
 
-    section {
-      padding: 95px 0;
-    }
+    section { padding: 95px 0; }
 
     .section-head {
       max-width: 810px;
@@ -420,9 +405,7 @@
 
     /* SERVICES */
 
-    .services {
-      background: var(--sand-light);
-    }
+    .services { background: var(--sand-light); }
 
     .services-grid {
       display: grid;
@@ -439,9 +422,7 @@
       transition: transform .2s;
     }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-    }
+    .service-card:hover { transform: translateY(-4px); }
 
     .service-number {
       display: block;
@@ -473,20 +454,15 @@
       margin-top: 32px;
     }
 
-    /* PROCESS */
+    /* APPROACH */
 
     .approach {
       background: var(--charcoal);
       color: #fff;
     }
 
-    .approach .kicker {
-      color: var(--orange-light);
-    }
-
-    .approach .section-head p {
-      color: #c9c9c7;
-    }
+    .approach .kicker { color: var(--orange-light); }
+    .approach .section-head p { color: #c9c9c7; }
 
     .approach-grid {
       display: grid;
@@ -520,96 +496,211 @@
       margin: 0;
     }
 
-    /* PROJECTS */
+    /* SCROLLING GALLERY */
 
-    .projects {
+    .gallery-section {
       background: #fff;
+      overflow: hidden;
     }
 
-    .projects-grid {
+    .gallery-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-heading-row .section-head {
+      margin-bottom: 0;
+    }
+
+    .gallery-controls {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .gallery-arrow {
+      width: 52px;
+      height: 52px;
+      border-radius: 4px;
+      background: var(--charcoal);
+      color: #fff;
+      border: 1px solid var(--charcoal);
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 26px;
+      place-items: center;
+      font-size: 1.4rem;
+      transition: background .2s;
     }
 
-    .project-card {
+    .gallery-arrow:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .gallery-arrow:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 8px 0 28px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--orange) var(--sand-light);
+    }
+
+    .gallery-track::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    .gallery-track::-webkit-scrollbar-track {
+      background: var(--sand-light);
+    }
+
+    .gallery-track::-webkit-scrollbar-thumb {
+      background: var(--orange);
+      border-radius: 20px;
+    }
+
+    .gallery-item {
+      flex: 0 0 calc((100% - 44px) / 3);
+      min-width: 0;
+      margin: 0;
+      scroll-snap-align: start;
       border: 1px solid var(--line);
       border-radius: 5px;
       overflow: hidden;
       background: #fff;
-      box-shadow: var(--shadow);
+      box-shadow: 0 8px 22px rgba(0,0,0,.05);
     }
 
-    .project-image {
-      position: relative;
+    .gallery-item a {
+      display: block;
       overflow: hidden;
-      aspect-ratio: 16 / 10;
-      background: #dfd6c8;
+      background: #e5dfd5;
     }
 
-    .project-image img {
+    .gallery-item img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
       transition: transform .35s;
     }
 
-    .project-card:hover .project-image img {
+    .gallery-item:hover img {
       transform: scale(1.035);
     }
 
-    .project-content {
-      padding: 30px;
+    .gallery-caption {
+      padding: 18px 21px;
+      border-top: 3px solid var(--orange);
     }
 
-    .project-tag {
+    .gallery-caption strong {
       display: block;
-      color: var(--orange-dark);
-      font-size: .73rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      margin-bottom: 13px;
+      font-size: 1rem;
+      line-height: 1.25;
     }
 
-    .project-content h3 {
-      font-size: 1.65rem;
-      margin: 0 0 13px;
-      line-height: 1.15;
-      letter-spacing: -.035em;
-    }
-
-    .project-content p {
+    .gallery-caption span {
+      display: block;
       color: var(--muted);
-      margin: 0;
+      font-size: .85rem;
+      margin-top: 5px;
+    }
+
+    .gallery-hint {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 15px;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(10,11,12,.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 60px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      border-radius: 4px;
+      width: 46px;
+      height: 46px;
+      font-size: 1.5rem;
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+    }
+
+    .lightbox-prev {
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next {
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: var(--orange);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 22px;
+      color: #fff;
+      font-size: .9rem;
+      letter-spacing: .12em;
     }
 
     /* CTA */
 
     .cta-section {
-      background: linear-gradient(
-        110deg,
-        #30302d 0%,
-        #1b1d1e 100%
-      );
+      background: linear-gradient(110deg,#30302d,#1b1d1e);
       color: #fff;
       position: relative;
       overflow: hidden;
     }
 
-    .cta-section::before {
-      content: "";
-      position: absolute;
-      width: 310px;
-      height: 310px;
-      background: rgba(201,122,0,.10);
-      transform: rotate(45deg);
-      right: -180px;
-      top: -150px;
-    }
-
     .cta-grid {
-      position: relative;
       display: grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 45px;
@@ -665,20 +756,20 @@
 
     /* RESPONSIVE */
 
-    @media(max-width:1100px) {
+    @media (max-width: 1100px) {
       .approach-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .about-grid {
-        gap: 35px;
+      .about-grid { gap: 35px; }
+
+      .gallery-item {
+        flex-basis: calc((100% - 22px) / 2);
       }
     }
 
-    @media(max-width:880px) {
-      .site-nav {
-        display: none;
-      }
+    @media (max-width: 880px) {
+      .site-nav { display: none; }
 
       .mobile-nav {
         display: block;
@@ -729,7 +820,7 @@
       }
 
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
       .cta-actions {
@@ -737,7 +828,7 @@
       }
     }
 
-    @media(max-width:650px) {
+    @media (max-width: 650px) {
       .container {
         width: min(calc(100% - 28px),var(--max));
       }
@@ -747,13 +838,8 @@
         min-height: 74px;
       }
 
-      .brand span {
-        font-size: .55rem;
-      }
-
-      .brand strong {
-        font-size: 1.02rem;
-      }
+      .brand span { font-size: .55rem; }
+      .brand strong { font-size: 1.02rem; }
 
       .header-cta {
         padding: 0 12px;
@@ -761,21 +847,14 @@
         font-size: .68rem;
       }
 
-      .hero {
-        min-height: 620px;
-      }
-
-      .hero-content {
-        padding: 85px 0;
-      }
+      .hero { min-height: 620px; }
+      .hero-content { padding: 85px 0; }
 
       .hero h1 {
         font-size: clamp(2.9rem,11vw,4.2rem);
       }
 
-      section {
-        padding: 70px 0;
-      }
+      section { padding: 70px 0; }
 
       .logo-display {
         min-height: 260px;
@@ -784,14 +863,34 @@
 
       .about-highlights,
       .services-grid,
-      .approach-grid,
-      .projects-grid {
+      .approach-grid {
         grid-template-columns: 1fr;
       }
 
-      .service-card,
-      .project-content {
-        padding: 26px;
+      .service-card { padding: 26px; }
+
+      .gallery-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .gallery-item {
+        flex-basis: 85%;
+      }
+
+      .gallery-track { gap: 14px; }
+
+      .lightbox {
+        padding: 65px 38px;
+      }
+
+      .lightbox-prev {
+        left: 3px;
+      }
+
+      .lightbox-next {
+        right: 3px;
       }
 
       .footer-inner {
@@ -801,13 +900,11 @@
       }
     }
 
-    @media(prefers-reduced-motion:reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       *, *::before, *::after {
         transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -816,6 +913,7 @@
 <body>
 
   <!-- HEADER -->
+
   <header class="site-header">
     <div class="container header-inner">
 
@@ -854,11 +952,12 @@
   <main>
 
     <!-- HERO -->
+
     <section class="hero">
 
       <div class="hero-image">
-        <img src="st-gabriel.png"
-             alt="St. Gabriel Classical Academy construction project">
+        <img src="golden-1.jpg"
+             alt="Golden Eagle construction project">
         <div class="hero-overlay"></div>
       </div>
 
@@ -885,22 +984,24 @@
           </p>
 
           <div class="hero-actions">
+
             <a href="contact.html" class="btn btn-orange">
               Start a Project
             </a>
 
-            <a href="#projects" class="btn btn-outline">
-              Explore Our Work
+            <a href="#gallery" class="btn btn-outline">
+              View Our Work
             </a>
-          </div>
 
+          </div>
         </div>
       </div>
 
       <div class="hero-bottom-line"></div>
     </section>
 
-    <!-- QUICK INTRO -->
+    <!-- INTRO BAR -->
+
     <div class="intro-bar">
       <div class="container intro-bar-inner">
 
@@ -923,6 +1024,7 @@
     </div>
 
     <!-- ABOUT -->
+
     <section id="about">
       <div class="container about-grid">
 
@@ -986,249 +1088,385 @@
 
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- SERVICES -->
+
     <section class="services" id="services">
       <div class="container">
 
         <div class="section-head">
-
           <span class="kicker">Our Capabilities</span>
 
-          <h2>Essential groundwork. Professional execution.</h2>
+          <h2>
+            Essential groundwork. Professional execution.
+          </h2>
 
           <p>
             Golden Eagle focuses on the sitework and
             infrastructure services that help construction
             projects begin on solid footing.
           </p>
-
         </div>
 
         <div class="services-grid">
 
           <article class="service-card">
-
-            <span class="service-number">01 / EARTHWORK</span>
+            <span class="service-number">
+              01 / EARTHWORK
+            </span>
 
             <h3>Excavation &amp; Site Preparation</h3>
 
             <p>
-              Excavation and site preparation services
-              that support early construction activity,
-              site readiness, and the sequencing
-              of subsequent trades.
+              Excavation and site preparation
+              services supporting site readiness
+              and construction sequencing.
             </p>
-
           </article>
 
           <article class="service-card">
-
-            <span class="service-number">02 / INFRASTRUCTURE</span>
+            <span class="service-number">
+              02 / INFRASTRUCTURE
+            </span>
 
             <h3>Underground Utilities</h3>
 
             <p>
-              Underground utility work performed
-              with attention to coordination,
-              site conditions, and the broader
-              construction schedule.
+              Underground utility work with
+              attention to field coordination,
+              site conditions, and scheduling.
             </p>
-
           </article>
 
           <article class="service-card">
-
-            <span class="service-number">03 / CONCRETE</span>
+            <span class="service-number">
+              03 / CONCRETE
+            </span>
 
             <h3>Concrete Flatwork</h3>
 
             <p>
-              Concrete flatwork services coordinated
-              with site preparation and construction
-              activities to support functional,
-              durable finished surfaces.
+              Concrete flatwork services
+              coordinated with site preparation
+              and related construction work.
             </p>
-
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- HOW WE WORK -->
+    <!-- APPROACH -->
+
     <section class="approach">
       <div class="container">
 
         <div class="section-head">
-
           <span class="kicker">Our Approach</span>
 
-          <h2>Setting the pace for the work ahead.</h2>
+          <h2>
+            Setting the pace for the work ahead.
+          </h2>
 
           <p>
-            Sitework is one of the first critical
-            phases of construction. Our approach
-            focuses on planning, field execution,
-            and coordination with the teams
-            that follow.
+            Our focus is on thoughtful preparation,
+            responsive coordination, and sound
+            field execution from the start.
           </p>
-
         </div>
 
         <div class="approach-grid">
 
           <div class="approach-card">
-
             <span>01</span>
-
             <h3>Evaluate</h3>
-
             <p>
-              Review site conditions, project
-              requirements, and the work
-              needed to prepare for construction.
+              Review site conditions and
+              construction requirements.
             </p>
-
           </div>
 
           <div class="approach-card">
-
             <span>02</span>
-
             <h3>Plan</h3>
-
             <p>
-              Coordinate sequencing, access,
-              resources, and utility-related
-              considerations before fieldwork.
+              Coordinate sequencing,
+              resources, access, and
+              utility considerations.
             </p>
-
           </div>
 
           <div class="approach-card">
-
             <span>03</span>
-
             <h3>Execute</h3>
-
             <p>
               Perform field operations with
-              attention to site conditions,
-              project requirements, and
-              construction coordination.
+              practical oversight and
+              jobsite awareness.
             </p>
-
           </div>
 
           <div class="approach-card">
-
             <span>04</span>
+            <h3>Deliver</h3>
+            <p>
+              Prepare the work for
+              the construction phases
+              that follow.
+            </p>
+          </div>
 
-            <h3>Prepare for What's Next</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCROLLING PHOTO GALLERY -->
+
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="gallery-heading-row">
+
+          <div class="section-head">
+
+            <span class="kicker">
+              Golden Eagle Project Gallery
+            </span>
+
+            <h2>
+              A closer look at our work.
+            </h2>
 
             <p>
-              Coordinate the transition from
-              excavation and sitework to the
-              next phases of construction.
+              Explore our construction and
+              sitework photo gallery.
+              Scroll through the images or
+              select one to view it larger.
             </p>
 
           </div>
 
+          <div class="gallery-controls">
+
+            <button class="gallery-arrow"
+                    id="galleryPrev"
+                    type="button"
+                    aria-label="Previous gallery photos">
+              &#8592;
+            </button>
+
+            <button class="gallery-arrow"
+                    id="galleryNext"
+                    type="button"
+                    aria-label="Next gallery photos">
+              &#8594;
+            </button>
+
+          </div>
         </div>
+
+        <div class="gallery-track"
+             id="goldenGallery"
+             aria-label="Golden Eagle project photographs"
+             tabindex="0">
+
+          <figure class="gallery-item">
+            <a href="golden-1.jpg" class="gallery-open">
+              <img src="golden-1.jpg" alt="Golden Eagle project photo 1" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Golden Eagle Project</strong>
+              <span>Photo 01</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="golden-2.jpg" class="gallery-open">
+              <img src="golden-2.jpg" alt="Golden Eagle project photo 2" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Golden Eagle Project</strong>
+              <span>Photo 02</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="golden-3.jpg" class="gallery-open">
+              <img src="golden-3.jpg" alt="Golden Eagle project photo 3" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Golden Eagle Project</strong>
+              <span>Photo 03</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-1.jpg" class="gallery-open">
+              <img src="gee-gal-1.jpg" alt="Golden Eagle gallery photo 1" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 04</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-2.jpg" class="gallery-open">
+              <img src="gee-gal-2.jpg" alt="Golden Eagle gallery photo 2" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 05</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-3.jpg" class="gallery-open">
+              <img src="gee-gal-3.jpg" alt="Golden Eagle gallery photo 3" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 06</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-4.jpg" class="gallery-open">
+              <img src="gee-gal-4.jpg" alt="Golden Eagle gallery photo 4" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 07</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-5.jpg" class="gallery-open">
+              <img src="gee-gal-5.jpg" alt="Golden Eagle gallery photo 5" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 08</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-6.jpg" class="gallery-open">
+              <img src="gee-gal-6.jpg" alt="Golden Eagle gallery photo 6" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 09</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-7.jpg" class="gallery-open">
+              <img src="gee-gal-7.jpg" alt="Golden Eagle gallery photo 7" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 10</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-8.jpg" class="gallery-open">
+              <img src="gee-gal-8.jpg" alt="Golden Eagle gallery photo 8" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 11</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-9.jpg" class="gallery-open">
+              <img src="gee-gal-9.jpg" alt="Golden Eagle gallery photo 9" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 12</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-10.jpg" class="gallery-open">
+              <img src="gee-gal-10.jpg" alt="Golden Eagle gallery photo 10" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 13</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-11.jpg" class="gallery-open">
+              <img src="gee-gal-11.jpg" alt="Golden Eagle gallery photo 11" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 14</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-12.jpg" class="gallery-open">
+              <img src="gee-gal-12.jpg" alt="Golden Eagle gallery photo 12" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 15</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-13.jpg" class="gallery-open">
+              <img src="gee-gal-13.jpg" alt="Golden Eagle gallery photo 13" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 16</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-14.jpg" class="gallery-open">
+              <img src="gee-gal-14.jpg" alt="Golden Eagle gallery photo 14" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 17</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <a href="gee-gal-15.jpg" class="gallery-open">
+              <img src="gee-gal-15.jpg" alt="Golden Eagle gallery photo 15" loading="lazy">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Project Gallery</strong>
+              <span>Photo 18</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <p class="gallery-hint">
+          &#8592; Scroll or swipe to explore all 18 photos &#8594;
+        </p>
 
       </div>
     </section>
 
-    <!-- PROJECT PORTFOLIO -->
-    <section class="projects" id="projects">
-      <div class="container">
+    <!-- CONTACT -->
 
-        <div class="section-head">
-
-          <span class="kicker">Project Experience</span>
-
-          <h2>Our work starts where the project begins.</h2>
-
-          <p>
-            A selection of projects associated
-            with Golden Eagle Excavation's
-            excavation and sitework experience.
-          </p>
-
-        </div>
-
-        <div class="projects-grid">
-
-          <!-- ST. GABRIEL -->
-          <article class="project-card">
-
-            <div class="project-image">
-              <img src="st-gabriel.png"
-                   alt="St. Gabriel Classical Academy project"
-                   loading="lazy">
-            </div>
-
-            <div class="project-content">
-
-              <span class="project-tag">
-                Educational Construction
-              </span>
-
-              <h3>St. Gabriel Classical Academy</h3>
-
-              <p>
-                Site-related construction support
-                for a school project where
-                early-phase coordination,
-                site readiness, and field
-                execution played important roles.
-              </p>
-
-            </div>
-          </article>
-
-          <!-- LOFTS AT POLARIS POINTE -->
-          <article class="project-card">
-
-            <div class="project-image">
-              <img src="lofts-polaris-pointe.png"
-                   alt="Lofts at Polaris Pointe project"
-                   loading="lazy">
-            </div>
-
-            <div class="project-content">
-
-              <span class="project-tag">
-                Multifamily Construction
-              </span>
-
-              <h3>Lofts at Polaris Pointe</h3>
-
-              <p>
-                Site and construction support
-                associated with a multifamily
-                residential project, with an
-                emphasis on coordination and
-                preparing the site for subsequent work.
-              </p>
-
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT CTA -->
     <section class="cta-section">
       <div class="container cta-grid">
 
         <div>
-
           <span class="kicker" style="color:#e9a537;">
             Build With Golden Eagle
           </span>
@@ -1244,7 +1482,6 @@
             the scope, schedule, and next
             steps for your project.
           </p>
-
         </div>
 
         <div class="cta-actions">
@@ -1258,15 +1495,49 @@
           </a>
 
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- LIGHTBOX -->
 
+  <div class="lightbox"
+       id="galleryLightbox"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Gallery photo viewer"
+       aria-hidden="true">
+
+    <button class="lightbox-close"
+            id="lightboxClose"
+            type="button"
+            aria-label="Close photo viewer">
+      &times;
+    </button>
+
+    <button class="lightbox-prev"
+            id="lightboxPrev"
+            type="button"
+            aria-label="Previous photo">
+      &#8592;
+    </button>
+
+    <img id="lightboxImage" src="" alt="Golden Eagle project photo">
+
+    <button class="lightbox-next"
+            id="lightboxNext"
+            type="button"
+            aria-label="Next photo">
+      &#8594;
+    </button>
+
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
     <div class="container footer-inner">
 
       <div>
@@ -1275,31 +1546,141 @@
 
       <nav class="footer-links" aria-label="Footer navigation">
 
-        <a href="executive.html">
-          Executive
-        </a>
-
-        <a href="apex.html">
-          APEX Construction Group
-        </a>
+        <a href="executive.html">Executive</a>
+        <a href="apex.html">APEX Construction Group</a>
 
         <a href="golden-eagle.html" aria-current="page">
           Golden Eagle
         </a>
 
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
 
       </nav>
-
     </div>
-
   </footer>
+
+  <!-- GALLERY JAVASCRIPT -->
+
+  <script>
+    const gallery = document.getElementById('goldenGallery');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+
+    const photos = Array.from(
+      document.querySelectorAll('.gallery-open')
+    );
+
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    let currentPhoto = 0;
+    let previousFocus = null;
+
+    function scrollGallery(direction) {
+      const firstCard = gallery.querySelector('.gallery-item');
+      const gap = parseFloat(getComputedStyle(gallery).gap) || 0;
+      const amount = firstCard.getBoundingClientRect().width + gap;
+
+      gallery.scrollBy({
+        left: direction * amount,
+        behavior: 'smooth'
+      });
+    }
+
+    prevBtn.addEventListener('click', () => scrollGallery(-1));
+    nextBtn.addEventListener('click', () => scrollGallery(1));
+
+    function updateArrows() {
+      prevBtn.disabled = gallery.scrollLeft <= 2;
+      nextBtn.disabled =
+        gallery.scrollLeft + gallery.clientWidth >=
+        gallery.scrollWidth - 2;
+    }
+
+    gallery.addEventListener('scroll', updateArrows, {passive:true});
+    window.addEventListener('resize', updateArrows);
+    window.addEventListener('load', updateArrows);
+    updateArrows();
+
+    function displayPhoto(index) {
+      currentPhoto = (index + photos.length) % photos.length;
+
+      lightboxImage.src = photos[currentPhoto].getAttribute('href');
+      lightboxImage.alt =
+        photos[currentPhoto].querySelector('img').alt;
+
+      lightboxCounter.textContent =
+        (currentPhoto + 1) + ' / ' + photos.length;
+    }
+
+    function openLightbox(index) {
+      previousFocus = document.activeElement;
+      displayPhoto(index);
+
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.removeAttribute('src');
+      document.body.style.overflow = '';
+
+      if (previousFocus) previousFocus.focus();
+    }
+
+    photos.forEach((photo, index) => {
+      photo.addEventListener('click', (event) => {
+        event.preventDefault();
+        openLightbox(index);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    document.getElementById('lightboxPrev')
+      .addEventListener('click', () => displayPhoto(currentPhoto - 1));
+
+    document.getElementById('lightboxNext')
+      .addEventListener('click', () => displayPhoto(currentPhoto + 1));
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        displayPhoto(currentPhoto + 1);
+      } else if (event.key === 'ArrowLeft') {
+        displayPhoto(currentPhoto - 1);
+      } else if (event.key === 'Tab') {
+        const controls = [
+          closeBtn,
+          document.getElementById('lightboxPrev'),
+          document.getElementById('lightboxNext')
+        ];
+        const index = controls.indexOf(document.activeElement);
+        if (event.shiftKey && index === 0) {
+          event.preventDefault();
+          controls[controls.length - 1].focus();
+        } else if (!event.shiftKey && index === controls.length - 1) {
+          event.preventDefault();
+          controls[0].focus();
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
